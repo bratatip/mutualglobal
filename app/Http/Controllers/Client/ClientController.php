@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Uhid;
+use PDF;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Http\Request;
 
@@ -79,6 +80,10 @@ class ClientController extends Controller
         try {
             $data = Uhid::where('uuid', $id)->first()->toArray();
 
+            if (!$data) {
+                return redirect()->back()->with('error', 'Record not found');
+            }
+
             if ($data['insurer'] == 'icici') {
                 $view = 'client.cardDownloads.uhid-download-icici';
             } elseif ($data['insurer'] == 'care') {
@@ -94,8 +99,12 @@ class ClientController extends Controller
                 return redirect()->back()->with('error', 'Invalid insurer');
             }
 
-            // Return the view with the data
-            return view($view, compact('data'));
+            $pdf = PDF::loadView($view,['data' => $data]);
+            
+
+            $fileName = $data['uuid'] . '-' . $data['insurer'] . '.pdf';
+            return $pdf->download($fileName, ['Attachment' => false]);
+            
         } catch (\Throwable $th) {
             // Handle any exceptions that may occur
             return redirect()->back()->with('error', 'An error occurred');
