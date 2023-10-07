@@ -346,11 +346,6 @@
     <script>
         window.onload = function() {
             window.print();
-            // Add an event listener to detect when the print dialog is closed
-            window.addEventListener('afterprint', function() {
-                // Close the current tab when the print dialog is closed
-                window.close();
-            });
         }
     </script>
 
