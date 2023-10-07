@@ -361,7 +361,6 @@
 
             <div class="downloadDiv">
                 <a href="{{ route('client.uhid-download', ['id' => $data['uuid']]) }}"
-                    target="_blank"
                     class="downloadButton">Download</a>
             </div>
         </div>
