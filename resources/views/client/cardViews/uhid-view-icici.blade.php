@@ -76,7 +76,7 @@
 
 
             .flip-card-front {
-                background-image: url('{{ asset('images/uhid-front.jpg') }}');
+                background-image: url('{{ asset('images/icici-uhid-front.jpg') }}');
                 background-size: cover;
                 position: absolute;
                 /* display: grid;
@@ -220,6 +220,98 @@
 
             a {
                 text-decoration: none !important;
+            }
+
+            @media (max-width: 768px) {
+                .flip-card {
+                    background-color: transparent;
+                    width: 400px;
+                    height: 260px;
+                    perspective: 1000px;
+                    color: white;
+                }
+
+                .flip-card-front {
+                    background-image: url('{{ asset('images/icici-uhid-front.jpg') }}');
+                    background-size: cover;
+                    background-repeat: no-repeat; 
+                    /* background-position-x: -26px; */
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    -webkit-backface-visibility: hidden;
+                    backface-visibility: hidden;
+                    border-radius: 1rem;
+                    justify-content: center;
+                    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.432);
+                    border-style: groove;
+                    border-color: rgba(185, 74, 27, 1);
+                    border-width: 1px;
+                    justify-items: center;
+                }
+
+                .clientData {
+                    display: grid;
+                    grid-template-columns: max-content 1fr;
+                    color: black;
+                    margin: 60px 0 0 10px;
+                    font-size: small;
+                }
+
+                .instruction {
+                    color: gray;
+                    font-size: 6px;
+                    font-weight: 600;
+                    line-height: 1.3;
+                }
+
+                .terms p {
+                    color: gray;
+                    margin-bottom: 10px;
+                    padding-inline-start: 15px;
+                    padding-inline-end: 15px;
+                    font-size: 6px;
+                    font-weight: 600;
+                    line-height: 1.3;
+                }
+
+                .redColor {
+                    color: #a71920;
+                    font-size: 6px;
+                    font-weight: bold;
+                }
+
+                .contactInfo {
+                    color: black;
+                    font-size: 6px;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 30px;
+                    margin-bottom: 10px;
+                }
+
+                .contactInfoHeader {
+                    color: black;
+                    font-size: 7px;
+                    font-weight: bold;
+                }
+
+                .note {
+                    color: black;
+                    font-size: 6px;
+                }
+
+                .italic {
+                    font-style: italic;
+                }
+
+                .text-block {
+                    color: black;
+                    cursor: pointer;
+                    margin-top: 1rem;
+                    transition: color 0.8s;
+                    margin-bottom: 1rem;
+                }
             }
         </style>
     </head>

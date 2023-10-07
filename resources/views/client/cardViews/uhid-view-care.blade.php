@@ -76,7 +76,7 @@
 
 
             .flip-card-front {
-                background-image: url('{{ asset('images/care-uhid-front.png') }}');
+                background-image: url('{{ asset('images/care-uhid-front.jpg') }}');
                 background-size: cover;
                 position: absolute;
                 /* display: grid;
@@ -116,7 +116,7 @@
             }
 
             .flip-card-back {
-                background-image: url('{{ asset('images/care-uhid-back.png') }}');
+                background-image: url('{{ asset('images/care-uhid-back.jpg') }}');
                 background-size: cover;
                 position: absolute;
                 box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.432);
@@ -152,6 +152,35 @@
 
             a {
                 text-decoration: none !important;
+            }
+
+            @media (max-width: 768px) {
+                .flip-card {
+                    background-color: transparent;
+                    width: 400px;
+                    height: 260px;
+                    perspective: 1000px;
+                    color: white;
+                }
+
+                .flip-card-front {
+                    background-image: url('{{ asset('images/care-uhid-front.jpg') }}');
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    /* background-position-x: -26px; */
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    -webkit-backface-visibility: hidden;
+                    backface-visibility: hidden;
+                    border-radius: 1rem;
+                    justify-content: center;
+                    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.432);
+                    border-style: groove;
+                    border-color: rgba(185, 74, 27, 1);
+                    border-width: 1px;
+                    justify-items: center;
+                }
             }
         </style>
     </head>
@@ -217,7 +246,6 @@
 
             <div>
                 <a href="{{ route('client.uhid-download', ['id' => $data['uuid']]) }}"
-                    target="_blank"
                     class="downloadButton">Download</a>
             </div>
         </div>
