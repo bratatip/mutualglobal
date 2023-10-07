@@ -31,3 +31,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/import-uhid-form', [AdminSettingsController::class, 'adminImportUhidForm'])->name('admin.import-uhid-form');
     Route::post('/store-uhid', [AdminSettingsController::class, 'adminStoreUhid'])->name('admin.store-uhid');
 });
+
+
+#Testing    
+Route::view('/test-view','client.cardDownloads.uhid-download-care');

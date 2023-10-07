@@ -35,10 +35,7 @@
 
 
             .flip-card-front {
-                background-image: url('{{ asset('images/uhid-front.jpg') }}');
-                background-size: cover;
-                position: absolute;
-                /* left: -40px; */
+                position: relative;
                 width: 350px;
                 height: 225px;
                 border-radius: 1rem;
@@ -46,7 +43,16 @@
                 border-style: groove;
                 border-color: rgba(185, 74, 27, 1);
                 border-width: 1px;
-                justify-items: center;
+                justify-content: center;
+                display: flex;
+                align-items: center;
+            }
+
+            .flip-card-front img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 1rem;
             }
 
             .clientData {
@@ -87,6 +93,7 @@
                 background-color: rgba(247, 237, 237, 0.363);
                 position: absolute;
                 right: -5px;
+                top: 0;
                 width: 350px;
                 height: 225px;
                 border-radius: 1rem;
@@ -124,9 +131,10 @@
                 margin-right: 10px;
             }
 
-            .terms{
-                margin-top:-10px;
+            .terms {
+                margin-top: -10px;
             }
+
             .terms p {
                 color: gray;
                 margin-bottom: 10px;
@@ -179,6 +187,9 @@
 
     <body>
         <div class="flip-card-front">
+            <img src="{{ asset('images/icici-uhid-front.jpg') }}"
+                alt="..."
+                style="width: 100%; height: 100%;  position: absolute; top: 0; left: 0; z-index: -1;">
             <div class="clientData">
                 <div>
                     <div class="data-row">
@@ -268,24 +279,24 @@
                 </p>
             </div>
 
-             <div class="contactInfo">
-                    <div>
-                        <span class="contactInfoHeader">Fax Number:</span>(040) 6698 9160/61 <br>
-                        <span class="contactInfoHeader">Email:</span>healthcare@icicilombard.com
-                    </div>
-
-                    <div style="position: absolute; top:155px; left:150px;">
-                        <span class="contactInfoHeader">Toll Free Number:</span>1800 2666 <br>
-                        <span class="contactInfoHeader">Visit us at:</span> www.icicilombard.com
-                    </div>
+            <div class="contactInfo">
+                <div>
+                    <span class="contactInfoHeader">Fax Number:</span>(040) 6698 9160/61 <br>
+                    <span class="contactInfoHeader">Email:</span>healthcare@icicilombard.com
                 </div>
 
-                <div class="note">
-                    <span>Insurance is the subject matter of the solicitation. IRDA Reg. No.: 115. CIN:
-                        L67200MH2000PLC129408</span><br><span class="italic">"The mentioned covers are add-ons
-                        by paying
-                        additional premium and available only if opted by the policyholders</span>
+                <div style="position: absolute; top:155px; left:150px;">
+                    <span class="contactInfoHeader">Toll Free Number:</span>1800 2666 <br>
+                    <span class="contactInfoHeader">Visit us at:</span> www.icicilombard.com
                 </div>
+            </div>
+
+            <div class="note">
+                <span>Insurance is the subject matter of the solicitation. IRDA Reg. No.: 115. CIN:
+                    L67200MH2000PLC129408</span><br><span class="italic">"The mentioned covers are add-ons
+                    by paying
+                    additional premium and available only if opted by the policyholders</span>
+            </div>
         </div>
 
 

@@ -1,7 +1,13 @@
 {
     "/js/app.js": "/js/app.js?id=4101baa1aaaf2eaefec142e2ac7d608f",
     "/css/app.css": "/css/app.css?id=f823064c690a70fee659a627c7647455",
-    "/images/care-uhid-back.png": "/images/care-uhid-back.png?id=eaa891017bd193b59808408eccfcfd1a",
-    "/images/care-uhid-front.png": "/images/care-uhid-front.png?id=49d5a60ffb04b1bfed088e2eb5b67002",
-    "/images/uhid-front.jpg": "/images/uhid-front.jpg?id=b5a98ac87aa0ef9a599dd5be536753e4"
+    "/images/care-uhid-back.jpg": "/images/care-uhid-back.jpg?id=acb4eb8b76e101434fefe147ebe230e9",
+    "/images/care-uhid-front.jpg": "/images/care-uhid-front.jpg?id=9d0ad97ea303a220cde0af0760a2799d",
+    "/images/hdfc-uhid-back.jpg": "/images/hdfc-uhid-back.jpg?id=e160633bb6bb8a5a482d6cafc4ea11f5",
+    "/images/hdfc-uhid-front.jpg": "/images/hdfc-uhid-front.jpg?id=dbc179ed867cbc33db06c59754921dd3",
+    "/images/icici-uhid-front.jpg": "/images/icici-uhid-front.jpg?id=df25550064e738c5b053a1033aef78bf",
+    "/images/reliance-uhid-back.jpg": "/images/reliance-uhid-back.jpg?id=9dd216a6a7fdda3c2424cdc2fc573296",
+    "/images/reliance-uhid-front.jpg": "/images/reliance-uhid-front.jpg?id=cf4586975707f060d8d36bc25dd55876",
+    "/images/tata-uhid-back.jpg": "/images/tata-uhid-back.jpg?id=320182f84a087fd9d460e5b0c57463fa",
+    "/images/tata-uhid-front.jpg": "/images/tata-uhid-front.jpg?id=d7888605a8b5e8dd0cacffbdeafc2b6c"
 }
