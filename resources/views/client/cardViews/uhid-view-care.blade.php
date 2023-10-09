@@ -180,18 +180,31 @@
                 }
 
                 .clientData {
+                    font-size: 12px !important;
                     display: flex;
                     grid-template-columns: max-content 1fr;
                     color: white;
-                    margin: 30px 0 0 30px;
+                    margin: -10px 0 0 30px;
                     font-size: small;
+                    height: 90%;
+                }
+
+                .responsive-custom-label {
+                    margin-left: 15px !important;
+                }
+                table {
+                    margin-left: 30px;
+                    margin-top: -60px;
+                    font-size: 12px;
+                    font-family: "Heebo", sans-serif;
+                    font-weight: 100 !important;
                 }
             }
 
             @media (max-width: 400px) {
 
                 body {
-                    font-size:8px;
+                    font-size: 8px;
                 }
 
                 .flip-card {
@@ -222,25 +235,26 @@
                 }
 
                 .clientData {
-                    margin: -10px 0 0 20px;
+                    margin: 0px 0 0 20px;
                     font-size: small;
+                    height: 90%;
                 }
 
-                .responsive-custome{
-                    font-size:10px !important;
+                .responsive-custome {
+                    font-size: 10px !important;
                 }
 
-                .responsive-custom-label{
+                .responsive-custom-label {
                     margin-left: 20px !important;
                 }
 
                 table {
-                margin-left: 30px;
-                margin-top: -60px;
-                font-size: 10px;
-                font-family: "Heebo", sans-serif;
-                font-weight: 100 !important;
-            }
+                    margin-left: 30px;
+                    margin-top: -60px;
+                    font-size: 10px;
+                    font-family: "Heebo", sans-serif;
+                    font-weight: 100 !important;
+                }
 
             }
         </style>
