@@ -92,22 +92,35 @@
             }
 
             .clientData {
-                display: grid;
-                grid-template-columns: max-content 1fr;
                 color: black;
-                margin: 100px 0 0 50px;
-                font-size: small;
+                font-size: 12px;
+                margin: 100px 0 0 20px;
+            }
+
+            .data-row {
+                display: flex;
+                align-items: center;
+                line-height: 1.2;
             }
 
             .label {
                 font-weight: bold;
             }
 
-            /* Specific styling for colons */
+            .label-custome {
+                position: absolute;
+                left: 300px;
+            }
+
+            /* .data {
+                display: inline-block;
+                margin-left: -20px;
+                word-wrap: break-word;
+            } */
+
             .data::before {
                 content: ":";
-                margin-left: 10px;
-                margin-right: 2px;
+                margin-right: 5px;
                 font-weight: bold;
             }
 
@@ -144,7 +157,7 @@
                 text-decoration: none !important;
             }
 
-            @media (max-width: 768px) {
+            @media (max-width: 700px) {
                 .flip-card {
                     background-color: transparent;
                     width: 400px;
@@ -171,6 +184,40 @@
                     border-width: 1px;
                     justify-items: center;
                 }
+
+                .clientData {
+                    color: black;
+                    font-size: 10px;
+                    margin: 100px 0 0 20px;
+                }
+
+                .data-row {
+                    display: flex;
+                    align-items: center;
+                    line-height: 1.2;
+                }
+
+                .label {
+                    font-weight: bold;
+                }
+
+                .label-custome {
+                    position: absolute;
+                    left: 230px;
+                }
+            }
+
+
+            @media (max-width: 400px) {
+                .flip-card {
+                    width: 350px;
+                    height: 230px;
+                }
+
+                .clientData {
+                    font-size: 10px;
+                    margin: 80px 0 0 20px;
+                }
             }
         </style>
     </head>
@@ -184,44 +231,46 @@
                     <div class="flip-card-front">
                         <div class="clientData">
                             <div>
-                                <span class="label">Company Name</span>
-                            </div>
-                            <div>
-                                <span class="data">{{ $data['policy_name'] }}</span>
-                            </div>
+                                <div class="data-row">
+                                    <span class="label">Name</span>
+                                    <span class="data">{{ $data['insured_name'] }}</span>
+                                </div>
+                                <div class="data-row">
+                                    <span class="label">Policy No</span>
+                                    <span class="data">{{ $data['policy_number'] }}</span>
+                                    <span class="label-custome">
+                                        <span class="label">Age</span>
+                                        <span class="data">{{ $data['age'] }}</span>
+                                    </span>
 
-                            <div>
-                                <span class="label">Name</span>
-                            </div>
-                            <div>
-                                <span class="data">{{ $data['insured_name'] }}</span>
-                            </div>
+                                </div>
+                                <div class="data-row">
+                                    <span class="label">Member Id</span>
+                                    <span class="data">{{ $data['emp_id'] }}</span>
+                                    <span class="label-custome">
+                                        <span class="label">DOB</span>
+                                        <span class="data">{{ $data['dob'] }}</span>
+                                    </span>
+                                </div>
+                                <div class="data-row">
+                                    <span class="label">Policy Period</span>
 
-                            <div>
-                                <span class="label">Age</span>
-                            </div>
-                            <div>
-                                <span class="data">{{ $data['age'] }}</span>
-                            </div>
+                                    <?php $docCarbon = \Carbon\Carbon::parse($data['doc']); ?>
+                                    <?php $doeCarbon = \Carbon\Carbon::parse($data['doe']); ?>
 
-                            <div>
-                                <span class="label">Card No</span>
-                            </div>
-                            <div>
-                                <span class="data">{{ $data['uhid'] }}</span>
-                            </div>
+                                    <span class="data">{{ $docCarbon->format('d-m-Y') }} -
+                                        {{ $doeCarbon->format('d-m-Y') }}</span> <span class="label-custome">
+                                        <span class="label">Gendre</span>
+                                        <span class="data">{{ $data['gender'] }}</span>
+                                    </span>
+                                </div>
 
-                            <div>
-                                <span class="label">Valid From</span>
-                            </div>
-                            <div>
-                                <span class="data">{{ $data['doc'] }}</span>
-                                <span class="label"
-                                    style="margin-left: 10px;">Valid To</span>
-                                <span class="data">{{ $data['doe'] }}</span>
+                                <div class="data-row">
+                                    <span class="label">Organisation</span>
+                                    <span class="data">{{ $data['policy_name'] }}</span>
+                                </div>
 
                             </div>
-
                         </div>
                     </div>
                     <div class="flip-card-back">

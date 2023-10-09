@@ -49,7 +49,6 @@
                 transform: rotateY(180deg);
             }
 
-            /* .flip-card-front, */
             .flip-card-back {
                 background-color: rgba(247, 237, 237, 0.363);
                 position: absolute;
@@ -62,17 +61,7 @@
                 -webkit-backface-visibility: hidden;
                 backface-visibility: hidden;
                 border-radius: 1rem;
-                /* padding-right: 15px;
-                padding-left: 15px; */
             }
-
-            /* .flip-card-front {
-                box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.432);
-                background-color: rgba(247, 237, 237, 0.363);
-                border-style: groove;
-                border-color: rgba(185, 74, 27, 1);
-                border-width: 1px;
-            } */
 
 
             .flip-card-front {
@@ -81,10 +70,6 @@
                 position: absolute;
                 background-repeat: no-repeat;
                 background-position: center 0px;
-                /* padding-top:70px; */
-                /* display: grid;
-                grid-template-columns: 1fr 2fr 1fr; */
-                /* grid-gap: 5px; */
                 width: 100%;
                 height: 100%;
                 -webkit-backface-visibility: hidden;
@@ -102,19 +87,32 @@
                 display: grid;
                 grid-template-columns: max-content 1fr;
                 color: black;
-                margin: 100px 0 0 50px;
+                margin: 120px 0 0 15px;
                 font-size: small;
+            }
+
+            .data-row {
+                display: flex;
+                align-items: center;
+                line-height: 2;
             }
 
             .label {
                 font-weight: bold;
+                min-width: 120px;
+                display: inline-block;
             }
 
-            /* Specific styling for colons */
+            .data {
+                display: inline-block;
+                margin-left: -20px;
+                word-wrap: break-word;
+            }
+
             .data::before {
                 content: ":";
-                margin-left: 10px;
-                margin-right: 2px;
+                margin-right: 5px;
+                margin-left: 5px;
                 font-weight: bold;
             }
 
@@ -156,7 +154,7 @@
                 text-decoration: none !important;
             }
 
-            @media (max-width: 768px) {
+            @media (max-width: 800px) {
                 .flip-card {
                     background-color: transparent;
                     width: 400px;
@@ -169,7 +167,6 @@
                     background-image: url('{{ asset('images/hdfc-uhid-front.jpg') }}');
                     background-size: cover;
                     background-repeat: no-repeat;
-                    /* background-position-x: -26px; */
                     position: absolute;
                     width: 100%;
                     height: 100%;
@@ -182,6 +179,24 @@
                     border-color: rgba(185, 74, 27, 1);
                     border-width: 1px;
                     justify-items: center;
+                }
+
+                .clientData {
+                    display: grid;
+                    grid-template-columns: max-content 1fr;
+                    color: black;
+                    margin: 100px 0 0 15px;
+                    font-size: small;
+                }
+            }
+
+            @media (max-width: 400px) {
+                .flip-card {
+                    background-color: transparent;
+                    width: 350px;
+                    height: 230px;
+                    perspective: 1000px;
+                    color: white;
                 }
             }
         </style>
@@ -196,44 +211,24 @@
                     <div class="flip-card-front">
                         <div class="clientData">
                             <div>
-                                <span class="label">Company Name</span>
-                            </div>
-                            <div>
-                                <span class="data">{{ $data['policy_name'] }}</span>
-                            </div>
-
-                            <div>
-                                <span class="label">Name</span>
-                            </div>
-                            <div>
-                                <span class="data">{{ $data['insured_name'] }}</span>
-                            </div>
-
-                            <div>
-                                <span class="label">Age</span>
-                            </div>
-                            <div>
-                                <span class="data">{{ $data['age'] }}</span>
-                            </div>
-
-                            <div>
-                                <span class="label">Card No</span>
-                            </div>
-                            <div>
-                                <span class="data">{{ $data['uhid'] }}</span>
-                            </div>
-
-                            <div>
-                                <span class="label">Valid From</span>
-                            </div>
-                            <div>
-                                <span class="data">{{ $data['doc'] }}</span>
-                                <span class="label"
-                                    style="margin-left: 10px;">Valid To</span>
-                                <span class="data">{{ $data['doe'] }}</span>
+                                <div class="data-row">
+                                    <span class="label">Corporate Name</span>
+                                    <span class="data">{{ $data['policy_name'] }}</span>
+                                </div>
+                                <div class="data-row">
+                                    <span class="label">HDFC EGRO ID</span>
+                                    <span class="data">{{ $data['uhid'] }}</span>
+                                </div>
+                                <div class="data-row">
+                                    <span class="label">Member Name</span>
+                                    <span class="data">{{ $data['insured_name'] }}</span>
+                                </div>
+                                <div class="data-row">
+                                    <span class="label">Gender</span>
+                                    <span class="data">{{ $data['gender'] }}</span>
+                                </div>
 
                             </div>
-
                         </div>
                     </div>
                     <div class="flip-card-back">

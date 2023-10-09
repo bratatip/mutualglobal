@@ -43,6 +43,9 @@
                 transition: transform 0.8s;
                 transform-style: preserve-3d;
                 box-sizing: border-box;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+                -moz-backface-visibility: hidden;
             }
 
             .rotate .flip-card-inner {
@@ -86,6 +89,7 @@
                 height: 100%;
                 -webkit-backface-visibility: hidden;
                 backface-visibility: hidden;
+                -moz-backface-visibility: hidden;
                 border-radius: 1rem;
                 justify-content: center;
                 box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.432);
@@ -234,7 +238,7 @@
                 .flip-card-front {
                     background-image: url('{{ asset('images/icici-uhid-front.jpg') }}');
                     background-size: cover;
-                    background-repeat: no-repeat; 
+                    background-repeat: no-repeat;
                     /* background-position-x: -26px; */
                     position: absolute;
                     width: 100%;
@@ -313,6 +317,24 @@
                     margin-bottom: 1rem;
                 }
             }
+
+            @media (max-width: 400px) {
+                .flip-card {
+                    background-color: transparent;
+                    width: 350px;
+                    height: 230px;
+                    perspective: 1000px;
+                    color: white;
+                }
+
+                .flip-card-front {
+                    background-position-x: -5px;
+                }
+
+                .clientData {
+                    font-size: 10px;
+                }
+            }
         </style>
     </head>
 
@@ -356,10 +378,10 @@
                                 <span class="label">Valid From</span>
                             </div>
                             <div>
-                                <span class="data">{{ $data['doc'] }}</span>
+                                <span class="data">{{ date('d-M-Y', strtotime($data['doc'])) }}</span>
                                 <span class="label"
                                     style="margin-left: 10px;">Valid To</span>
-                                <span class="data">{{ $data['doe'] }}</span>
+                                <span class="data">{{ date('d-M-Y', strtotime($data['doe'])) }}</span>
 
                             </div>
 
