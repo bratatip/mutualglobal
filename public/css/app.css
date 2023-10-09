@@ -273,6 +273,9 @@ select {
         max-width: 1536px;
     }
 }
+.fixed {
+    position: fixed;
+}
 .absolute {
     position: absolute;
 }
@@ -316,6 +319,9 @@ select {
 }
 .flex {
     display: flex;
+}
+.table {
+    display: table;
 }
 .grid {
     display: grid;

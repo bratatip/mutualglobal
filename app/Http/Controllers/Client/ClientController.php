@@ -103,7 +103,7 @@ class ClientController extends Controller
             // $pdf->setOptions(['dpi' => 600]); 
 
             $fileName = $data['uuid'] . '-' . $data['insurer'] . '.pdf';
-            return $pdf->download($fileName, ['Attachment' => false]);
+            return $pdf->stream($fileName, ['Attachment' => false]);
             
         } catch (\Throwable $th) {
             // Handle any exceptions that may occur
