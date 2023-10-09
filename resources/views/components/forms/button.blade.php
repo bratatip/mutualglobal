@@ -2,8 +2,8 @@
     'type' => 'button',
     'text' => 'Button Text',
     'classes' => '',
-    'href' => '',
-    'target' => '',
+    'href' => '#',
+    'target' => '#',
 ])
 
 @if ($href)
