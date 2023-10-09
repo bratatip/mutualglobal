@@ -99,23 +99,13 @@
             }
 
             .clientData {
-                display: grid;
-                grid-template-columns: max-content 1fr;
-                color: black;
-                margin: 100px 0 0 50px;
-                font-size: small;
+                color: white;
+                font-size: 12px;
+                margin: 120px 0 0 170px;
             }
 
-            .label {
-                font-weight: bold;
-            }
-
-            /* Specific styling for colons */
-            .data::before {
-                content: ":";
-                margin-left: 10px;
-                margin-right: 2px;
-                font-weight: bold;
+            .data-row {
+                margin-bottom: 5px;
             }
 
             .flip-card-back {
@@ -183,6 +173,12 @@
                     border-width: 1px;
                     justify-items: center;
                 }
+
+                .clientData {
+                    color: white;
+                    font-size: 12px;
+                    margin: 110px 0 0 140px;
+                }
             }
         </style>
     </head>
@@ -196,44 +192,36 @@
                     <div class="flip-card-front">
                         <div class="clientData">
                             <div>
-                                <span class="label">Company Name</span>
+                                {{-- <div class="data-row">
+                                    <span class="label">Company Name</span>
+                                    <span class="data">{{ $data['policy_name'] }}</span>
+                                </div> --}}
+                                <div class="data-row">
+                                    {{-- <span class="label">Name</span> --}}
+                                    <span class="data"
+                                        style="font-weight: bold;">{{ $data['insured_name'] }}</span>
+                                </div>
+                                <div class="data-row"
+                                    style="margin-top: 20px;!important">
+                                    <span class="label">AGE:</span>
+                                    <span class="data">{{ $data['age'] }}</span>
+                                    <span class="label"
+                                        style="margin-left: 50px;">Gender:</span>
+                                    <span class="data">{{ $data['gender'] }}</span>
+                                </div>
+                                <div class="data-row">
+                                    <span class="label">UHID No:</span>
+                                    <span class="data">{{ $data['uhid'] }}</span>
+                                </div>
+                                <div class="data-row">
+                                    <span class="label">Policy No:</span>
+                                    <span class="data">{{ $data['policy_number'] }}</span>
+                                </div>
+                                <div class="data-row">
+                                    <span class="label">EMP Code:</span>
+                                    <span class="data">{{ $data['emp_id'] }}</span>
+                                </div>
                             </div>
-                            <div>
-                                <span class="data">{{ $data['policy_name'] }}</span>
-                            </div>
-
-                            <div>
-                                <span class="label">Name</span>
-                            </div>
-                            <div>
-                                <span class="data">{{ $data['insured_name'] }}</span>
-                            </div>
-
-                            <div>
-                                <span class="label">Age</span>
-                            </div>
-                            <div>
-                                <span class="data">{{ $data['age'] }}</span>
-                            </div>
-
-                            <div>
-                                <span class="label">Card No</span>
-                            </div>
-                            <div>
-                                <span class="data">{{ $data['uhid'] }}</span>
-                            </div>
-
-                            <div>
-                                <span class="label">Valid From</span>
-                            </div>
-                            <div>
-                                <span class="data">{{ $data['doc'] }}</span>
-                                <span class="label"
-                                    style="margin-left: 10px;">Valid To</span>
-                                <span class="data">{{ $data['doe'] }}</span>
-
-                            </div>
-
                         </div>
                     </div>
                     <div class="flip-card-back">

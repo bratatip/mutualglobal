@@ -11,6 +11,7 @@
                 color: rgb(255, 255, 255);
                 font-size: 17px;
                 font-family: "Heebo", sans-serif;
+                font-weight: 100 !important;
                 margin: 0;
                 background-color: rgba(243, 235, 235, 0.178);
                 backdrop-filter: blur(5px);
@@ -61,27 +62,14 @@
                 height: 100%;
                 -webkit-backface-visibility: hidden;
                 backface-visibility: hidden;
-                border-radius: 1rem;
-                /* padding-right: 15px;
-                padding-left: 15px; */
+                border-radius: 1rem;/
             }
-
-            /* .flip-card-front {
-                box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.432);
-                background-color: rgba(247, 237, 237, 0.363);
-                border-style: groove;
-                border-color: rgba(185, 74, 27, 1);
-                border-width: 1px;
-            } */
 
 
             .flip-card-front {
                 background-image: url('{{ asset('images/care-uhid-front.jpg') }}');
                 background-size: cover;
                 position: absolute;
-                /* display: grid;
-                grid-template-columns: 1fr 2fr 1fr; */
-                /* grid-gap: 5px; */
                 width: 100%;
                 height: 100%;
                 -webkit-backface-visibility: hidden;
@@ -89,30 +77,38 @@
                 border-radius: 1rem;
                 justify-content: center;
                 box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.432);
-                /* border-style: groove;
-                border-color: rgba(185, 74, 27, 1);
-                border-width: 1px; */
                 justify-items: center;
             }
 
             .clientData {
-                display: grid;
-                grid-template-columns: max-content 1fr;
-                color: black;
-                margin: 100px 0 0 50px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                /* Use space-around to distribute content equally */
+                color: white;
+                margin: -20px 0 0 -20px;
                 font-size: small;
+                height: 100%;
             }
 
-            .label {
-                font-weight: bold;
-            }
 
             /* Specific styling for colons */
             .data::before {
                 content: ":";
-                margin-left: 10px;
-                margin-right: 2px;
-                font-weight: bold;
+                margin-right: 5px;
+            }
+
+            table {
+                width:90%;
+                margin-left: 30px;
+                margin-top: -90px;
+                font-size: 13px;
+                font-family: "Heebo", sans-serif;
+                font-weight: 100 !important;
+            }
+            tr {
+                text-align: left;
             }
 
             .flip-card-back {
@@ -181,6 +177,14 @@
                     border-width: 1px;
                     justify-items: center;
                 }
+
+                .clientData {
+                    display: flex;
+                    grid-template-columns: max-content 1fr;
+                    color: white;
+                    margin: 70px 0 0 30px;
+                    font-size: small;
+                }
             }
         </style>
     </head>
@@ -194,45 +198,50 @@
                     <div class="flip-card-front">
                         <div class="clientData">
                             <div>
-                                <span class="label">Company Name</span>
-                            </div>
-                            <div>
-                                <span class="data">{{ $data['policy_name'] }}</span>
-                            </div>
+                                <div class="data-row">
+                                    <span class="label">Policy Number</span>
+                                    <span class="data">{{ $data['policy_number'] }}</span>
+                                </div>
+                                <div class="data-row">
+                                    <span class="label">Policy Type</span>
+                                    <span class="data"
+                                        style="">Health Insurance</span>
+                                </div>
 
-                            <div>
-                                <span class="label">Name</span>
-                            </div>
-                            <div>
-                                <span class="data">{{ $data['insured_name'] }}</span>
-                            </div>
+                                <div class="data-row">
+                                    <span class="label">Member Id</span>
+                                    <span class="data"
+                                        style="">{{ $data['emp_id'] }}</span>
+                                </div>
 
-                            <div>
-                                <span class="label">Age</span>
-                            </div>
-                            <div>
-                                <span class="data">{{ $data['age'] }}</span>
-                            </div>
-
-                            <div>
-                                <span class="label">Card No</span>
-                            </div>
-                            <div>
-                                <span class="data">{{ $data['uhid'] }}</span>
-                            </div>
-
-                            <div>
-                                <span class="label">Valid From</span>
-                            </div>
-                            <div>
-                                <span class="data">{{ $data['doc'] }}</span>
-                                <span class="label"
-                                    style="margin-left: 10px;">Valid To</span>
-                                <span class="data">{{ $data['doe'] }}</span>
+                                <div class="data-row"
+                                    style="margin-top: 20px;!important">
+                                    <span>{{ $data['policy_name'] }}</span>
+                                    <span class="label"
+                                        style="margin-left: 50px;">Valid Upto</span>
+                                    <span class="data">{{ date('d-M-y', strtotime($data['doe'])) }}
+                                    </span>
+                                </div>
 
                             </div>
 
                         </div>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Client Id</th>
+                                    <th>Dob</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{ $data['insured_name'] }}</td>
+                                    <td>{{ $data['uhid'] }}</td>
+                                    <td>{{ date('d-M-y', strtotime($data['dob'])) }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                     <div class="flip-card-back">
 
