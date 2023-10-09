@@ -180,6 +180,21 @@
                     margin: 110px 0 0 140px;
                 }
             }
+
+            @media (max-width: 400px) {
+                .flip-card {
+                    background-color: transparent;
+                    width: 350px;
+                    height: 230px;
+                    perspective: 1000px;
+                    color: white;
+                }
+                .clientData {
+                    font-size: 10px;
+                    margin: 110px 0 0 130px;
+                }
+                
+            }
         </style>
     </head>
 

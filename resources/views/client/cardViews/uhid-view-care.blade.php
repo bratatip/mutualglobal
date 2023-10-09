@@ -100,13 +100,14 @@
             }
 
             table {
-                width:90%;
+                width: 90%;
                 margin-left: 30px;
                 margin-top: -90px;
                 font-size: 13px;
                 font-family: "Heebo", sans-serif;
                 font-weight: 100 !important;
             }
+
             tr {
                 text-align: left;
             }
@@ -150,7 +151,7 @@
                 text-decoration: none !important;
             }
 
-            @media (max-width: 768px) {
+            @media (max-width: 700px) {
                 .flip-card {
                     background-color: transparent;
                     width: 400px;
@@ -182,9 +183,65 @@
                     display: flex;
                     grid-template-columns: max-content 1fr;
                     color: white;
-                    margin: 70px 0 0 30px;
+                    margin: 30px 0 0 30px;
                     font-size: small;
                 }
+            }
+
+            @media (max-width: 400px) {
+
+                body {
+                    font-size:8px;
+                }
+
+                .flip-card {
+                    background-color: transparent;
+                    width: 350px;
+                    height: 230px;
+                    perspective: 1000px;
+                    color: white;
+                }
+
+                .flip-card-front {
+                    background-image: url('{{ asset('images/care-uhid-front.jpg') }}');
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    /* background-position-x: -26px; */
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    -webkit-backface-visibility: hidden;
+                    backface-visibility: hidden;
+                    border-radius: 1rem;
+                    justify-content: center;
+                    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.432);
+                    border-style: groove;
+                    border-color: rgba(185, 74, 27, 1);
+                    border-width: 1px;
+                    justify-items: center;
+                }
+
+                .clientData {
+                    margin: -10px 0 0 20px;
+                    font-size: small;
+                }
+
+                .responsive-custome{
+                    font-size:10px !important;
+                }
+
+                .responsive-custom-label{
+                    margin-left: 20px !important;
+                }
+
+                table {
+                margin-left: 30px;
+                margin-top: -60px;
+                font-size: 10px;
+                font-family: "Heebo", sans-serif;
+                font-weight: 100 !important;
+            }
+
             }
         </style>
     </head>
@@ -214,10 +271,10 @@
                                         style="">{{ $data['emp_id'] }}</span>
                                 </div>
 
-                                <div class="data-row"
+                                <div class="data-row responsive-custome"
                                     style="margin-top: 20px;!important">
                                     <span>{{ $data['policy_name'] }}</span>
-                                    <span class="label"
+                                    <span class="label responsive-custom-label"
                                         style="margin-left: 50px;">Valid Upto</span>
                                     <span class="data">{{ date('d-M-y', strtotime($data['doe'])) }}
                                     </span>

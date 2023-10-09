@@ -210,9 +210,9 @@
                     </div>
                     <div class="data-row">
                         <span style="font-weight: bold;">Valid From</span>
-                        <span><span style="font-weight: bold; margin-left: 38px;">:</span>{{ $data['doc'] }}</span>
-                        <span style="font-weight: bold; margin-left:10px;">Valid To</span>
-                        <span>{{ $data['doe'] }}</span>
+                        <span><span style="font-weight: bold; margin-left: 38px;">:</span>{{ date('d-M-Y', strtotime($data['doc'])) }}</span>
+                        <span style="font-weight: bold; margin-left:10px;">Valid To :</span>
+                        <span>{{ date('d-M-Y', strtotime($data['doe'])) }}</span>
                     </div>
                 </div>
             </div>
