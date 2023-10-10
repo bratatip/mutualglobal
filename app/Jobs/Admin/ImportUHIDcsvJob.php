@@ -75,8 +75,6 @@ class ImportUHIDcsvJob implements ShouldQueue
             // Initialize skipped rows array with header
             $skippedRows = [$header];
 
-            $duplicateRows = [$header];
-
             // Loop through the data rows and create new candidates and users
             foreach ($rows as $row) {
                 // Combine the header with the row data
@@ -96,7 +94,7 @@ class ImportUHIDcsvJob implements ShouldQueue
 
                 if (Uhid::where('uhid', $clientUhid)->exists()) {
                     // Skip duplicate candidate
-                    $duplicateRows[] = $row;
+                    $skippedRows[] = $row;
                     continue;
                 }
 
@@ -118,78 +116,23 @@ class ImportUHIDcsvJob implements ShouldQueue
                     'status' => $clientUHIDData['status'],
                     'insurer' => $clientUHIDData['insurer'],
                 ]);
-
-                // Check if user already exists
-                // $userEmail = $candidateData['email'];
-                // $user = User::where('email', $userEmail)->first();
-
-                // if (!$user) {
-                //     // Create a new user record
-                //     $tempPassword = Str::random(8);
-                //     $user = User::create([
-                //         'role_id' => 3,
-                //         'uuid' => UuidGeneratorHelper::generateUniqueUuidForTable('users'),
-                //         'first_name' => $candidateData['first_name'],
-                //         'last_name' => $candidateData['last_name'],
-                //         'email' => $userEmail,
-                //         'password' => Hash::make($tempPassword),
-                //         'verification_token' => Str::random(40),
-                //     ]);
-                // } else {
-                //     // Use existing user record
-                //     $tempPassword = null;
-                // }
-
-                // Check if candidate already exists
-                // if (Candidate::where('user_id', $user->id)->exists()) {
-                //     // Skip duplicate candidate
-                //     $skippedRows[] = $row;
-                //     continue;
-                // }
-
-                // Create a new candidate record
-                // $candidateData['uuid'] = UuidGeneratorHelper::generateUniqueUuidForTable('candidates');
-                // $candidateData['user_id'] = $user->id;
-                // $candidateData['agency_id'] = $agency_id;
-                // $candidateData['is_profile_completed'] = false;
-
-                try {
-                    // Candidate::create($candidateData);
-                } catch (\Illuminate\Database\QueryException $e) {
-                    // Skip duplicate entry exception
-                    if (strpos($e->getMessage(), 'Duplicate entry') !== false) {
-                        $skippedRows[] = $row;
-                        continue;
-                    }
-                    return redirect()->back()->with('error', 'Database error: ' . $e->getMessage());
-                }
-
-                // if ($tempPassword) {
-                //     Send notification only if new user is created
-                //     SendImportCandidateNotificationJob::dispatch($userEmail,  $tempPassword);
-                // }
             }
 
-            dd($skippedRows,$duplicateRows);
-            // Delete the temporary file after processing
             Storage::delete($this->filePath);
 
-            // if (count($skippedRows) > 1) {
-            //     $csv = fopen($this->skippedRowsFilePath, 'w');
-            //     foreach ($skippedRows as $row) {
-            //         fputcsv($csv, $row);
-            //     }
-            //     fclose($csv);
-
-            //     $agencyUser = Agency::where('id', $agency_id)->first();
-
-            //     $agencyUser->skipped_candidates_url = $this->skippedRowsFilePath;
-            //     $agencyUser->save();
-            // }
-            return redirect()->back()->with('success', 'Data Uploaded Successfully');
+            if (count($skippedRows) > 1) {
+                $csv = fopen($this->skippedRowsFilePath, 'w');
+                foreach ($skippedRows as $row) {
+                    fputcsv($csv, $row);
+                }
+                fclose($csv);
+            }
+            $skippedRowsFile = storage_path('app/' . $this->skippedRowsFilePath);
+            
+            return $skippedRowsFile;
         } catch (\Exception $e) {
 
-            return redirect()->back()->with('error', 'Database error: ' . $e->getMessage());
+            return $e->getMessage();
         }
     }
 }

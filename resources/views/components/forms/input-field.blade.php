@@ -8,7 +8,7 @@
     'readonly' => false,
     'inputmode' => '',
     'step' => '',
-    'acceptedFileTypes' => '',
+    'acceptedFileTypes' => '.csv,.xls,.xlsx,.pdf,.png,.jpg,.jpeg,.txt',
 ])
 
 <div>
@@ -24,7 +24,7 @@
 </div>
 
 <div class="w-full">
-    @if (!empty($type) && $type === 'text')
+    @if (!empty($type) && in_array($type, ['text', 'password','email']))
         <input type="{{ $type }}"
             {{ $attributes->merge(['class' => 'text-xs text-gray-500 rounded-sm w-11/12 px-3 border-solid border-[#CCCCCC] focus:border-[#FFC451] focus:ring-0', 'id' => $name, 'value' => old($name)]) }}
             name="{{ $name }}"
@@ -63,7 +63,7 @@
             @if ($readonly) readonly @endif>
     @elseif (!empty($type) && $type === 'file')
         <input type="{{ $type }}"
-            {{ $attributes->merge(['class' => 'text-xs text-gray-500 rounded-sm px-3 border-solid border-[#CCCCCC] focus:outline-0 focus:border-[#FFC451] focus:ring-0', 'id' => $name, 'accept' => $acceptedFileTypes, 'value' => old($name)]) }}
+            {{ $attributes->merge(['class' => 'text-xs text-gray-500 rounded-sm px-3 border-solid border-[#CCCCCC] focus:outline-0 focus:border-[#FFC451] focus:ring-0', 'id' => $name, 'accept' => $acceptedFileTypes]) }}
             name="{{ $name }}"
             id="{{ $name }}"
             placeholder="{{ $placeholder }}"

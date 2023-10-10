@@ -37,7 +37,7 @@ class ClientController extends Controller
                         $subquery->orWhere('emp_id', $validatedData['emp_id']);
                     }
                 });
-            })->whereNull('deleted_at')->first();
+            })->first();
 
             if ($data) {
                 $data = $data->toArray();

@@ -46,7 +46,7 @@
                 <h1 class="logo mr-auto"><img src="assets/img/logo_mg1.png"></h1>
                 <nav class="nav-menu d-none d-lg-block">
                     <ul>
-                        <li class="active"><a href="index.html">Home</a></li>
+                        <li class="active"><a href="{{ route('static-web.index') }}">Home</a></li>
                     </ul>
                 </nav><!-- .nav-menu -->
 

@@ -42,10 +42,10 @@
             class="fixed-top">
             <div class="container d-flex align-items-center">
 
-                <h1 class="logo mr-auto"><a href="index.html">MutualGlobal</a></h1>
+                <h1 class="logo mr-auto"><a href="{{ route('static-web.index') }}">MutualGlobal</a></h1>
                 <nav class="nav-menu d-none d-lg-block">
                     <ul>
-                        <li class="active"><a href="index.html">Home</a></li>
+                        <li class="active"><a href="{{ route('static-web.index') }}">Home</a></li>
 
                         <li>
                             <div id="google_translate_element"></div>
