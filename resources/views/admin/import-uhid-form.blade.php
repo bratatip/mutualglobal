@@ -91,7 +91,7 @@
                         $('#skipped_block').addClass();
                         $('#skipped_block').removeClass('hidden');
 
-                        toastr.success('Candidates imported successfully.');
+                        toastr.success('Data imported successfully.');
                     } else {
                         toastr.error(data.message);
                     }
