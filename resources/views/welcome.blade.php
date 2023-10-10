@@ -8,6 +8,7 @@
         @include('layouts.js_cdn')
     </head>
 
+
     <body class="font-sans">
         <div class="min-h-screen bg-zinc-200 flex flex-col justify-center">
             <div>
