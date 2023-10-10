@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="min-h-screen bg-gray-700 flex flex-col justify-center">
+    <div class="min-h-screen flex flex-col justify-center" style="background-color:#666666 !important">
         @include('common.partials._message')
 
         <div class="mt-1 sm:mx-auto sm:w-full sm:max-w-md">
