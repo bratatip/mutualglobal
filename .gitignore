@@ -3,7 +3,9 @@
 /public/hot
 /public/storage
 /storage/*.key
-/vendor
+/vendor/
+# !composer.json
+# !composer.lock
 .env
 .env.backup
 .env.production
@@ -16,3 +18,18 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+
+/public/css
+/public/images
+/public/js/app.js
+/public/files
+/public/storage/app
+/public/mix-manifest.json
+
+public/js
+public/css
+public/images
+public/files
+public/mix-manifest.json
+public/storage
+public/storage/app
