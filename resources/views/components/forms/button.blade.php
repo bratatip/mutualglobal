@@ -1,6 +1,29 @@
 @props([
     'type' => 'button',
     'text' => 'Button Text',
+    'class' => '',
+    'href' => '#',
+    'target' => '_self',
+])
+
+@if ($href)
+    <a href="{{ $href }}"
+        target="{{ $target }}"
+        {{ $attributes->merge(['class' => 'inline text-white text-md ml-2 font-bold no-underline' . $class]) }}>
+        {{ $text }}
+    </a>
+@else
+    <button type="{{ $type }}"
+        {{ $attributes->merge(['class' => 'text-white text-md font-bold ' . $class]) }}>
+        {{ $text }}
+    </button>
+@endif
+
+
+
+{{-- @props([
+    'type' => 'button',
+    'text' => 'Button Text',
     'classes' => '',
     'href' => '#',
     'target' => '#',
@@ -17,4 +40,5 @@
         {{ $attributes->merge(['class' => 'logout_button block px-6 py-2 mt-3 border border-solid border-dark rounded-2xl bg-white text-xs text-[#0F628B] hover:bg-gray-100 ml-2 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white font-bold ' . $classes]) }}>
         {{ $text }}
     </button>
-@endif
+@endif --}}
+

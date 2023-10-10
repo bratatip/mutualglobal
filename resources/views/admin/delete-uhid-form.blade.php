@@ -6,12 +6,12 @@
 
         <div>
             <h2 class="mt-6 text-center text-md font-sans font-extrabold text-gray-500">
-                Import Uhids
+                Delete Uhids
             </h2>
         </div>
         <div class="flex justify-center">
             <form class="space-y-6"
-                action="{{ route('admin.downloadSampleCSV') }}"
+                action="{{ route('admin.downloadSampleCSVForDelete') }}"
                 method="POST">
                 @csrf
                 @method('post')
@@ -35,8 +35,8 @@
                 <div>
                     <x-forms.input-field type="file"
                         class="w-11/12"
-                        name="excel_uhid"
-                        id="excel_uhid"
+                        name="uhid_delete_csv"
+                        id="uhid_delete_csv"
                         label="Select Excel File"
                         acceptedFileTypes=".csv"
                         required />
@@ -58,7 +58,7 @@
                     <button type="button"
                         id="import-btn"
                         class="px-6 py-2 mt-3 border border-solid border-[#CCCCCC] rounded-2xl bg-gray-500 text-xs text-white font-bold">
-                        Import csv
+                        Delete Uhids
                     </button>
 
 
@@ -72,13 +72,13 @@
     <script>
         $('#import-btn').on('click', function() {
             var formData = new FormData();
-            var excel_uhid = $('#excel_uhid')[0].files[0];
-            formData.append('excel_uhid', excel_uhid);
+            var uhid_delete_csv = $('#uhid_delete_csv')[0].files[0];
+            formData.append('uhid_delete_csv', uhid_delete_csv);
             formData.append('_token', "{{ csrf_token() }}");
 
             $.ajax({
                 type: 'POST',
-                url: "{{ route('admin.store-uhid') }}",
+                url: "{{ route('admin.delete-uhid') }}",
                 data: formData,
                 contentType: false,
                 processData: false,
@@ -91,7 +91,7 @@
                         $('#skipped_block').addClass();
                         $('#skipped_block').removeClass('hidden');
 
-                        toastr.success('Candidates imported successfully.');
+                        toastr.error('Data Deleted successfully !');
                     } else {
                         toastr.error(data.message);
                     }
