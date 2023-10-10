@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminSettingsController;
 use App\Http\Controllers\Client\ClientController;
+use App\Http\Controllers\StaticWeb\StaticWebController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,8 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [ClientController::class, 'clientIndex'])->name('client.index');
-
+Route::get('/', [StaticWebController::class, 'indexAction'])->name('static-web.index');
+Route::get('/fire',[StaticWebController::class, 'firePageView'])->name('static-web.fire');
+Route::get('/why-mutual-global',[StaticWebController::class, 'whyMutualGlobalPageView'])->name('static-web.why-mutual-global');
+Route::get('/terms',[StaticWebController::class, 'termsPageView'])->name('static-web.terms');
+Route::get('/privacy_policy',[StaticWebController::class, 'privacyPolicyPageView'])->name('static-web.privacy_policy');
 
 # Client Routes
 Route::prefix('client')->group(function () {
@@ -34,4 +38,4 @@ Route::prefix('admin')->group(function () {
 
 
 #Testing    
-Route::view('/test-view','client.cardDownloads.uhid-download-care');
+Route::view('/test-view', 'client.cardDownloads.uhid-download-care');
