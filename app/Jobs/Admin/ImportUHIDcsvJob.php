@@ -79,7 +79,6 @@ class ImportUHIDcsvJob implements ShouldQueue
             foreach ($rows as $row) {
                 // Combine the header with the row data
                 $clientUHIDData = array_combine($header, $row);
-
                 // Validate the required fields
                 $validator = Validator::make($clientUHIDData, $rules);
                 if ($validator->fails()) {
@@ -97,7 +96,6 @@ class ImportUHIDcsvJob implements ShouldQueue
                     $skippedRows[] = $row;
                     continue;
                 }
-
                 $uhid = Uhid::create([
                     'uuid' => UuidGeneratorHelper::generateUniqueUuidForTable('uhids'),
                     'policy_number' => $clientUHIDData['policy_number'],
