@@ -41,7 +41,7 @@
                 border-radius: 1rem;
                 justify-content: center;
                 border-style: groove;
-                border-color: rgba(185, 74, 27, 1);
+                border-color: rgb(1, 1, 1);
                 border-width: 1px;
                 justify-content: center;
                 display: flex;
@@ -58,7 +58,7 @@
             .clientData {
                 color: black;
                 font-size: 12px;
-                margin: 60px 0 0 20px;
+                margin: 80px 0 0 20px;
             }
 
             .data-row {
@@ -187,7 +187,7 @@
 
     <body>
         <div class="flip-card-front">
-            <img src="{{ asset('images/icici-uhid-front.jpg') }}"
+            <img src="{{ asset('images/HC_MGIB.jpg') }}"
                 alt="..."
                 style="width: 100%; height: 100%;  position: absolute; top: 0; left: 0; z-index: -1;">
             <div class="clientData">

@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\AdminSettingsController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Client\ClientController;
+use App\Http\Controllers\Coupon\ClientCouponController;
 use App\Http\Controllers\StaticWeb\StaticWebController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,10 +28,17 @@ Route::get('/privacy_policy', [StaticWebController::class, 'privacyPolicyPageVie
 # Client Routes
 Route::prefix('client')->group(function () {
     Route::get('/', [ClientController::class, 'clientIndex'])->name('client.index');
-    Route::post('/uhid-show', [ClientController::class, 'clientUhidShow'])->name('client.uhid-show');
-    Route::get('/uhid-download/{id}', [ClientController::class, 'downloadUhid'])->name('client.uhid-download');
+    Route::post('/uhid-show', [ClientController::class, 'clientUhidShowMgib'])->name('client.uhid-show');
+    Route::get('/uhid-download/{id}', [ClientController::class, 'downloadUhidMgib'])->name('client.uhid-download');
 });
 
+# Health Card Coupon Routes
+
+Route::prefix('Coupon')->group(function () {
+    Route::get('/', [ClientCouponController::class, 'couponIndex'])->name('coupon.index');
+    Route::post('/get-coupon', [ClientCouponController::class, 'GetCouponIndex'])->name('getCoupon');
+    
+});
 
 # Admin Routes
 

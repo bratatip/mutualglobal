@@ -32,7 +32,7 @@ return new class extends Migration
             $table->decimal('sum_insured', 15, 2)->default(0);
             $table->string('status')->nullable();
             $table->string('insurer');
-
+            $table->text('remarks');
             $table->timestamps();
         });
     }

@@ -74,7 +74,7 @@ class ImportUHIDcsvJob implements ShouldQueue
 
             // Initialize skipped rows array with header
             $skippedRows = [$header];
-
+            
             // Loop through the data rows and create new candidates and users
             foreach ($rows as $row) {
                 // Combine the header with the row data
@@ -84,6 +84,7 @@ class ImportUHIDcsvJob implements ShouldQueue
                 if ($validator->fails()) {
                     // Add skipped rows to array
                     $skippedRows[] = $row;
+                    
                     continue;
                 }
                 $sumInsured = $clientUHIDData['sum_insured'] !== '' ? floatval($clientUHIDData['sum_insured']) : 0;
@@ -114,8 +115,8 @@ class ImportUHIDcsvJob implements ShouldQueue
                     'status' => $clientUHIDData['status'],
                     'insurer' => $clientUHIDData['insurer'],
                 ]);
+                dd("Hi");
             }
-
             Storage::delete($this->filePath);
 
             if (count($skippedRows) > 1) {

@@ -66,8 +66,9 @@
                                 id="myBtn10">POS</a> </li>
                         <li><a href="#testimonials">Team</a></li>
                         <li><a href="{{ route('client.index') }}">Health Card</a></li>
+                        <li><a href="{{ route('coupon.index') }}">Services</a></li>
                         <li><a href="#contact">Contact</a></li>
-                        <li>
+                        {{-- <li>
                             <div id="google_translate_element"></div>
                             <script type="text/javascript">
                                 function googleTranslateElementInit() {
@@ -79,7 +80,7 @@
                             </script>
                             <script type="text/javascript"
                                 src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-                        </li>
+                        </li> --}}
                     </ul>
                 </nav><!-- .nav-menu -->
             </div>

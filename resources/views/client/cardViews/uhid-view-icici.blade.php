@@ -81,7 +81,7 @@
 
 
         .flip-card-front {
-            background-image: url('{{ asset('images/icici-uhid-front.jpg') }}');
+            background-image: url('{{ asset('images/HC_MGIB.jpg') }}');
             background-size: cover;
             position: absolute;
             /* display: grid;

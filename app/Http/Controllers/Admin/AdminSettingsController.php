@@ -55,11 +55,13 @@ class AdminSettingsController extends Controller
             $filename = preg_replace('#[ -]+#', '-', $filename);
 
             $skippedRowsFilePath = storage_path('app/temp/' . $filename);
-            $skippedRowsFile = ImportUHIDcsvJob::dispatchNow($filePath, $skippedRowsFilePath);
+            // $skippedRowsFile = ImportUHIDcsvJob::dispatchNow($filePath, $skippedRowsFilePath);
 
-            // if ($skippedRowsFile && is_string($skippedRowsFile) && file_exists($skippedRowsFile)) {
-            //     return response()->download($skippedRowsFile)->deleteFileAfterSend(true);
-            // }
+            $skippedRowsFile =   dispatch(new ImportUHIDcsvJob($filePath, $skippedRowsFilePath));
+            
+            if ($skippedRowsFile && is_string($skippedRowsFile) && file_exists($skippedRowsFile)) {
+                return response()->download($skippedRowsFile)->deleteFileAfterSend(true);
+            }
             return response()->json([
                 'status' => 'success',
                 'message' => 'Data imported successfully.',
