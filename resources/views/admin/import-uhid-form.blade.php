@@ -87,13 +87,16 @@
                     $('.atom-spinner').removeClass('hide')
                 },
                 success: function(data) {
-                    if (data.status == 'success') {
-                        $('#skipped_block').addClass();
-                        $('#skipped_block').removeClass('hidden');
-
-                        toastr.success('Data imported successfully.');
+                    if (data.status === 'success') {
+                        toastr.success(data.message);
                     } else {
                         toastr.error(data.message);
+                    }
+
+                    if (data.download_url) {
+                        // Trigger the download by redirecting to the URL
+                        window.location.href = data
+                            .download_url;
                     }
                 },
                 error: function(xhr, status, error) {

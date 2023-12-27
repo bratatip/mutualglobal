@@ -10,7 +10,10 @@ class Uhid extends Model
     use HasFactory;
 
     protected $fillable = [
-        'uuid', 'policy_number', 'emp_id', 'policy_name',
+        'uuid',
+        'policy_number',
+        'emp_id',
+        'policy_name',
         'uhid',
         'insured_name',
         'age',
@@ -23,6 +26,7 @@ class Uhid extends Model
         'sum_insured',
         'status',
         'insurer',
+        'remarks',
         'updated_at',
         'created_at',
     ];

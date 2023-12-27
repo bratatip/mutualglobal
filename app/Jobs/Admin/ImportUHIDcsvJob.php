@@ -81,6 +81,7 @@ class ImportUHIDcsvJob implements ShouldQueue
                 $clientUHIDData = array_combine($header, $row);
                 // Validate the required fields
                 $validator = Validator::make($clientUHIDData, $rules);
+                dd($clientUHIDData);
                 if ($validator->fails()) {
                     // Add skipped rows to array
                     $skippedRows[] = $row;
