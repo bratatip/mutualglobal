@@ -2,11 +2,11 @@
 
 @section('content')
     <div class="min-h-screen flex flex-col justify-center"
-         style="background-color:dimgray;">
+         >
         @include('common.partials._message')
 
         <div class="mt-1 sm:mx-auto sm:w-full sm:max-w-md">
-            <div class="bg-white bg-opacity-50 py-8 px-4 shadow sm:rounded-lg sm:px-10">
+            <div class="border-solid border border-indigo-600 bg-opacity-50 py-8 px-4 shadow-lg sm:rounded-lg sm:px-10">
                 <div class="flex justify-center">
                     <img src="{{ asset('assets/img/globe_logo.png') }}"
                          alt="LOGO"
@@ -102,7 +102,7 @@
                     <div class="flex justify-center">
                         <button type="submit"
                         id="submitBtn"
-                                class="px-6  py-2 mt-3 border border-solid border-[#CCCCCC] rounded-2xl bg-gray-500 text-xs text-white ml-2 font-bold cursor-pointer  cursor-not-allowed"
+                                class="px-6  py-2 mt-3 border border-solid border-[#CCCCCC] rounded-2xl bg-gray-500 text-xs text-white ml-2 font-bold  cursor-not-allowed"
                                 disabled>
                             Generate Coupon
                         </button>
@@ -131,7 +131,6 @@
             // Function to check if all inputs are filled
             function checkInputs() {
                 let allFilled = true;
-    
                 inputs.forEach(input => {
                     if (input.type === 'checkbox') {
                         if (!input.checked) {
@@ -147,15 +146,16 @@
                 if (allFilled) {
                     submitButton.disabled = false;
                     submitButton.classList.remove("cursor-not-allowed");
+                    submitButton.classList.add("cursor-pointer");
                 } else {
                     submitButton.disabled = true;
+                    submitButton.classList.remove("cursor-pointer");
                     submitButton.classList.add("cursor-not-allowed");
                 }
             }
     
             // Listen for changes in any input field or select box
             inputs.forEach(input => {
-                console.log("hi");
                 input.addEventListener('input', checkInputs);
             });
         });

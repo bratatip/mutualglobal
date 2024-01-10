@@ -54,10 +54,10 @@ class ClientCouponController extends Controller
 
         Storage::put($filePath, $pdf->output());
 
-        if ($pdf) {
-            dispatch(new CouponGeneratedNotificationJob($data, $filePath));
-        }
+        // if ($pdf) {
+        //     dispatch(new CouponGeneratedNotificationJob($data, $filePath));
+        // }
 
-        return $pdf->download($fileName);
+        return $pdf->stream($fileName);
     }
 }

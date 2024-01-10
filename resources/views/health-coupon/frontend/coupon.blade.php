@@ -33,16 +33,16 @@
                 </tr>
             </tbody>
         </table>
-        <p
-           style="position:absolute; top: 60px;left:70px; font-size: 18px; color: #2e2e2e; margin-top: 20px; position: absolute; line-height: 20px; font-weight:bolder;">
-            <strong>
-                <span>STEALDEAL20</span><br>
-            </strong>
 
+        <p
+           style="position: absolute; top: 60px; left: 50px; font-size: 24px; color: #2e2e2ebc; margin-top: 20px; position: absolute; line-height: 28px; font-weight: bold; font-family: 'Arial', sans-serif; text-transform: uppercase; font-style:italic;">
+            <strong>
+                <span>Discount Voucher</span><br>
+            </strong>
         </p>
 
         <p
-           style="position:absolute; top: 120px;right:45px; font-size: 70px; color: #fff; margin-top: 20px; position: absolute; line-height: 20px; font-weight:bolder; font-style:'Calisto MT' !important;">
+           style="position:absolute; top: 200px;right:45px; font-size: 70px; color: #0e0e0ea2; margin-top: 20px; position: absolute; line-height: 20px; font-weight:bolder; font-style:'Calisto MT' !important;">
             <strong>
                 <span>20 %</span><br>
             </strong>
@@ -50,11 +50,11 @@
         </p>
 
         <p
-           style="position:absolute; top: 130px;left:50px; font-size: 14px; color: #666; margin-top: 20px; position: absolute; bottom: 0; line-height: 20px; font-style: italic; ">
+           style="position:absolute; top: 150px;left:50px; font-size: 20px; color: #666; margin-top: 20px; position: absolute; bottom: 0; line-height: 35px; font-style: italic;">
             <strong>
                 <span>{{ $data['name'] }}</span><br>
                 <span>{{ $data['email'] }}</span><br>
-                <span>{{ $data['hospital'] }}</span>
+                <span>{{ ucwords(str_replace('_', ' ', $data['hospital'])) }}</span>
             </strong>
 
         </p>
