@@ -1,10 +1,8 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="min-h-screen flex flex-col justify-center"
-         >
-        @include('common.partials._message')
-
+    <div class="min-h-screen flex flex-col justify-center">
+        {{-- @include('common.partials._message') --}}
         <div class="mt-1 sm:mx-auto sm:w-full sm:max-w-md">
             <div class="border-solid border border-indigo-600 bg-opacity-50 py-8 px-4 shadow-lg sm:rounded-lg sm:px-10">
                 <div class="flex justify-center">
@@ -28,6 +26,7 @@
                                              label="Name"
                                              id="userName"
                                              placeholder="Enter Your Name"
+                                             :value="old('name')"
                                              required />
                         @include('common.partials._error', ['name' => 'name'])
                     </div>
@@ -51,6 +50,16 @@
                                              placeholder="Enter Phone"
                                              required />
                         @include('common.partials._error', ['name' => 'contact_no'])
+                    </div>
+
+                    <div>
+                        <x-forms.input-field type="text"
+                                             class="h-[15px]"
+                                             name="locality"
+                                             label="Locality"
+                                             pattern="^[A-Za-z ]{10,50}$"
+                                             placeholder="Enter Locality"
+                                             required />
                     </div>
 
                     <div>
@@ -101,7 +110,7 @@
 
                     <div class="flex justify-center">
                         <button type="submit"
-                        id="submitBtn"
+                                id="submitBtn"
                                 class="px-6  py-2 mt-3 border border-solid border-[#CCCCCC] rounded-2xl bg-gray-500 text-xs text-white ml-2 font-bold  cursor-not-allowed"
                                 disabled>
                             Generate Coupon
@@ -112,6 +121,17 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // Check if there's an error message in the session
+        let errorMessage = "{{ session('error') }}";
+
+        // If there's an error message, display it using Toastr
+        if (errorMessage) {
+            toastr.error(errorMessage);
+        }
+    </script>
+
 
     <script>
         $(document).ready(function() {
@@ -127,7 +147,7 @@
             const submitButton = document.getElementById("submitBtn");
             const inputs = document.querySelectorAll('input, select');
 
-    
+
             // Function to check if all inputs are filled
             function checkInputs() {
                 let allFilled = true;
@@ -142,7 +162,7 @@
                         }
                     }
                 });
-    
+
                 if (allFilled) {
                     submitButton.disabled = false;
                     submitButton.classList.remove("cursor-not-allowed");
@@ -153,14 +173,11 @@
                     submitButton.classList.add("cursor-not-allowed");
                 }
             }
-    
+
             // Listen for changes in any input field or select box
             inputs.forEach(input => {
                 input.addEventListener('input', checkInputs);
             });
         });
     </script>
-    
-    
-    
 @endsection

@@ -1,4 +1,5 @@
-{{-- Dependency Js And CSS Files Only --}}
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/toastr.min.js"></script>
 
 <link href="{{ asset('css/app.css') }}"
       rel="stylesheet">

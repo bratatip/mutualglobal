@@ -54,6 +54,7 @@
             <strong>
                 <span>{{ $data['name'] }}</span><br>
                 <span>{{ $data['email'] }}</span><br>
+                <span>{{ $data['locality'] }}</span><br>
                 <span>{{ ucwords(str_replace('_', ' ', $data['hospital'])) }}</span>
             </strong>
 
