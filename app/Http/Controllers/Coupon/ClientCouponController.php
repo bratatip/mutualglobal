@@ -28,12 +28,13 @@ class ClientCouponController extends Controller
             'name' => 'required|string',
             'email' => 'required|email',
             'contact_no' => 'required|string|min:10|max:10|regex:/^[0-9]+$/',
-            'locality' => 'required|string|min:10|max:50|regex:/^[A-Za-z ]+$/',
+            'locality' => 'required|string|min:10|max:100|regex:/^[A-Za-z0-9(), -]+$/',
             'city' => 'required|string',
             'area' => 'required|string',
             'hospital' => 'required|string',
             'terms&conditions' => 'required|accepted',
         ], [
+            'locality.regex' => 'only use [ A-Z, a-z, 0-9, (), - , comma ].',
             'terms&conditions.required' => 'Please accept the terms and conditions.',
             'terms&conditions.accepted' => 'Please accept the terms and conditions.',
         ]);

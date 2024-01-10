@@ -48,6 +48,7 @@
                                              label="Phone Number"
                                              pattern="[0-9]{10}"
                                              placeholder="Enter Phone"
+                                             title="10 digit Mob No"
                                              required />
                         @include('common.partials._error', ['name' => 'contact_no'])
                     </div>
@@ -57,9 +58,11 @@
                                              class="h-[15px]"
                                              name="locality"
                                              label="Locality"
-                                             pattern="^[A-Za-z ]{10,50}$"
+                                             pattern="^[A-Za-z0-9,() ]{10,50}$"
                                              placeholder="Enter Locality"
                                              required />
+                        @include('common.partials._error', ['name' => 'locality'])
+
                     </div>
 
                     <div>

@@ -14,7 +14,7 @@
 
 
     <!-- Favicons -->
-    <link href="{{asset('assets/img/favicon.png')}}"
+    <link href="{{ asset('assets/img/favicon.png') }}"
           rel="icon"
           type="image/png">
 
@@ -55,7 +55,7 @@
             class="fixed-top">
         <div class="container d-flex align-items-center">
 
-            <h1 class="logo mr-auto"><img src="assets/img/logo_mg1.png"></h1>
+            <h1 class="logo mr-auto"><img src="{{ asset('assets/img/logo_mg1.png') }}"></h1>
             <nav class="nav-menu d-none d-lg-block">
                 <ul>
                     <li class="active"><a href="#hero">Home</a></li>

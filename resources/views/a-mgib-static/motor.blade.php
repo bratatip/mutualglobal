@@ -275,7 +275,7 @@
                         <p>
                             <a href="/images/myw3schoolsimage.jpg"
                                download>
-                                <img src="assets/img/pdf.jpeg"></a><br><br><br>
+                                <img src="{{ asset('assets/img/pdf.jpeg') }}"></a><br><br><br>
 
                         <p><b>Note:</b> The download attribute is not supported in IE or Edge (prior version 18), or
                             in Safari (prior version 10.1).</p>
