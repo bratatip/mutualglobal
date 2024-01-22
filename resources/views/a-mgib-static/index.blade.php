@@ -108,15 +108,15 @@
                         <i class="fa-solid fa-heart-pulse fa-beat-fade fa-xs md:fa-lg"
                            style="color: #fbcd27;"></i>
 
-                        <div class="uppercase text-[8px] sm:text-base sm:font-medium text-amber-400 tracking-[2.24px]">
+                        <div class="uppercase text-[10px] sm:text-base sm:font-medium text-amber-400 tracking-[2.24px]">
                             LIVE SECURELY, THRIVE FREELY
                         </div>
                     </div>
 
-                    <h1 class="text-[14px] sm:text-2xl font-bold mb-6">Elevate Your Tomorrow: Insure Online Today!
+                    <h1 class="text-[14px] sm:text-4xl font-bold mb-6">Elevate Your Tomorrow: Insure Online Today!
                     </h1>
 
-                    <p class="mb-[42px] sm:text-[12px] max-[640px]:text-[8px]  md:max-w-xl">Welcome to a realm of
+                    <p class="mb-[42px] text-[10px] sm:text-base  md:max-w-xl">Welcome to a realm of
                         unmatched insurance
                         coverage. Elevate your
                         protection, embrace financial security, and ensure life's uncertainties won't hinder your
