@@ -105,7 +105,7 @@
 
                     <div
                          class="flex items-center bg-white py-1 px-[12px] w-max gap-x-2 mb-[26px] rounded-full mx-auto xl:mx-0">
-                        <i class="fa-solid fa-heart-pulse fa-beat-fade fa-xs md:fa-lg"
+                        <i class="fa-solid fa-heart-pulse fa-fade-slow fa-sm md:fa-lg"
                            style="color: #fbcd27;"></i>
 
                         <div class="uppercase text-[10px] sm:text-base sm:font-medium text-amber-400 tracking-[2.24px]">
@@ -347,7 +347,8 @@
             <div class="md:flex-1 py-12 max-[769px]:hidden relative">
                 <img src="{{ asset('images/landing-page/app/communication.png') }}"
                      alt="Your SVG Image"
-                     width="600" height="400" />
+                     width="600"
+                     height="400" />
             </div>
 
             <div class="md:flex-1 md:max-w-sm relative">
@@ -391,7 +392,7 @@
                     <a role="menuitem"
                        class="py-2 px-6 bg-neutral-900 text-white w-max shadow-xl hover:shadow-none transition-shadow focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-md ring-offset-4 ring-offset-white"
                        href="/">
-                        <i class="fa-regular fa-paper-plane fa-bounce me-3"
+                        <i class="fa-regular fa-paper-plane fa-fade-slow me-3"
                            style="color: #FFD43B;"></i><span>Send</span>
                     </a>
                 </form>
@@ -470,19 +471,19 @@
                     </li>
 
                     <li class="my-4 list-none text-sm">
-                        <i class="fa-solid fa-chevron-right fa-fade fa-xs"
+                        <i class="fa-solid fa-chevron-right fa-fade-slow fa-sm me-1"
                            style="color: #ffd43b"></i>
                         Website Guideline & Ideas
                     </li>
 
                     <li class="my-4 list-none text-sm">
-                        <i class="fa-solid fa-chevron-right fa-fade fa-xs"
+                        <i class="fa-solid fa-chevron-right fa-fade-slow fa-sm me-1"
                            style="color: #ffd43b"></i>
                         Tips & tricks
                     </li>
 
                     <li class="my-4 list-none text-sm">
-                        <i class="fa-solid fa-chevron-right fa-fade fa-xs"
+                        <i class="fa-solid fa-chevron-right fa-fade-slow fa-sm me-1"
                            style="color: #ffd43b"></i>
                         Photography
                     </li>
@@ -496,18 +497,18 @@
                     </li>
 
                     <li class="my-4 list-none text-sm">
-                        <i class="fa-solid fa-chevron-right fa-fade fa-xs"
+                        <i class="fa-solid fa-chevron-right fa-fade-slow fa-sm me-1"
                            style="color: #ffd43b"></i>
                         Website Guideline & Ideas
                     </li>
                     <li class="my-4 list-none text-sm">
-                        <i class="fa-solid fa-chevron-right fa-fade fa-xs"
+                        <i class="fa-solid fa-chevron-right fa-fade-slow fa-sm me-1"
                            style="color: #ffd43b"></i>
                         Tips & tricks
                     </li>
 
                     <li class="my-4 list-none text-sm">
-                        <i class="fa-solid fa-chevron-right fa-fade fa-xs"
+                        <i class="fa-solid fa-chevron-right fa-fade-slow fa-sm me-1"
                            style="color: #ffd43b"></i>
                         Photography
                     </li>
@@ -522,19 +523,19 @@
                     </li>
 
                     <li class="my-4 list-none text-sm">
-                        <i class="fa-solid fa-chevron-right fa-fade fa-xs"
+                        <i class="fa-solid fa-chevron-right fa-fade-slow fa-sm me-1"
                            style="color: #ffd43b"></i>
                         Website Guideline & Ideas
                     </li>
 
                     <li class="my-4 list-none text-sm">
-                        <i class="fa-solid fa-chevron-right fa-fade fa-xs"
+                        <i class="fa-solid fa-chevron-right fa-fade-slow fa-sm me-1"
                            style="color: #ffd43b"></i>
                         Tips & tricks
                     </li>
 
                     <li class="my-4 list-none text-sm">
-                        <i class="fa-solid fa-chevron-right fa-fade fa-xs"
+                        <i class="fa-solid fa-chevron-right fa-fade-slow fa-sm me-1"
                            style="color: #ffd43b"></i>
                         Photography
                     </li>
@@ -621,5 +622,20 @@
     });
     sr.reveal('.hero__img');
 </script>
+
+<style>
+ .fa-fade-slow {
+    animation: fadeSlowInfinite 3s ease-in-out infinite;
+  }
+
+  @keyframes fadeSlowInfinite {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+</style>
 
 </html>
