@@ -9,7 +9,7 @@
             font-family: "Inter", sans-serif;
         }
     </style>
-
+    <title>Mutual Global Insurance Broking Pvt Ltd</title>
     <!-- dependency links -->
 
     {{-- <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
@@ -73,22 +73,22 @@
                  :class="{ 'bg-white transition shadow-xl': scrolledPastHeader, 'bg-[#F2F7FF]': !scrolledPastHeader }"
                  class="hidden flex-col gap-4 absolute z-40 right-0 left-0 top-16 text-center text-lg px-6 xl:pr-20 items-center lg:flex lg:flex-row lg:static lg:shadow-none lg:justify-between lg:w-full">
                 <a role="menuitem"
-                   class="py-1 px-2 focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-sm ring-offset-4 ring-offset-amber-400 hover:text-neutral-600 transition-colors lg:ms-auto"
+                   class="py-1 px-2 focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-sm ring-offset-4 ring-offset-amber-400 hover:text-amber-400 transition-colors lg:ms-auto"
                    href="/">Home</a>
                 <a role="menuitem"
-                   class="py-1 px-2 focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-sm ring-offset-4 ring-offset-amber-400 hover:text-neutral-600 transition-colors"
+                   class="py-1 px-2 focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-sm ring-offset-4 ring-offset-amber-400 hover:text-amber-400 transition-colors"
                    href="/">
                     Contact
                 </a>
                 <a role="menuitem"
-                   class="py-1 px-2 focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-sm ring-offset-4 ring-offset-amber-400 hover:text-neutral-600 transition-colors"
+                   class="py-1 px-2 focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-sm ring-offset-4 ring-offset-amber-400 hover:text-amber-400 transition-colors"
                    href="/">
-                    Login
+                    About Us
                 </a>
                 <a role="menuitem"
-                   class="py-1 px-2 focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-sm ring-offset-4 ring-offset-amber-400 hover:text-neutral-600 transition-colors"
+                   class="py-1 px-2 focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-sm ring-offset-4 ring-offset-amber-400 hover:text-amber-400 transition-colors"
                    href="/">
-                    Sign Up
+                    Services
                 </a>
             </div>
         </div>
@@ -285,12 +285,11 @@
                  class="text-center grid gap-8 py-8 place-items-center">
             <div class="grid gap-4">
                 <h2 id="partners"
-                    class="text-4xl font-bold text-amber-400">
+                    class="text-2xl sm:text-4xl font-bold text-amber-400">
                     Our Partners
                 </h2>
-                <p class="w-full max-w-lg">
-                    We’ve partnered with hundreds of smart home brands to help you
-                    create a smart home that fits your needs and doesn’t lock you in.
+                <p class="w-full max-[640px]:text-[12px] max-w-lg">
+                    We've forged partnerships with numerous reputable insurance companies to assist you in securing coverage that aligns with your requirements and ensures flexibility without any restrictive commitments.
                 </p>
             </div>
             <div class="flex flex-wrap justify-center gap-8 md:gap-x-16 max-w-2xl mx-auto">
