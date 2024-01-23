@@ -348,7 +348,7 @@
         <div class="h-36 sm:h-48 relative ">
             <!-- HIGHWAY -->
             <div
-                 class="animate-highway block opacity-50 h-[100px] w-[500%] absolute -bottom-10 left-0 right-0 bg-repeat-x ">
+                 class="animate-highway block opacity-50 h-[100px] w-[800%] absolute -bottom-10 left-0 right-0 bg-repeat-x ">
             </div>
 
             <!-- CITY -->
@@ -357,14 +357,14 @@
             </div>
 
             <!-- CAR AND WHEELS -->
-            <div class="animate-car w-[200px] bottom-10  left-1/2 absolute opacity-[80%] -translate-x-1/2">
+            <div class="animate-car w-[200px] bottom-10 left-[25%] lg:left-1/2 absolute opacity-[80%] -translate-x-1/2">
                 <img src="{{ asset('images/landing-page/app/hero-animation/car.png') }}"
                      alt=""
                      class="w-full">
             </div>
 
             <div
-                 class="flex animate-wheel w-[36px] h-[36px] bottom-[45px] translate-x-1/2 left-1/2 absolute opacity-[80%">
+                 class="flex animate-wheel w-[36px] h-[36px] bottom-[45px] translate-x-1/2 left-[25%] lg:left-1/2 absolute opacity-[80%">
                 <img src="{{ asset('images/landing-page/app/hero-animation/wheel.png') }}"
                      class="absolute left-[-100px] animate-spin">
                 <img src="{{ asset('images/landing-page/app/hero-animation/wheel.png') }}"
@@ -390,7 +390,7 @@
 
 
             <!-- Bike AND Wheels -->
-            <div class="max-[900px]:hidden">
+            <div>
                 <div class="animate-bike w-[100px] bottom-10 absolute  z-20 right-[15%]">
                     <img src="{{ asset('images/landing-page/app/hero-animation/bike.png') }}"
                          alt=""
