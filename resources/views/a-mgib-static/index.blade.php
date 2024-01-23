@@ -119,9 +119,6 @@
                         </div>
                     </div> --}}
 
-                    <h1 class="text-[14px] sm:text-3xl md:text-4xl font-bold mb-6">Elevate Your Tomorrow: Insure Online
-                        Today!
-                    </h1>
 
                     {{-- <p class="mb-[42px] text-[10px] sm:text-base  md:max-w-xl">Welcome to a realm of
                         unmatched insurance
@@ -262,6 +259,11 @@
                         </div>
                     </div>
 
+                    <!-- Hero Header -->
+
+                    <h1 class="text-[14px] mt-6 sm:text-3xl md:text-4xl font-bold mb-6">Elevate Your Tomorrow: Insure Online
+                        Today!
+                    </h1>
                 </div>
 
 
@@ -357,7 +359,8 @@
             </div>
 
             <!-- CAR AND WHEELS -->
-            <div class="animate-car w-[200px] bottom-10 left-[25%] lg:left-1/2 absolute opacity-[80%] -translate-x-1/2">
+            <div
+                 class="animate-car w-[200px] bottom-10 left-[25%] lg:left-1/2 absolute opacity-[80%] -translate-x-1/2">
                 <img src="{{ asset('images/landing-page/app/hero-animation/car.png') }}"
                      alt=""
                      class="w-full">
@@ -397,8 +400,7 @@
                          class="w-full">
                 </div>
 
-                <div
-                     class="flex animate-wheel w-[22px] h-[22px] bottom-[39px] right-[15%] z-10 absolute opacity-[70%">
+                <div class="flex animate-wheel w-[22px] h-[22px] bottom-[39px] right-[15%] z-10 absolute opacity-[70%">
                     <img src="{{ asset('images/landing-page/app/hero-animation/bike-wheel.png') }}"
                          class="absolute  animate-spin">
                     <img src="{{ asset('images/landing-page/app/hero-animation/bike-wheel.png') }}"
