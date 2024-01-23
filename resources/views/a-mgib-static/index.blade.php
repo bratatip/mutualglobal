@@ -16,6 +16,7 @@
           rel="stylesheet" /> --}}
     <link href="{{ asset('css/app.css') }}"
           rel="stylesheet">
+    <script src="{{ asset('js/app.js') }}"></script>
 
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap"
@@ -24,8 +25,6 @@
 
     <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css"
-          rel="stylesheet" />
 
 
     <link rel="stylesheet"
@@ -261,7 +260,8 @@
 
                     <!-- Hero Header -->
 
-                    <h1 class="text-[14px] mt-6 sm:text-3xl md:text-4xl font-bold mb-6">Elevate Your Tomorrow: Insure Online
+                    <h1 class="text-[14px] mt-6 sm:text-3xl md:text-4xl font-bold mb-6">Elevate Your Tomorrow: Insure
+                        Online
                         Today!
                     </h1>
                 </div>
@@ -376,7 +376,7 @@
 
             <!-- BUS AND Wheels -->
             <div class="max-[900px]:hidden">
-                <div class="animate-bus w-[350px] -bottom-10  absolute opacity-[80%] ">
+                <div class="animate-bus w-[350px] -bottom-10  absolute">
                     <img src="{{ asset('images/landing-page/app/hero-animation/bus.png') }}"
                          alt=""
                          class="w-full">
@@ -792,7 +792,6 @@
         </div>
 
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 
 </body>
 
