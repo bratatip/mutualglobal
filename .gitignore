@@ -21,6 +21,7 @@ yarn-error.log
 
 /public/assets
 /public/css
+/public/fonts
 /public/images
 /public/js/app.js
 /public/files
@@ -29,6 +30,7 @@ yarn-error.log
 
 public/assets
 public/js
+public/fonts
 public/css
 public/images
 public/files

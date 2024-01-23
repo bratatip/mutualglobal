@@ -12,30 +12,27 @@
     <title>Mutual Global Insurance Broking Pvt Ltd</title>
     <!-- dependency links -->
 
-    {{-- <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
-          rel="stylesheet" /> --}}
-    <link href="{{ asset('css/app.css') }}"
-          rel="stylesheet">
-    <script src="{{ asset('js/app.js') }}"></script>
+    {{-- <link href="{{ asset('css/app.css') }}"
+          rel="stylesheet"> --}}
 
+    <link href="{{ asset('css/style.css') }}"
+          rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="{{ asset('js/app.js') }}"
+            defer></script>
+    <script src="{{ asset('js/jquery.js') }}"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap"
           rel="stylesheet" />
 
 
-    <script src="{{ asset('js/jquery.js') }}"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
 
 
-    <link rel="stylesheet"
+    {{-- <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
           integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
           crossorigin="anonymous"
-          referrerpolicy="no-referrer" />
-
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js"
-            defer></script>
-
+          referrerpolicy="no-referrer" /> --}}
 </head>
 
 <body class="max-w-[2000px] mx-auto text-neutral-900 bg-white">
@@ -85,7 +82,7 @@
                 <a role="menuitem"
                    class="py-1 px-2 focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-sm ring-offset-4 ring-offset-amber-400 hover:text-amber-400 transition-colors"
                    href="/">
-                   Services
+                    Services
                 </a>
                 <a role="menuitem"
                    class="py-1 px-2 focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-sm ring-offset-4 ring-offset-amber-400 hover:text-amber-400 transition-colors"
@@ -94,10 +91,10 @@
                 </a>
 
                 <a role="menuitem"
-                class="py-1 px-2 focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-sm ring-offset-4 ring-offset-amber-400 hover:text-amber-400 transition-colors"
-                href="/">
-                 Contact Us
-             </a>
+                   class="py-1 px-2 focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-sm ring-offset-4 ring-offset-amber-400 hover:text-amber-400 transition-colors"
+                   href="/">
+                    Contact Us
+                </a>
             </div>
         </div>
     </nav>
@@ -800,13 +797,8 @@
     </footer>
 
 </body>
+<script src="{{ asset('js/scrollreveal.min.js') }}"></script>
 
-<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
-
-{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"></script> --}}
 <script>
     const sr = ScrollReveal({
         origin: "bottom",
