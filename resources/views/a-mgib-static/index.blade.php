@@ -418,7 +418,7 @@
 
     </header>
 
-    <main class="grid gap-12 sm:gap-16 md:gap-24 lg:gap-32 px-8 overflow-hidden">
+    <main class="grid gap-12 sm:gap-16 md:gap-24 lg:gap-32 sm:px-8 overflow-hidden">
 
         <section aria-labelledby="qualities"
                  class="relative min-[1280px]:hidden pt-8">
@@ -426,7 +426,7 @@
                 <h2 class="text-4xl font-bold text-amber-400">Our Services</h2>
             </div> --}}
             <div
-                 class="container mx-auto max-w-5xl flex gap-12 flex-wrap items-start justify-center md:justify-between">
+                 class="container mx-auto max-w-5xl flex max-[368px]:gap-2 gap-12 flex-wrap items-start justify-center md:justify-between">
                 <div class="product_items grid gap-4 justify-items-center text-center md:flex-1">
                     <a href="http://uatweb.mutualglobal.com/two-wheeler-insurance/"
                        class="text-decoration-none">
