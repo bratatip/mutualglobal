@@ -80,18 +80,24 @@
                 <a role="menuitem"
                    class="py-1 px-2 focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-sm ring-offset-4 ring-offset-amber-400 hover:text-amber-400 transition-colors"
                    href="/">
-                    Contact
+                    Products
+                </a>
+                <a role="menuitem"
+                   class="py-1 px-2 focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-sm ring-offset-4 ring-offset-amber-400 hover:text-amber-400 transition-colors"
+                   href="/">
+                   Services
                 </a>
                 <a role="menuitem"
                    class="py-1 px-2 focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-sm ring-offset-4 ring-offset-amber-400 hover:text-amber-400 transition-colors"
                    href="/">
                     About Us
                 </a>
+
                 <a role="menuitem"
-                   class="py-1 px-2 focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-sm ring-offset-4 ring-offset-amber-400 hover:text-amber-400 transition-colors"
-                   href="/">
-                    Services
-                </a>
+                class="py-1 px-2 focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-sm ring-offset-4 ring-offset-amber-400 hover:text-amber-400 transition-colors"
+                href="/">
+                 Contact Us
+             </a>
             </div>
         </div>
     </nav>
@@ -394,13 +400,13 @@
 
             <!-- Bike AND Wheels -->
             <div>
-                <div class="animate-bike w-[100px] bottom-10 absolute  z-20 right-[15%]">
+                <div class="animate-bike w-[100px] bottom-10 absolute  z-20 right-[10%]">
                     <img src="{{ asset('images/landing-page/app/hero-animation/bike.png') }}"
                          alt=""
                          class="w-full">
                 </div>
 
-                <div class="flex animate-wheel w-[22px] h-[22px] bottom-[41px] right-[15%] z-10 absolute opacity-[70%">
+                <div class="flex animate-wheel w-[22px] h-[22px] bottom-[41px] right-[10%] z-10 absolute opacity-[70%">
                     <img src="{{ asset('images/landing-page/app/hero-animation/bike-wheel.png') }}"
                          class="absolute left-[1.1px] animate-spin">
                     <img src="{{ asset('images/landing-page/app/hero-animation/bike-wheel.png') }}"
