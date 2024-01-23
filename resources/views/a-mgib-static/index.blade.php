@@ -385,9 +385,9 @@
                 <div
                      class="flex animate-wheel w-[50px] h-[50px] bottom-[30px] translate-x-3/4 left-32 absolute opacity-[70%">
                     <img src="{{ asset('images/landing-page/app/hero-animation/bus-wheel.png') }}"
-                         class="absolute left-[89px] animate-spin">
+                         class="absolute left-[85px] animate-spin">
                     <img src="{{ asset('images/landing-page/app/hero-animation/bus-wheel.png') }}"
-                         class="absolute left-[-92px] animate-spin">
+                         class="absolute left-[-95px] animate-spin">
                 </div>
             </div>
 
@@ -400,11 +400,11 @@
                          class="w-full">
                 </div>
 
-                <div class="flex animate-wheel w-[22px] h-[22px] bottom-[39px] right-[15%] z-10 absolute opacity-[70%">
+                <div class="flex animate-wheel w-[22px] h-[22px] bottom-[41px] right-[15%] z-10 absolute opacity-[70%">
                     <img src="{{ asset('images/landing-page/app/hero-animation/bike-wheel.png') }}"
-                         class="absolute  animate-spin">
+                         class="absolute left-[1.1px] animate-spin">
                     <img src="{{ asset('images/landing-page/app/hero-animation/bike-wheel.png') }}"
-                         class="absolute left-[-66px] animate-spin">
+                         class="absolute left-[-64px] animate-spin">
                 </div>
             </div>
 
