@@ -1,11 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    darkMode: 'class',
+    darkMode: "class",
     content: [
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
         "./resources/**/*.vue",
-        "./node_modules/flowbite/**/*.js"
+        "./node_modules/flowbite/**/*.js",
     ],
     theme: {
         extend: {
@@ -63,12 +63,9 @@ module.exports = {
         },
     },
 
-    corePlugins: {
-        preflight: false,
-    },
     plugins: [
         require("@tailwindcss/forms"),
         require("@tailwindcss/typography"),
-        require('flowbite/plugin'),
+        require("flowbite/plugin"),
     ],
 };

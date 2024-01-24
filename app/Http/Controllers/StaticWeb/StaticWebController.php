@@ -11,7 +11,7 @@ class StaticWebController extends Controller
     public function indexAction()
     {
         Auth::logout();
-        return view('a-mgib-static.index');
+        return view('mutualglobal.landing-page.frontend.index');
     }
 
     public function firePageView()
