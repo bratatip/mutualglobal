@@ -240,14 +240,72 @@
         </div>
     </section>
 
-    <!-- Testimonials -->
+    <!-- Our Team -->
+    <section>
+        <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">Our Team</h2>
 
+        <!--Card Slider -->
+        <div class="bg-[#F2F7FF]">
+            <div class="flex justify-center xl:justify-start mx-32 md:mx-60 overflow-hidden">
+                <div id="swiper-carousel"
+                     class="swiper-container relative w-full">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide">
+                            <div class="text-center p-8">
+                                <h1 class="text-2xl font-bold text-amber-400">Bratati Pattajoshi</h1>
+                                <p class="text-md font-semibold text-neutral-700">Principal Officer & CEO</p>
+                                <p class="italic text-sm text-neutral-600 mt-2">
+                                    Technical Graduate with morethan a decade of experience in Software development and
+                                    deployment of IT infrastructure, She is instrumental in implementing the technology
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide">
+                            <div class="text-center p-8">
+                                <h1 class="text-2xl font-bold text-amber-400">Bishnu Hotta</h1>
+                                <p class="text-md font-semibold text-neutral-700">Co-Founder</p>
+                                <p class="italic text-sm text-neutral-600 mt-2">
+                                    Management graduate from ICFAI and with 14Years of Expertise in General Insurance
+                                    industry, He brings a perfect combination of Risk Advisory and Value creation to client,
+                                    Started this Advisory firm in 2016 with a aim of providing Risk Advisory service to PAN
+                                    India with a Prime focus on creating a digital experience
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide">
+                            <div class="text-center p-8">
+                                <h1 class="text-2xl font-bold text-amber-400">Bidyut Nayak</h1>
+                                <p class="text-md font-semibold text-neutral-700">AVP Sales</p>
+                                <p class="italic text-sm text-neutral-600 mt-2">
+                                    Management Graduate with 14 years of Sales and Claims experience in the General
+                                    Insurance
+                                    Industry. Carries an unmatchable customer-centric approach.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination text-amber-400"></div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
 
 @endsection
 
 
 @push('third_party_scripts')
     <script src="{{ asset('js/scrollreveal.min.js') }}"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 @endpush
 
 @push('page_scripts')
@@ -295,10 +353,38 @@
             interval: 200,
         });
     </script>
+
+    <script>
+        var swiper = new Swiper('#swiper-carousel', {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            loop: true,
+            navigation: {
+                nextEl: null,
+                prevEl: null,
+            },
+            pagination: {
+                el: '.swiper-pagination', // Specify the pagination element
+                clickable: true, // Enable clickable pagination bullets
+            },
+            grabCursor: true, // Enable grab cursor
+            touchRatio: 1,
+            autoplay: {
+                delay: 3000, // Auto-play delay in milliseconds
+            },
+        });
+    </script>
+@endpush
+
+@push('third_party_stylesheets')
+    <link rel="stylesheet"
+          href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 @endpush
 
 @push('page_css')
     <style>
-
+        .swiper-pagination-bullet {
+            background-color: #FFC107;
+        }
     </style>
 @endpush

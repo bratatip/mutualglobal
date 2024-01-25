@@ -183,7 +183,7 @@
     </div>
 
     <!-- SVG Back grounds -->
-    <div class="absolute top-0 left-0 opacity-5 w-[300px] h-[300px] md:w-[500px] md:h-[500px] ">
+    <div class="absolute top-0 left-0 opacity-5 w-[300px] h-[300px] md:w-[350px] md:h-[350px] ">
         <svg viewBox="0 0 200 200"
              xmlns="http://www.w3.org/2000/svg">
             <path fill="#FEEDCF"
@@ -191,7 +191,7 @@
                   transform="translate(100 100)" />
         </svg>
     </div>
-    <div class="absolute top-0 md:top-10 left-0 opacity-10 w-[300px] h-[300px] md:w-[500px] md:h-[500px] ">
+    <div class="absolute top-0 md:top-10 left-0 opacity-10 w-[300px] h-[300px] md:w-[350px] md:h-[350px] ">
         <svg viewBox="0 0 200 200"
              xmlns="http://www.w3.org/2000/svg">
             <path fill="#FDB73E"
@@ -200,7 +200,7 @@
         </svg>
     </div>
 
-    <div class="absolute md:top-10 bottom-0 right-0 opacity-5 w-[300px] h-[300px] md:w-[500px] md:h-[500px] ">
+    <div class="absolute md:top-10 bottom-0 right-0 opacity-5 w-[300px] h-[300px] md:w-[350px] md:h-[350px] ">
         <svg viewBox="0 0 200 200"
              xmlns="http://www.w3.org/2000/svg">
             <path fill="#FEEDCF"
