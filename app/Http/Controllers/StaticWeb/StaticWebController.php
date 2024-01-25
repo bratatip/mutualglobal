@@ -14,6 +14,10 @@ class StaticWebController extends Controller
         return view('mutualglobal.landing-page.frontend.index');
     }
 
+    public function aboutPage(){
+        return view('mutualglobal.landing-page.frontend.about');
+    }
+    
     public function firePageView()
     {
         return view('a-mgib-static.fire');

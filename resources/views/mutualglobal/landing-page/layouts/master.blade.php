@@ -32,7 +32,10 @@
 
 <body class="max-w-[2000px] mx-auto text-neutral-900 bg-white">
 
+    @include('mutualglobal.landing-page.layouts.nav')
     @yield('content')
+    @include('mutualglobal.landing-page.layouts.footer')
+
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/jquery.js') }}"></script>
 
