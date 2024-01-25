@@ -246,7 +246,7 @@
 
         <!--Card Slider -->
         <div class="bg-[#F2F7FF]">
-            <div class="flex justify-center xl:justify-start mx-32 md:mx-60 overflow-hidden">
+            <div class="flex justify-center xl:justify-start mx-10 sm:mx-20 md:mx-80 overflow-hidden">
                 <div id="swiper-carousel"
                      class="swiper-container relative w-full">
                     <!-- Additional required wrapper -->
