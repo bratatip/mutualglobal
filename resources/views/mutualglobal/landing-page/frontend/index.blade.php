@@ -89,21 +89,21 @@
                                 <!-- Item 1 -->
                                 <div class="hidden duration-700 ease-in-out"
                                      data-carousel-item>
-                                    <img src="https://static.pbcdn.in/cdn/images/home/term_crore_desktop.png?v=2"
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAZP9GUoeHzRzQUkkpMyaNyMljh3hn26f8SQ&usqp=CAU"
                                          class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                          alt="...">
                                 </div>
                                 <!-- Item 2 -->
                                 <div class="hidden duration-700 ease-in-out"
                                      data-carousel-item>
-                                    <img src="https://static.pbcdn.in/cdn/images/home/maxlife-fund_desktop.png"
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkXXMTzMxJwZ-ID5AB_fwxPrMOUk0PSWhmKA&usqp=CAU"
                                          class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                          alt="...">
                                 </div>
                                 <!-- Item 3 -->
                                 <div class="hidden duration-700 ease-in-out"
                                      data-carousel-item>
-                                    <img src="https://static.pbcdn.in/cdn/images/home/health-cashless-anywhere_desktop.png"
+                                    <img src="https://media.istockphoto.com/id/1152400130/vector/car-insurance.jpg?s=612x612&w=0&k=20&c=JIUTvhACANqaMYTppnIZOxWvdVOhDbuslLteP14crx4="
                                          class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                          alt="...">
                                 </div>
