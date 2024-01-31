@@ -425,12 +425,12 @@
                          class="h-16 w-16" />
                 </div>
                 <div class="partner_img p-4 bg-white shadow-md rounded-md">
-                    <img src="{{ asset('images/landing-page/partners/hdfc.png') }}"
+                    <img src="{{ asset('images/landing-page/partners/hdfc1.png') }}"
                          alt="Partner"
                          class="h-16 w-16" />
                 </div>
                 <div class="partner_img p-4 bg-white shadow-md rounded-md">
-                    <img src="{{ asset('images/landing-page/partners/icici.png') }}"
+                    <img src="{{ asset('images/landing-page/partners/icici1.png') }}"
                          alt="Partner"
                          class="h-16 w-16" />
                 </div>
@@ -470,7 +470,7 @@
                 </div>
 
                 <div class="partner_img p-4 bg-white shadow-md rounded-md">
-                    <img src="{{ asset('images/landing-page/partners/sbi.png') }}"
+                    <img src="{{ asset('images/landing-page/partners/sbi1.png') }}"
                          alt="Partner"
                          class="h-16 w-16" />
                 </div>
