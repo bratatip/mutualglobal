@@ -14,7 +14,7 @@
 
                     <div>
                         <x-forms.input-field type="text"
-                            class="h-3"
+                            class="h-8"
                             name="policy_name"
                             label="Policy Name"
                             placeholder="Enter Company Name"
@@ -24,7 +24,7 @@
 
                     <div>
                         <x-forms.input-field type="text"
-                            class="h-3"
+                            class="h-8"
                             name="insured_name"
                             label="Insured Name"
                             placeholder="Enter Name"
@@ -35,7 +35,7 @@
                     <div class="flex justify-between items-center">
                         <div class="w-10/12">
                             <x-forms.input-field type="date"
-                                class="h-3"
+                                class="h-8"
                                 name="dob"
                                 label="DOB"
                                 placeholder="Enter Name"
@@ -46,7 +46,7 @@
                         <span class="text-red-500 text-sm mx-[20px]">OR</span>
                         <div class="w-10/12">
                             <x-forms.input-field type="text"
-                                class="h-3"
+                                class="h-8"
                                 name="emp_id"
                                 label="Employee ID"
                                 placeholder="Employee ID"

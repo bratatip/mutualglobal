@@ -21,7 +21,7 @@
 
                     <div>
                         <x-forms.input-field type="text"
-                                             class="h-[15px]"
+                                             class="h-8 w-[92%]"
                                              name="name"
                                              label="Name"
                                              id="userName"
@@ -33,7 +33,7 @@
 
                     <div>
                         <x-forms.input-field type="email"
-                                             class="h-[15px]"
+                                             class="h-8 w-[92%]"
                                              name="email"
                                              label="email"
                                              placeholder="Enter Email"
@@ -43,7 +43,7 @@
 
                     <div>
                         <x-forms.input-field type="text"
-                                             class="h-[15px]"
+                                             class="h-8 w-[92%]"
                                              name="contact_no"
                                              label="Phone Number"
                                              pattern="[0-9]{10}"
@@ -55,7 +55,7 @@
 
                     <div>
                         <x-forms.input-field type="text"
-                                             class="h-[15px]"
+                                             class="h-8 w-[92%]"
                                              name="locality"
                                              label="Locality"
                                              pattern="^[A-Za-z0-9,() ]{10,50}$"
