@@ -512,7 +512,7 @@
 
 
 @push('third_party_scripts')
-    <script src="{{ asset('js/scrollreveal.min.js') }}"></script>
+    {{-- <script src="{{ asset('js/scrollreveal.min.js') }}"></script> --}}
 @endpush
 
 @push('page_scripts')
