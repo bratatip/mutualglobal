@@ -179,7 +179,7 @@
 
 
                 <!-- Services Section -->
-                <div class="hero__img hidden items-center xl:flex max-w-[50%] xl:max-w-[40%] max-h-[500px] self-end ">
+                <div class="hero__img hidden items-center xl:flex max-w-[50%] xl:max-w-[40%] max-h-[500px] self-end pb-3">
 
                     <section aria-labelledby="qualities"
                              class="relative">
@@ -257,67 +257,7 @@
                 </div>
             </div>
         </div>
-        <!-- Animation -->
-        <div class="h-36 sm:h-48 relative ">
-            <!-- HIGHWAY -->
-            {{-- <div
-                 class="animate-highway block opacity-50 h-[100px] w-[800%] absolute -bottom-10 left-0 right-0 bg-repeat-x ">
-            </div> --}}
 
-            <!-- CITY -->
-            <div class="animate-city block opacity-15 h-[250px] w-[600%] absolute bottom-14 left-0 right-0 bg-repeat-x ">
-            </div>
-
-            <!-- CAR AND WHEELS -->
-            {{-- <div class="animate-car w-[200px] bottom-10 left-[25%] lg:left-1/2 absolute opacity-[80%] -translate-x-1/2">
-                <img src="{{ asset('images/landing-page/app/hero-animation/car.png') }}"
-                     alt=""
-                     class="w-full">
-            </div> --}}
-
-            {{-- <div
-                 class="flex animate-wheel w-[36px] h-[36px] bottom-[45px] translate-x-1/2 left-[25%] lg:left-1/2 absolute opacity-[80%">
-                <img src="{{ asset('images/landing-page/app/hero-animation/wheel.png') }}"
-                     class="absolute left-[-100px] animate-spin">
-                <img src="{{ asset('images/landing-page/app/hero-animation/wheel.png') }}"
-                     class="absolute left-[22px] animate-spin	">
-            </div> --}}
-
-            <!-- BUS AND Wheels -->
-            {{-- <div class="max-[900px]:hidden">
-                <div class="animate-bus w-[350px] -bottom-10  absolute">
-                    <img src="{{ asset('images/landing-page/app/hero-animation/bus.png') }}"
-                         alt=""
-                         class="w-full">
-                </div>
-
-                <div
-                     class="flex animate-wheel w-[50px] h-[50px] bottom-[30px] translate-x-3/4 left-32 absolute opacity-[70%">
-                    <img src="{{ asset('images/landing-page/app/hero-animation/bus-wheel.png') }}"
-                         class="absolute left-[85px] animate-spin">
-                    <img src="{{ asset('images/landing-page/app/hero-animation/bus-wheel.png') }}"
-                         class="absolute left-[-95px] animate-spin">
-                </div>
-            </div> --}}
-
-
-            <!-- Bike AND Wheels -->
-            {{-- <div>
-                <div class="animate-bike w-[100px] bottom-10 absolute  z-20 right-[10%]">
-                    <img src="{{ asset('images/landing-page/app/hero-animation/bike.png') }}"
-                         alt=""
-                         class="w-full">
-                </div>
-
-                <div class="flex animate-wheel w-[22px] h-[22px] bottom-[41px] right-[10%] z-10 absolute opacity-[70%">
-                    <img src="{{ asset('images/landing-page/app/hero-animation/bike-wheel.png') }}"
-                         class="absolute left-[1.1px] animate-spin">
-                    <img src="{{ asset('images/landing-page/app/hero-animation/bike-wheel.png') }}"
-                         class="absolute left-[-64px] animate-spin">
-                </div>
-            </div> --}}
-
-        </div>
 
     </header>
 
