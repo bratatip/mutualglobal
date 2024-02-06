@@ -63,7 +63,7 @@
                          x-transition:enter="transition ease-out duration-100"
                          x-transition:enter-start="transform opacity-0 scale-95">
                         <ul
-                            class="[&>li]:text-black [&>li]:text-sm [&>li]:cursor-pointer [&>li]:px-2 [&>li]:py-1 [&>li]:rounded-md [&>li]:transition-all hover:[&>li]:bg-amber-600 active:[&>li]:bg-amber-700 active:[&>li]:scale-[0.99]">
+                            class="[&>li]:text-black [&>li]:text-sm [&>li]:cursor-pointer [&>li]:px-2 [&>li]:py-1 [&>li]:rounded-md [&>li]:transition-all hover:[&>li]:bg-amber-300 active:[&>li]:bg-amber-400 active:[&>li]:scale-[0.99]">
                             <li><a class=""
                                    href="{{ route('client.index') }}">Health Card</a></li>
                             <li><a class=""

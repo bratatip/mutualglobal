@@ -352,97 +352,97 @@
                 <div class="partner_img p-4 bg-white shadow-md rounded-md">
                     <img src="{{ asset('images/landing-page/partners/care.png') }}"
                          alt="Partner"
-                         class="h-16 w-16" />
+                         class="h-12 w-12" />
                 </div>
                 <div class="partner_img p-4 bg-white shadow-md rounded-md">
                     <img src="{{ asset('images/landing-page/partners/chola.png') }}"
                          alt="Partner"
-                         class="h-16 w-16" />
+                         class="h-12 w-12" />
                 </div>
                 <div class="partner_img p-4 bg-white shadow-md rounded-md">
                     <img src="{{ asset('images/landing-page/partners/future.png') }}"
                          alt="Partner"
-                         class="h-16 w-16" />
+                         class="h-12 w-12" />
                 </div>
                 <div class="partner_img p-4 bg-white shadow-md rounded-md">
                     <img src="{{ asset('images/landing-page/partners/hdfc1.png') }}"
                          alt="Partner"
-                         class="h-16 w-16" />
+                         class="h-12 w-12" />
                 </div>
                 <div class="partner_img p-4 bg-white shadow-md rounded-md">
                     <img src="{{ asset('images/landing-page/partners/icici1.png') }}"
                          alt="Partner"
-                         class="h-16 w-16" />
+                         class="h-12 w-12" />
                 </div>
                 <div class="partner_img p-4 bg-white shadow-md rounded-md">
                     <img src="{{ asset('images/landing-page/partners/ifco-tokio.png') }}"
                          alt="Partner"
-                         class="h-16 w-16" />
+                         class="h-12 w-12" />
                 </div>
                 <div class="partner_img p-4 bg-white shadow-md rounded-md">
                     <img src="{{ asset('images/landing-page/partners/liberty.png') }}"
                          alt="Partner"
-                         class="h-16 w-16" />
+                         class="h-12 w-12" />
                 </div>
 
                 <div class="partner_img p-4 bg-white shadow-md rounded-md">
                     <img src="{{ asset('images/landing-page/partners/magma.png') }}"
                          alt="Partner"
-                         class="h-16 w-16" />
+                         class="h-12 w-12" />
                 </div>
 
                 <div class="partner_img p-4 bg-white shadow-md rounded-md">
                     <img src="{{ asset('images/landing-page/partners/national-insurance.jpeg') }}"
                          alt="Partner"
-                         class="h-16 w-16" />
+                         class="h-12 w-12" />
                 </div>
 
                 <div class="partner_img p-4 bg-white shadow-md rounded-md">
                     <img src="{{ asset('images/landing-page/partners/reliance.png') }}"
                          alt="Partner"
-                         class="h-16 w-16" />
+                         class="h-12 w-12" />
                 </div>
 
                 <div class="partner_img p-4 bg-white shadow-md rounded-md">
                     <img src="{{ asset('images/landing-page/partners/royal.png') }}"
                          alt="Partner"
-                         class="h-16 w-16" />
+                         class="h-12 w-12" />
                 </div>
 
                 <div class="partner_img p-4 bg-white shadow-md rounded-md">
                     <img src="{{ asset('images/landing-page/partners/sbi1.png') }}"
                          alt="Partner"
-                         class="h-16 w-16" />
+                         class="h-12 w-12" />
                 </div>
 
                 <div class="partner_img p-4 bg-white shadow-md rounded-md">
                     <img src="{{ asset('images/landing-page/partners/star.png') }}"
                          alt="Partner"
-                         class="h-16 w-16" />
+                         class="h-12 w-12" />
                 </div>
 
                 <div class="partner_img p-4 bg-white shadow-md rounded-md">
                     <img src="{{ asset('images/landing-page/partners/tata.png') }}"
                          alt="Partner"
-                         class="h-16 w-16" />
+                         class="h-12 w-12" />
                 </div>
 
                 <div class="partner_img p-4 bg-white shadow-md rounded-md">
                     <img src="{{ asset('images/landing-page/partners/the-new-india.png') }}"
                          alt="Partner"
-                         class="h-16 w-16" />
+                         class="h-12 w-12" />
                 </div>
 
                 <div class="partner_img p-4 bg-white shadow-md rounded-md">
                     <img src="{{ asset('images/landing-page/partners/the-oriental.png') }}"
                          alt="Partner"
-                         class="h-16 w-16" />
+                         class="h-12 w-12" />
                 </div>
 
                 <div class="partner_img p-4 bg-white shadow-md rounded-md">
                     <img src="{{ asset('images/landing-page/partners/zuno.png') }}"
                          alt="Partner"
-                         class="h-16 w-16" />
+                         class="h-12 w-12" />
                 </div>
             </div>
         </section>
