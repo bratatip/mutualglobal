@@ -232,7 +232,15 @@
                                 </a>
                             </div>
 
+                            <div class="product_items grid gap-4 justify-items-center text-center md:flex-1">
+                                <div class="border border-gray-200 rounded shadow-lg bg-[#F2F7FF] p-1 w-28 h-20">
+                                    <img src="{{ asset('images/landing-page/services/health.png') }}"
+                                         class="w-full h-full object-contain"
+                                         alt="" />
+                                </div>
 
+                                <p class="text-sm font-bold text-slate-600">Health</p>
+                            </div>
 
                             <div class="product_items grid gap-4 justify-items-center text-center md:flex-1">
                                 <div class="border border-gray-200 rounded shadow-lg bg-[#F2F7FF] p-1 w-28 h-20">
@@ -288,6 +296,22 @@
                  class="relative min-[1280px]:hidden pt-8">
             <div
                  class="container mx-auto max-w-5xl flex max-[368px]:gap-2 gap-12 flex-wrap items-start justify-center md:justify-between">
+                 <div class="product_items grid gap-4 justify-items-center text-center md:flex-1">
+                    <a href="#"
+                       class="text-decoration-none">
+                        <div class="rounded shadow-lg bg-[#F2F7FF] p-1 w-32 h-20">
+                            <img src="{{ asset('images/landing-page/services/health.png') }}"
+                                 class="w-full h-full object-contain"
+                                 alt="" />
+                        </div>
+
+                        <p class="text-sm font-bold text-slate-600 mt-4">Health</p>
+
+                    </a>
+
+                </div>
+
+
                 <div class="product_items grid gap-4 justify-items-center text-center md:flex-1">
                     <a href="http://uatweb.mutualglobal.com/two-wheeler-insurance/"
                        class="text-decoration-none">
