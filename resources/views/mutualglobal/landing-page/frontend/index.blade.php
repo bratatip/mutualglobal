@@ -89,22 +89,33 @@
                                 <!-- Item 1 -->
                                 <div class="hidden duration-700 ease-in-out"
                                      data-carousel-item>
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAZP9GUoeHzRzQUkkpMyaNyMljh3hn26f8SQ&usqp=CAU"
-                                         class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                    <img src="{{ asset('images/landing-page/carousel/slider-1.jpg') }}"
                                          alt="...">
                                 </div>
                                 <!-- Item 2 -->
                                 <div class="hidden duration-700 ease-in-out"
                                      data-carousel-item>
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkXXMTzMxJwZ-ID5AB_fwxPrMOUk0PSWhmKA&usqp=CAU"
-                                         class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                    <img src="{{ asset('images/landing-page/carousel/slider-2.jpg') }}"
                                          alt="...">
                                 </div>
                                 <!-- Item 3 -->
                                 <div class="hidden duration-700 ease-in-out"
                                      data-carousel-item>
-                                    <img src="https://media.istockphoto.com/id/1152400130/vector/car-insurance.jpg?s=612x612&w=0&k=20&c=JIUTvhACANqaMYTppnIZOxWvdVOhDbuslLteP14crx4="
-                                         class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                    <img src="{{ asset('images/landing-page/carousel/slider-3.jpg') }}"
+                                         alt="...">
+                                </div>
+
+                                <!-- Item 4 -->
+                                <div class="hidden duration-700 ease-in-out"
+                                     data-carousel-item>
+                                    <img src="{{ asset('images/landing-page/carousel/slider-4.jpg') }}"
+                                         alt="...">
+                                </div>
+
+                                <!-- Item 5 -->
+                                <div class="hidden duration-700 ease-in-out"
+                                     data-carousel-item>
+                                    <img src="{{ asset('images/landing-page/carousel/slider-5.jpg') }}"
                                          alt="...">
                                 </div>
                             </div>
@@ -126,6 +137,16 @@
                                         aria-current="false"
                                         aria-label="Slide 3"
                                         data-carousel-slide-to="2"></button>
+                                <button type="button"
+                                        class="w-3 h-3 rounded-full"
+                                        aria-current="false"
+                                        aria-label="Slide 4"
+                                        data-carousel-slide-to="3"></button>
+                                <button type="button"
+                                        class="w-3 h-3 rounded-full"
+                                        aria-current="false"
+                                        aria-label="Slide 5"
+                                        data-carousel-slide-to="4"></button>
                             </div>
                             <!-- Slider controls -->
                             <button type="button"
@@ -348,7 +369,7 @@
            commitments.
        </p> --}}
             </div>
-            <div class="flex flex-wrap justify-center gap-8 md:gap-x-16 max-w-2xl mx-auto">
+            <div class="flex flex-wrap justify-center gap-4 md:gap-x-4 max-w-2xl mx-auto">
                 <div class="partner_img p-4 bg-white shadow-md rounded-md">
                     <img src="{{ asset('images/landing-page/partners/care.png') }}"
                          alt="Partner"
@@ -606,8 +627,8 @@
 
         /* Car Animation */
         /* .animate-car {
-                                                                                            transform: translate(-50%);
-                                                                                        } */
+                                                                                                    transform: translate(-50%);
+                                                                                                } */
 
         .animate-car img {
             animation: car 1s linear infinite !important;
