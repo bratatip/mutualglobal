@@ -5,7 +5,11 @@ namespace App\Http\Controllers\Coupon;
 use App\Helpers\UuidGeneratorHelper;
 use App\Http\Controllers\Controller;
 use App\Jobs\HealthCoupon\CouponGeneratedNotificationJob;
+use App\Models\Area;
+use App\Models\City;
 use App\Models\Coupon\HealthCoupon;
+use App\Models\Discount;
+use App\Models\Hospital;
 use Barryvdh\DomPDF\Facade\Pdf as PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -40,19 +44,24 @@ class ClientCouponController extends Controller
         ]);
 
 
-
+        $cityName = City::where('id',$validatedData['city'])->value('name');
+        $areaName = Area::where('id',$validatedData['area'])->value('name');
+        $hospitalInfo = Hospital::where('id',$validatedData['hospital'])->value('name');
+        $discount = Discount::where('hospital_id', $validatedData['hospital'])->first();
+        
         $data = [
             'name' => $validatedData['name'],
             'email' => $validatedData['email'],
             'contact_no' => $validatedData['contact_no'],
             'locality' => $validatedData['locality'],
-            'city' => $validatedData['city'],
-            'area' => $validatedData['area'],
-            'hospital' => $validatedData['hospital'],
+            'city' => $cityName,
+            'area' => $areaName,
+            'hospital' => $hospitalInfo,
         ];
 
         $pdf = PDF::loadView('health-coupon.frontend.coupon', [
             'data' => $data,
+            'discount' => $discount,
         ]);
 
 
@@ -84,6 +93,6 @@ class ClientCouponController extends Controller
             return redirect()->back()->with(['error' => $e->getMessage()])->withInput();
         }
 
-        return $pdf->download($fileName);
+        return $pdf->stream($fileName);
     }
 }

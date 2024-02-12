@@ -41,25 +41,51 @@
             </strong>
         </p>
 
-        <p
-           style="position:absolute; top: 200px;right:45px; font-size: 70px; color: #0e0e0ea2; margin-top: 20px; position: absolute; line-height: 20px; font-weight:bolder; font-style:'Calisto MT' !important;">
-            <strong>
-                <span>20 %</span><br>
-            </strong>
+        @if ($discount['consultancy_discount_percentage'])
+            <p
+               style="position:absolute; top: 130px;right:45px; font-size: 30px; color: #0e0e0ea2; margin-top: 20px; position: absolute; line-height: 20px; font-weight:bolder; font-style:'Calisto MT' !important;">
+                Consultancy
+            </p>
 
+            <p
+               style="position:absolute; top: 200px;right:45px; font-size: 70px; color: #0e0e0ea2; margin-top: 20px; position: absolute; line-height: 20px; font-weight:bolder; font-style:'Calisto MT' !important;">
+                <strong>
+                    <span>{{ $discount['consultancy_discount_percentage'] }} %</span><br>
+                </strong>
+            </p>
+        @endif
+
+        @if ($discount['treatment_discount_percentage'])
+            <p
+               style="position:absolute; top: 230px;right:45px; font-size: 20px; color: #0e0e0ea2; margin-top: 20px; position: absolute; line-height: 20px; font-weight:bolder; font-style:'Calisto MT' !important;">
+                Investigations/diagnosis
+            </p>
+
+            <p
+               style="position:absolute; top: 300px;right:45px; font-size: 70px; color: #0e0e0ea2; margin-top: 20px; position: absolute; line-height: 20px; font-weight:bolder; font-style:'Calisto MT' !important;">
+                <strong>
+                    <span>{{ $discount['treatment_discount_percentage'] }} %</span><br>
+                </strong>
+            </p>
+        @endif
+
+
+
+        <p
+           style="position:absolute; top: 150px;left:50px; font-size: 16px; color: #3606f5; margin-top: 20px; position: absolute; bottom: 0; line-height: 20px; font-style: italic;">
+            <span>{{ $data['name'] }}</span><br>
+            <span>{{ $data['email'] }}</span><br>
+            <span>{{ $data['locality'] }}</span><br>
         </p>
 
         <p
-           style="position:absolute; top: 150px;left:50px; font-size: 20px; color: #666; margin-top: 20px; position: absolute; bottom: 0; line-height: 35px; font-style: italic;">
+           style="position:absolute; top: 250px;left:50px; font-size: 20px; color: #666; margin-top: 20px; position: absolute; bottom: 0; line-height: 25px; font-style: italic;">
             <strong>
-                <span>{{ $data['name'] }}</span><br>
-                <span>{{ $data['email'] }}</span><br>
-                <span>{{ $data['locality'] }}</span><br>
-                <span>{{ ucwords(str_replace('_', ' ', $data['hospital'])) }}</span>
+                <span>{{ ucwords(str_replace('_', ' ', $data['hospital'])) }}</span><br>
+                <span>{{ $data['area'] }}</span>
             </strong>
 
         </p>
-
 
 
         {{-- <p style="font-size: 16px; line-height: 1.5; color: #666; margin-top: 30px; margin-bottom: 20px;"><strong>Please
