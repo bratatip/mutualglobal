@@ -65,35 +65,7 @@
 
                     </div>
 
-                    <div>
-                        <x-forms.select class="js-select2"
-                                        label="City"
-                                        name="city"
-                                        :options="[
-                                            'bengaluru' => 'Bengaluru',
-                                        ]" />
-                        @include('common.partials._error', ['name' => 'city'])
-                    </div>
-
-                    <div>
-                        <x-forms.select class="js-select2"
-                                        label="Area"
-                                        name="area"
-                                        :options="[
-                                            'begur' => 'Begur',
-                                        ]" />
-                        @include('common.partials._error', ['name' => 'area'])
-                    </div>
-
-                    <div>
-                        <x-forms.select class="js-select2"
-                                        label="Hospitals"
-                                        name="hospital"
-                                        :options="[
-                                            'ekana_hospital_begur' => 'EKANA HOSPITAL BEGUR',
-                                        ]" />
-                        @include('common.partials._error', ['name' => 'hospital'])
-                    </div>
+                    <livewire:health-coupon.form.hospital-drop-down />
 
                     <div class="flex flex-row items-center mt-2">
                         <div class="w-full flex items-center">

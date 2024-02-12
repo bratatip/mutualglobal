@@ -14,6 +14,7 @@
             top: 70px;
         }
     </style>
+    @livewireStyles
 
 </head>
 
@@ -45,6 +46,7 @@
     </main>
 
     @include('layouts.footer')
+    @livewireScripts
 </body>
 
 </html>

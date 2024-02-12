@@ -20,7 +20,7 @@
 
                     <div>
                         <x-forms.input-field type="email"
-                            class="h-3"
+                            class="h-8"
                             name="email"
                             label="Email"
                             placeholder="Enter Registered Email Address"
@@ -30,7 +30,7 @@
 
                     <div>
                         <x-forms.input-field type="password"
-                            class="h-3"
+                            class="h-8"
                             name="password"
                             label="Password"
                             placeholder="Enter Password"

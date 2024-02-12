@@ -36,7 +36,7 @@
                                     type="email"
                                     autocomplete="email"
                                     required
-                                    class="h-3 text-xs text-gray-500 rounded-sm w-11/12 px-3 border-solid border-[#CCCCCC] focus:ring-0"
+                                    class="h-8 text-xs text-gray-500 rounded-sm w-11/12 px-3 border-solid border-[#CCCCCC] focus:ring-0"
                                     placeholder="Enter your email address">
                             </div>
                         </div>
@@ -52,7 +52,7 @@
                                     type="password"
                                     autocomplete="current-password"
                                     required
-                                    class="h-3  text-xs rounded-sm w-11/12 px-3 border-solid border-[#CCCCCC] focus:ring-0"
+                                    class="h-8  text-xs rounded-sm w-11/12 px-3 border-solid border-[#CCCCCC] focus:ring-0"
                                     placeholder="Enter your password">
                             </div>
                         </div>
