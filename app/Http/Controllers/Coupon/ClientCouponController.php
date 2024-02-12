@@ -81,7 +81,7 @@ class ClientCouponController extends Controller
             'email' => $validatedData['email'],
             'phone' => $validatedData['contact_no'],
             'locality' => $validatedData['locality'],
-            'hospital' => $validatedData['hospital'],
+            'hospital_id' => $validatedData['hospital'],
             'download_status' => 1, 
         ]);
 
@@ -93,6 +93,6 @@ class ClientCouponController extends Controller
             return redirect()->back()->with(['error' => $e->getMessage()])->withInput();
         }
 
-        return $pdf->stream($fileName);
+        return $pdf->download($fileName);
     }
 }

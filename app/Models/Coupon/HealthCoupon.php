@@ -17,7 +17,7 @@ class HealthCoupon extends Model
         'email',
         'phone',
         'locality',
-        'hospital',
+        'hospital_id',
         'download_status',
     ];
 }

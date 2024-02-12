@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('phone');
             $table->string('locality');
-            $table->string('hospital');
+            $table->string('hospital_id');
             $table->string('download_status');
             $table->timestamps();
             $table->softDeletes();
