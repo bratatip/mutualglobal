@@ -1,7 +1,7 @@
 @extends('mutualglobal.landing-page.layouts.master')
 
 
-@section('title', 'Home - Mutual Global Pvt Ltd')
+@section('title', 'About - Mutual Global Pvt Ltd')
 
 
 @section('content')
