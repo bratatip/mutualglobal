@@ -57,6 +57,7 @@ class ClientCouponController extends Controller
             'city' => $cityName,
             'area' => $areaName,
             'hospital' => $hospitalInfo,
+            'current_date' => now()->toDateString(),
         ];
 
         $pdf = PDF::loadView('health-coupon.frontend.coupon', [

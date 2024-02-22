@@ -87,40 +87,11 @@
 
         </p>
 
+        <p style="font-weight: 500; position:absolute; top: 360px;left:450px; ">
+            Valid For 1 Visit on: {{ $data['current_date'] }}
+        </p>
 
-        {{-- <p style="font-size: 16px; line-height: 1.5; color: #666; margin-top: 30px; margin-bottom: 20px;"><strong>Please
-                advise
-                of the following candidate:</strong></p>
 
-
-        <div style="font-size: 15px; line-height: 1.5; color: #333; margin-bottom: 20px;">
-
-            <p><strong>NAME: </strong>Sumit</p>
-
-            <p><strong>RATE: </strong> u38743</p>
-            <p><strong>RATE AMOUNT: </strong>43jiu</p>
-            <p><strong>NOTES: </strong> fdkjkgkjhfd8er</p>
-        </div>
-
-        <hr style="border-color: #e25e14; border-color: #e25e14; border-top-width: 2px; margin: 30px 0 20px;">
-
-        <div style="font-size: 15px; line-height: 1.5; color: #333; margin-bottom: 20px;">
-
-            <p style="font-size: 16px; line-height: 1.5; color: #666; margin-top: 30px; margin-bottom: 20px;">
-                <strong>Sourced By:</strong>
-            </p>
-
-            <p><strong>Agency Name:</strong> hiureyiutureiytiureyt</p>
-            <p><strong>Agency Key Contact Name:</strong> kjwhf984378</p>
-            <p><strong>Agency Key Contact Phone Number:</strong> dh9847874</p>
-            <p><strong>Agency Key Contact Email:</strong> 9843798jehthjkfd</p>
-        </div> --}}
-        {{-- <p
-           style="text-align: center; font-size: 14px; color: #333; margin-top: 20px; position: absolute; bottom: 0; line-height: 20px; font-style: italic; ">
-            <span style="text-decoration: underline">Not intended to be used as criteria for hire</span><br>
-            For more information regarding the Professional Sourcing Solutions Platform and the SourceMe app, please
-            contact <strong style="text-decoration: underline">info@professionalsourcingsolutions.ca</strong>
-        </p> --}}
     </div>
 </body>
 
