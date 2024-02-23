@@ -32,7 +32,7 @@ class ClientCouponController extends Controller
             'name' => 'required|string',
             'email' => 'required|email',
             'contact_no' => 'required|string|min:10|max:10|regex:/^[0-9]+$/',
-            'locality' => 'required|string|min:10|max:100|regex:/^[A-Za-z0-9(), -]+$/',
+            'locality' => 'required|string|min:5|max:100|regex:/^[A-Za-z0-9(), -]+$/',
             'city' => 'required|string',
             'area' => 'required|string',
             'hospital' => 'required|string',

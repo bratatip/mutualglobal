@@ -29,7 +29,7 @@
     <div>
         <label for="area"
                class="text-[#0F628B] text-sm">
-            Area
+           Hospital Area
             <span class="text-red-600"><strong>*</strong></span>
         </label>
         <div>
@@ -53,7 +53,7 @@
     <div>
         <label for="area"
                class="text-[#0F628B] text-sm">
-            Area
+            Hospital Name
             <span class="text-red-600"><strong>*</strong></span>
         </label>
         <div>
