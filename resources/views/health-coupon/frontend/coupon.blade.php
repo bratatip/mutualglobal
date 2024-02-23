@@ -10,11 +10,123 @@
         html,
         body {
             display: block;
+            font-family: 'Adobe Gothic Std', sans-serif !important;
+            /* Add the Adobe Gothic font */
         }
+
+        /* Add additional styles for customization */
+        p {
+            font-family: 'Adobe Gothic Std', sans-serif !important;
+        }
+
+        strong {
+            font-family: 'Adobe Gothic Std', sans-serif !important;
+            font-weight: bold;
+        }
+
+        img {
+            display: inline-block;
+            vertical-align: middle;
+            max-width: 100%;
+            border: black solid 1px;
+            border-radius: 10px;
+            margin: -2px;
+        }
+
+        .header {
+            position: absolute;
+            top: 80px;
+            left: 30px;
+            font-size: 40px;
+            color: #F07E01;
+            margin-top: 20px;
+            position: absolute;
+            line-height: 28px;
+            font-weight: bold;
+        }
+
+        .info {
+            position: absolute;
+            top: 150px;
+            left: 30px;
+            font-size: 16px;
+            font-weight: 300;
+            color: black;
+            margin-top: 20px;
+            position: absolute;
+            bottom: 0;
+            line-height: 25px;
+        }
+
+        .hospital-info {
+            position: absolute;
+            top: 250px;
+            left: 30px;
+            font-size: 20px;
+            color: #666;
+            margin-top: 20px;
+            position: absolute;
+            bottom: 0;
+            line-height: 25px;
+        }
+
+        .info-header {
+            font-size: 18px;
+        }
+
+        .consultancy_discount_percentage_header {
+            position: absolute;
+            top: 130px;
+            right: 45px;
+            font-size: 25px;
+            color: black;
+            margin-top: 20px;
+            position: absolute;
+            line-height: 20px;
+            font-weight: bolder;
+        }
+
+        .consultancy_discount_percentage {
+            position: absolute;
+            top: 200px;
+            right: 45px;
+            font-size: 70px;
+            color: #F07E01;
+            margin-top: 20px;
+            position: absolute;
+            line-height: 20px;
+            font-weight: bolder;
+        }
+
+        .treatment_discount_percentage_header {
+            position: absolute;
+            top: 230px;
+            right: 45px;
+            font-size: 20px;
+            color: black;
+            margin-top: 20px;
+            position: absolute;
+            line-height: 20px;
+            font-weight: bolder;
+        }
+
+        .treatment_discount_percentage {
+            position: absolute;
+            top: 300px;
+            right: 45px;
+            font-size: 70px;
+            color: #F07E01;
+            margin-top: 20px;
+            position: absolute;
+            line-height: 20px;
+            font-weight: bolder;
+        }
+
+        /* Add more custom styles as needed */
     </style>
 </head>
 
-<body style="background:white; font-family: 'Quicksand', sans-serif; !important;">
+<body style="background:white;">
     <div style="position: relative; padding-bottom: 80px;">
         <table style="width: 100%;">
             <tbody style="padding: 0;">
@@ -22,8 +134,7 @@
                     <td style="max-width: 100%">
                         {{-- <img style="display: inline-block; vertical-align: middle; max-width: 200px; margin-right: 20px;"
                              src="{{ str_replace('http://', 'https://', config('app.url')) }}/assets/img/globe_logo.png"> --}}
-                        <img style="display: inline-block; vertical-align: middle; max-width: 100%;border:#333 solid 1px; border-radious:15px;"
-                             src="{{ asset('/images/health-coupon/health_coupon.jpg') }}">
+                        <img src="{{ asset('/images/health-coupon/health_coupon.jpg') }}">
                     </td>
                     <td style="max-width: 50%; text-align: right">
 
@@ -34,21 +145,18 @@
             </tbody>
         </table>
 
-        <p
-           style="position: absolute; top: 60px; left: 50px; font-size: 24px; color: #2e2e2ebc; margin-top: 20px; position: absolute; line-height: 28px; font-weight: bold; font-family: 'Arial', sans-serif; text-transform: uppercase; font-style:italic;">
+        <p class="header">
             <strong>
                 <span>Discount Voucher</span><br>
             </strong>
         </p>
 
         @if ($discount['consultancy_discount_percentage'])
-            <p
-               style="position:absolute; top: 130px;right:45px; font-size: 30px; color: #0e0e0ea2; margin-top: 20px; position: absolute; line-height: 20px; font-weight:bolder; font-style:'Calisto MT' !important;">
+            <p class="consultancy_discount_percentage_header">
                 Consultancy
             </p>
 
-            <p
-               style="position:absolute; top: 200px;right:45px; font-size: 70px; color: #0e0e0ea2; margin-top: 20px; position: absolute; line-height: 20px; font-weight:bolder; font-style:'Calisto MT' !important;">
+            <p class="consultancy_discount_percentage">
                 <strong>
                     <span>{{ $discount['consultancy_discount_percentage'] }} %</span><br>
                 </strong>
@@ -56,13 +164,11 @@
         @endif
 
         @if ($discount['treatment_discount_percentage'])
-            <p
-               style="position:absolute; top: 230px;right:45px; font-size: 20px; color: #0e0e0ea2; margin-top: 20px; position: absolute; line-height: 20px; font-weight:bolder; font-style:'Calisto MT' !important;">
-                Investigations/diagnosis
+            <p class="treatment_discount_percentage_header">
+                Investigations/Diagnosis
             </p>
 
-            <p
-               style="position:absolute; top: 300px;right:45px; font-size: 70px; color: #0e0e0ea2; margin-top: 20px; position: absolute; line-height: 20px; font-weight:bolder; font-style:'Calisto MT' !important;">
+            <p class="treatment_discount_percentage">
                 <strong>
                     <span>{{ $discount['treatment_discount_percentage'] }} %</span><br>
                 </strong>
@@ -71,24 +177,23 @@
 
 
 
-        <p
-           style="position:absolute; top: 150px;left:50px; font-size: 16px; color: #3606f5; margin-top: 20px; position: absolute; bottom: 0; line-height: 20px; font-style: italic;">
-            <span>{{ $data['name'] }}</span><br>
-            <span>{{ $data['email'] }}</span><br>
-            <span>{{ $data['locality'] }}</span><br>
+        <p class="info">
+            <span class="info-header">Name :</span> <span>{{ $data['name'] }}</span><br>
+            <span class="info-header">E-Mail :</span> <span>{{ $data['email'] }}</span><br>
+            <span class="info-header">Locality :</span> <span>{{ $data['locality'] }}</span><br>
         </p>
 
-        <p
-           style="position:absolute; top: 250px;left:50px; font-size: 20px; color: #666; margin-top: 20px; position: absolute; bottom: 0; line-height: 25px; font-style: italic;">
+        <p class="hospital-info">
             <strong>
+                <span class="info-header">Hospital Name :</span>
                 <span>{{ ucwords(str_replace('_', ' ', $data['hospital'])) }}</span><br>
-                <span>{{ $data['area'] }}</span>
+                <span class="info-header">Hospital Area :</span> <span>{{ $data['area'] }}</span>
             </strong>
 
         </p>
 
-        <p style="font-weight: 500; position:absolute; top: 360px;left:450px; ">
-            Valid For 1 Visit on: {{ $data['current_date'] }}
+        <p style="font-weight: 500; position:absolute; top: 360px;left:500px; ">
+            Valid Date : {{ \Carbon\Carbon::parse($data['current_date'])->format('d M, Y') }}
         </p>
 
 
