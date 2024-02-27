@@ -140,10 +140,9 @@
             {{-- Mobile Side Bar --}}
 
 
-            <div class="h-screen bg-white transition-all duration-300 space-y-2 fixed  z-20 lg:hidden"
+            <div class="h-screen bg-white transition-all duration-300 space-y-2 fixed z-20 lg:hidden"
                  x-bind:class="{
                      'w-64': $store.sidebar.full,
-                     'w-64 md:w-20': !$store.sidebar.full,
                      'top-0 left-0': $store.sidebar
                          .navOpen,
                      'top-0 -left-64 md:left-0': !$store.sidebar.navOpen
@@ -157,7 +156,7 @@
                 <div class="px-4 space-y-2">
 
                     <!-- SideBar Toggle -->
-                    <button @click="$store.sidebar.full = !$store.sidebar.full"
+                    {{-- <button @click="$store.sidebar.full = !$store.sidebar.full"
                             class="hidden md:block focus:outline-none absolute p-1 -right-3 top-10 bg-gray-900 rounded-full shadow-md">
                         <svg xmlns="http://www.w3.org/2000/svg"
                              class="h-4 w-4 transition-all duration-300 text-white transform"
@@ -168,7 +167,7 @@
                                   d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
                                   clip-rule="evenodd" />
                         </svg>
-                    </button>
+                    </button> --}}
                     <!-- Home -->
                     <div x-data="tooltip"
                          x-on:mouseover="show = true"
@@ -719,161 +718,6 @@
                         </h1>
                     </div>
 
-                    <!-- *****************************************END************************************************************************ -->
-                    {{-- For Future Reference --}}
-                    <!-- Nested Drop Down -->
-                    {{-- <div x-data="dropdown"
-                         class="relative">
-                        <!-- Dropdown head -->
-                        <div @click="toggle('income')"
-                             x-data="tooltip"
-                             x-on:mouseover="show = true"
-                             x-on:mouseleave="show = false"
-                             class="flex justify-between text-gray-400 hover:text-amber-200 hover:bg-gray-800 items-center space-x-2 rounded-md p-2 cursor-pointer"
-                             x-bind:class="{ 'justify-start': $store.sidebar.full, 'md:justify-center': !$store.sidebar
-                                 .full, 'text-gray-200 bg-gray-800': $store.sidebar.active ==
-                                 'income', 'text-gray-400 ': $store.sidebar.active != 'income' }">
-                            <div class="relative flex space-x-2 items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg"
-                                     class="h-6 w-6"
-                                     fill="none"
-                                     viewBox="0 0 24 24"
-                                     stroke="currentColor">
-                                    <path stroke-linecap="round"
-                                          stroke-linejoin="round"
-                                          stroke-width="2"
-                                          d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
-                                    <path stroke-linecap="round"
-                                          stroke-linejoin="round"
-                                          stroke-width="2"
-                                          d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
-                                </svg>
-                                <h1 x-cloak
-                                    x-bind:class="!$store.sidebar.full && show ? visibleClass : '' || !$store.sidebar.full && !show ?
-                                        'md:hidden' : ''">
-                                    Services</h1>
-                            </div>
-                            <svg x-cloak
-                                 x-bind:class="$store.sidebar.full ? '' : 'md:hidden'"
-                                 xmlns="http://www.w3.org/2000/svg"
-                                 class="h-4 w-4"
-                                 viewBox="0 0 20 20"
-                                 fill="currentColor">
-                                <path fill-rule="evenodd"
-                                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                      clip-rule="evenodd" />
-                            </svg>
-                        </div>
-                        <!-- Dropdown content -->
-                        <div x-cloak
-                             x-show="open"
-                             @click.outside="open=false"
-                             x-bind:class="$store.sidebar.full ? expandedClass : shrinkedClass"
-                             class="text-gray-400 space-y-3">
-                            <h1 class="hover:text-gray-200 cursor-pointer">Item 1</h1>
-                            <h1 class="hover:text-gray-200 cursor-pointer">Item 2</h1>
-                            <!-- Sub Dropdown  -->
-                            <div x-data="sub_dropdown"
-                                 class="relative w-full ">
-                                <div @click="sub_toggle()"
-                                     class="flex items-center justify-between cursor-pointer">
-                                    <h1 class="hover:text-gray-200 cursor-pointer">Item 3</h1>
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                         class="h-4 w-4"
-                                         viewBox="0 0 20 20"
-                                         fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                              clip-rule="evenodd" />
-                                    </svg>
-                                </div>
-                                <div x-show="sub_open"
-                                     @click.outside="sub_open = false"
-                                     x-bind:class="$store.sidebar.full ? sub_expandedClass : sub_shrinkedClass">
-                                    <h1 class="hover:text-gray-200 cursor-pointer ">Sub Item 1</h1>
-                                    <h1 class="hover:text-gray-200 cursor-pointer ">Sub Item 2</h1>
-                                    <h1 class="hover:text-gray-200 cursor-pointer ">Sub Item 3</h1>
-                                </div>
-                            </div>
-                            <h1 class="hover:text-gray-200 cursor-pointer">Item 4</h1>
-                        </div>
-                    </div> --}}
-
-                    <!-- Posts -->
-                    {{-- <div @click="$store.sidebar.active = 'posts' "
-                         x-data="tooltip"
-                         x-on:mouseover="show = true"
-                         x-on:mouseleave="show = false"
-                         class=" relative flex justify-between items-center text-gray-400 hover:text-gray-200 hover:bg-gray-800 space-x-2 rounded-md p-2 cursor-pointer"
-                         x-bind:class="{ 'justify-start': $store.sidebar.full, 'md:justify-center': !$store.sidebar
-                             .full, 'text-gray-200 bg-gray-800': $store.sidebar.active ==
-                             'posts', 'text-gray-400 ': $store.sidebar.active != 'posts' }">
-                        <div class="flex  items-center space-x-2">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                 class="h-6 w-6"
-                                 fill="none"
-                                 viewBox="0 0 24 24"
-                                 stroke="currentColor">
-                                <path stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      stroke-width="2"
-                                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                            </svg>
-                            <h1 x-cloak
-                                x-bind:class="!$store.sidebar.full && show ? visibleClass : '' || !$store.sidebar.full && !show ?
-                                    'md:hidden' : ''">
-                                Posts</h1>
-                        </div>
-                        <h1 x-cloak
-                            x-bind:class="$store.sidebar.full ? '' : 'md:hidden'"
-                            class="w-5 h-5 p-1 bg-green-400 rounded-md text-md leading-3 text-center text-gray-900">8
-                        </h1>
-                    </div> --}}
-
-                    <!-- Schedules -->
-                    {{-- <div @click="$store.sidebar.active = 'home' "
-                         x-data="tooltip"
-                         x-on:mouseover="show = true"
-                         x-on:mouseleave="show = false"
-                         class=" relative flex justify-between items-center text-gray-400 hover:text-gray-200 hover:bg-gray-800 space-x-2 rounded-md p-2 cursor-pointer"
-                         x-bind:class="{ 'justify-start': $store.sidebar.full, 'md:justify-center': !$store.sidebar
-                             .full, 'text-gray-200 bg-gray-800': $store.sidebar.active ==
-                             'schedules', 'text-gray-400 ': $store.sidebar.active != 'schedules' }">
-                        <div class="flex  items-center space-x-2">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                 class="h-6 w-6"
-                                 fill="none"
-                                 viewBox="0 0 24 24"
-                                 stroke="currentColor">
-                                <path stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      stroke-width="2"
-                                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                            </svg>
-                            <h1 x-cloak
-                                x-bind:class="!$store.sidebar.full && show ? visibleClass : '' || !$store.sidebar.full && !show ?
-                                    'md:hidden' : ''">
-                                Schedules</h1>
-                        </div>
-                        <div x-cloak
-                             x-bind:class="$store.sidebar.full ? '' : 'md:hidden'"
-                             class="flex items-center space-x-2">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                 class="h-6 w-6"
-                                 fill="none"
-                                 viewBox="0 0 24 24"
-                                 stroke="currentColor">
-                                <path stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      stroke-width="1"
-                                      d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <h1 class="w-5 h-5 p-1 bg-pink-400 rounded-md text-md leading-3 text-center text-gray-900">
-                                3
-                            </h1>
-
-                        </div>
-                    </div> --}}
                 </div>
             </div>
             <div x-show="$store.sidebar.navOpen"
