@@ -140,7 +140,7 @@
             {{-- Mobile Side Bar --}}
 
 
-            <div class="h-screen bg-white transition-all duration-300 space-y-2 fixed lg:relative z-20 lg:hidden"
+            <div class="h-screen bg-white transition-all duration-300 space-y-2 fixed  z-20 lg:hidden"
                  x-bind:class="{
                      'w-64': $store.sidebar.full,
                      'w-64 md:w-20': !$store.sidebar.full,
