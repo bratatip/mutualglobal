@@ -177,7 +177,7 @@
                          class=" relative flex items-center hover:text-neutral-900 hover:bg-amber-200 space-x-2 rounded-md p-2 cursor-pointer"
                          x-bind:class="{
                              'justify-start': $store.sidebar.full,
-                             'md:justify-center': !$store.sidebar
+                             'justify-start': !$store.sidebar
                                  .full,
                              'text-neutral-900 bg-amber-200': $store.sidebar.active ==
                                  'home',
@@ -235,7 +235,7 @@
                                   stroke-width="1"></path>
                         </svg>
                         <h1 x-cloak
-                            x-bind:class="!$store.sidebar.full && show ? visibleClass : '' || !$store.sidebar.full && !show ?
+                            x-bind:class="!$store.sidebar.full && !show ?
                                 'lg:hidden' : ''">
                             <a href="/"
                                class="text-decoration-none">Home</a>
@@ -253,7 +253,7 @@
                              class="flex justify-between text-gray-400 hover:text-neutral-900 hover:bg-amber-200 items-center space-x-2 rounded-md p-2 cursor-pointer"
                              x-bind:class="{
                                  'justify-start': $store.sidebar.full,
-                                 'md:justify-center': !$store.sidebar
+                                 'justify-start': !$store.sidebar
                                      .full,
                                  'text-neutral-900 bg-amber-200': $store.sidebar.active ==
                                      'products',
@@ -330,7 +330,7 @@
                                           stroke-width="1"></path>
                                 </svg>
                                 <h1 x-cloak
-                                    x-bind:class="!$store.sidebar.full && show ? visibleClass : '' || !$store.sidebar.full && !show ?
+                                    x-bind:class="!$store.sidebar.full && !show ?
                                         'lg:hidden' : ''">
                                     <a href="#"
                                        class="text-decoration-none">Products</a>
@@ -371,7 +371,7 @@
                              class="flex justify-between text-gray-400 hover:text-neutral-900 hover:bg-amber-200 items-center space-x-2 rounded-md p-2 cursor-pointer"
                              x-bind:class="{
                                  'justify-start': $store.sidebar.full,
-                                 'md:justify-center': !$store.sidebar
+                                 'justify-start': !$store.sidebar
                                      .full,
                                  'text-neutral-900 bg-amber-200': $store.sidebar.active ==
                                      'services',
@@ -442,7 +442,7 @@
                                           stroke-width="1"></path>
                                 </svg>
                                 <h1 x-cloak
-                                    x-bind:class="!$store.sidebar.full && show ? visibleClass : '' || !$store.sidebar.full && !show ?
+                                    x-bind:class="!$store.sidebar.full && !show ?
                                         'lg:hidden' : ''">
                                     Services</h1>
                             </div>
@@ -480,7 +480,7 @@
                          class=" relative flex items-center hover:text-neutral-900 hover:bg-amber-200 space-x-2 rounded-md p-2 cursor-pointer"
                          x-bind:class="{
                              'justify-start': $store.sidebar.full,
-                             'md:justify-center': !$store.sidebar
+                             'justify-start': !$store.sidebar
                                  .full,
                              'text-neutral-900 bg-amber-200': $store.sidebar.active ==
                                  'pos',
@@ -546,7 +546,7 @@
                                   stroke-width="1"></path>
                         </svg>
                         <h1 x-cloak
-                            x-bind:class="!$store.sidebar.full && show ? visibleClass : '' || !$store.sidebar.full && !show ?
+                            x-bind:class="!$store.sidebar.full && !show ?
                                 'lg:hidden' : ''">
                             <a href="#"
                                class="text-decoration-none">POS</a>
@@ -561,7 +561,7 @@
                          class=" relative flex items-center hover:text-neutral-900 hover:bg-amber-200 space-x-2 rounded-md p-2 cursor-pointer"
                          x-bind:class="{
                              'justify-start': $store.sidebar.full,
-                             'md:justify-center': !$store.sidebar
+                             'justify-start': !$store.sidebar
                                  .full,
                              'text-neutral-900 bg-amber-200': $store.sidebar.active ==
                                  'prime',
@@ -631,7 +631,7 @@
                                   stroke-width="1"></path>
                         </svg>
                         <h1 x-cloak
-                            x-bind:class="!$store.sidebar.full && show ? visibleClass : '' || !$store.sidebar.full && !show ?
+                            x-bind:class="!$store.sidebar.full && !show ?
                                 'lg:hidden' : ''">
                             <a href="#"
                                class="text-decoration-none">MGIB Prime</a>
@@ -646,7 +646,7 @@
                          class=" relative flex items-center hover:text-neutral-900 hover:bg-amber-200 space-x-2 rounded-md p-2 cursor-pointer"
                          x-bind:class="{
                              'justify-start': $store.sidebar.full,
-                             'md:justify-center': !$store.sidebar
+                             'justify-start': !$store.sidebar
                                  .full,
                              'text-neutral-900 bg-amber-200': $store.sidebar.active ==
                                  'about',
@@ -712,7 +712,7 @@
                                   stroke-width="1"></path>
                         </svg>
                         <h1 x-cloak
-                            x-bind:class="!$store.sidebar.full && show ? visibleClass : '' || !$store.sidebar.full && !show ?
+                            x-bind:class="!$store.sidebar.full && !show ?
                                 'lg:hidden' : ''">
                             <a href="{{ route('static-web.about') }}"
                                class="text-decoration-none">About Us</a>
