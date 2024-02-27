@@ -144,7 +144,6 @@
                  x-cloak
                  x-bind:class="{
                      'w-64': $store.sidebar.full,
-                     'w-64 sm:w-64': !$store.sidebar.full,
                      'top-0 left-0': $store.sidebar.navOpen,
                      'top-0 -left-64 md:left-0': !$store.sidebar.navOpen
                  }">
@@ -177,8 +176,6 @@
                          class=" relative flex items-center hover:text-neutral-900 hover:bg-amber-200 space-x-2 rounded-md p-2 cursor-pointer"
                          x-bind:class="{
                              'justify-start': $store.sidebar.full,
-                             'md:justify-center': !$store.sidebar
-                                 .full,
                              'text-neutral-900 bg-amber-200': $store.sidebar.active ==
                                  'home',
                              'text-gray-400 ': $store.sidebar.active != 'home'
@@ -253,8 +250,6 @@
                              class="flex justify-between text-gray-400 hover:text-neutral-900 hover:bg-amber-200 items-center space-x-2 rounded-md p-2 cursor-pointer"
                              x-bind:class="{
                                  'justify-start': $store.sidebar.full,
-                                 'md:justify-center': !$store.sidebar
-                                     .full,
                                  'text-neutral-900 bg-amber-200': $store.sidebar.active ==
                                      'products',
                                  'text-gray-400 ': $store.sidebar.active != 'products'
@@ -371,8 +366,6 @@
                              class="flex justify-between text-gray-400 hover:text-neutral-900 hover:bg-amber-200 items-center space-x-2 rounded-md p-2 cursor-pointer"
                              x-bind:class="{
                                  'justify-start': $store.sidebar.full,
-                                 'md:justify-center': !$store.sidebar
-                                     .full,
                                  'text-neutral-900 bg-amber-200': $store.sidebar.active ==
                                      'services',
                                  'text-gray-400 ': $store.sidebar.active != 'services'
@@ -480,8 +473,6 @@
                          class=" relative flex items-center hover:text-neutral-900 hover:bg-amber-200 space-x-2 rounded-md p-2 cursor-pointer"
                          x-bind:class="{
                              'justify-start': $store.sidebar.full,
-                             'md:justify-center': !$store.sidebar
-                                 .full,
                              'text-neutral-900 bg-amber-200': $store.sidebar.active ==
                                  'pos',
                              'text-gray-400 ': $store.sidebar.active != 'pos'
@@ -561,8 +552,6 @@
                          class=" relative flex items-center hover:text-neutral-900 hover:bg-amber-200 space-x-2 rounded-md p-2 cursor-pointer"
                          x-bind:class="{
                              'justify-start': $store.sidebar.full,
-                             'md:justify-center': !$store.sidebar
-                                 .full,
                              'text-neutral-900 bg-amber-200': $store.sidebar.active ==
                                  'prime',
                              'text-gray-400 ': $store.sidebar.active != 'prime'
@@ -646,8 +635,6 @@
                          class=" relative flex items-center hover:text-neutral-900 hover:bg-amber-200 space-x-2 rounded-md p-2 cursor-pointer"
                          x-bind:class="{
                              'justify-start': $store.sidebar.full,
-                             'md:justify-center': !$store.sidebar
-                                 .full,
                              'text-neutral-900 bg-amber-200': $store.sidebar.active ==
                                  'about',
                              'text-gray-400 ': $store.sidebar.active != 'about'
