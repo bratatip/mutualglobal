@@ -141,6 +141,7 @@
 
 
             <div class="h-screen bg-white transition-all duration-300 space-y-2 fixed z-20 lg:hidden"
+                 x-cloak
                  x-bind:class="{
                      'top-0 left-0': $store.sidebar.navOpen,
                      'top-0 -left-64 md:left-0': !$store.sidebar.navOpen
