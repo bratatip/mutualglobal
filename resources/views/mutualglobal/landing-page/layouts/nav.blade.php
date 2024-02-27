@@ -877,6 +877,7 @@
                 </div>
             </div>
             <div x-show="$store.sidebar.navOpen"
+                 x-cloak
                  class="fixed top-0 right-0 h-full w-full backdrop-blur z-10"
                  @click="$store.sidebar.navOpen = false"></div>
         </div>
