@@ -28,7 +28,7 @@
         <div class="container mx-auto flex items-center justify-between">
 
             <a href="/"
-               class="focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-sm ring-offset-4 ring-offset-amber-400 xl:pl-24 px-6 z-50 hover:opacity-75 transition-opacity"
+               class="focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-md ring-offset-4 ring-offset-amber-400 xl:pl-24 px-6 z-50 hover:opacity-75 transition-opacity"
                aria-label="Go to homepage">
                 <img src="{{ asset('images/landing-page/app/brand.png') }}"
                      width="200"
@@ -38,7 +38,7 @@
 
             {{-- hamburger for small screen --}}
             {{-- <button id="menu"
-                class="lg:hidden focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-sm ring-offset-4 ring-offset-amber-400 text-neutral-900 hover:text-neutral-600 transition-colors mx-3"
+                class="lg:hidden focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-md ring-offset-4 ring-offset-amber-400 text-neutral-900 hover:text-neutral-600 transition-colors mx-3"
                 aria-expanded="false"
                 aria-label="Open Menu">
             <svg xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +54,7 @@
         </button> --}}
 
             <button @click="$store.sidebar.navOpen = !$store.sidebar.navOpen"
-                    class="sm:hidden absolute top-5 right-5 focus:outline-none">
+                    class="lg:hidden absolute top-5 right-5 focus:outline-none">
                 <!-- Menu Icons -->
                 <svg xmlns="http://www.w3.org/2000/svg"
                      class="h-6 w-6"
@@ -88,19 +88,19 @@
                  :class="{ 'bg-white transition shadow-xl': scrolledPastHeader, 'bg-[#F2F7FF]': !scrolledPastHeader }"
                  class="hidden flex-col gap-4 absolute z-40 right-0 left-0 top-16 text-center text-md px-6 xl:pr-20 items-center lg:flex lg:flex-row lg:static lg:shadow-none lg:justify-between lg:w-full">
                 <a role="menuitem"
-                   class="py-1 px-2 focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-sm ring-offset-4 ring-offset-amber-400 hover:text-amber-400 transition-colors lg:ms-auto"
+                   class="py-1 px-2 focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-md ring-offset-4 ring-offset-amber-400 hover:text-amber-400 transition-colors lg:ms-auto"
                    href="/">Home</a>
                 <a role="menuitem"
-                   class="py-1 px-2 focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-sm ring-offset-4 ring-offset-amber-400 hover:text-amber-400 transition-colors"
+                   class="py-1 px-2 focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-md ring-offset-4 ring-offset-amber-400 hover:text-amber-400 transition-colors"
                    href="#">
                     Products
                 </a>
 
                 <div x-data="{ show: false, menu: false }">
-                    {{-- <button class="text-sm text-neutral px-4 py-2 border-0 rounded-md outline-none"
+                    {{-- <button class="text-md text-neutral px-4 py-2 border-0 rounded-md outline-none"
                         x-on:click="show = ! show">Open Dropdown</button> --}}
 
-                    <button class="py-1 px-2 focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-sm ring-offset-4 ring-offset-amber-400 hover:text-amber-400 transition-colors"
+                    <button class="py-1 px-2 focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-md ring-offset-4 ring-offset-amber-400 hover:text-amber-400 transition-colors"
                             x-on:click="show = ! show">Services</button>
                     <div class="relative">
                         <div class="bg-[#e4e6e9] rounded-md p-3 min-w-max top-1 w-full absolute z-10"
@@ -110,7 +110,7 @@
                              x-transition:enter="transition ease-out duration-100"
                              x-transition:enter-start="transform opacity-0 scale-95">
                             <ul
-                                class="[&>li]:text-black [&>li]:text-sm [&>li]:cursor-pointer [&>li]:px-2 [&>li]:py-1 [&>li]:rounded-md [&>li]:transition-all hover:[&>li]:bg-amber-300 active:[&>li]:bg-amber-400 active:[&>li]:scale-[0.99]">
+                                class="[&>li]:text-black [&>li]:text-md [&>li]:cursor-pointer [&>li]:px-2 [&>li]:py-1 [&>li]:rounded-md [&>li]:transition-all hover:[&>li]:bg-amber-300 active:[&>li]:bg-amber-400 active:[&>li]:scale-[0.99]">
                                 <li><a class=""
                                        href="{{ route('client.index') }}">Health Card</a></li>
                                 <li><a class=""
@@ -125,13 +125,13 @@
                     </div>
                 </div>
                 <a role="menuitem"
-                   class="py-1 px-2 focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-sm ring-offset-4 ring-offset-amber-400 hover:text-amber-400 transition-colors"
+                   class="py-1 px-2 focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-md ring-offset-4 ring-offset-amber-400 hover:text-amber-400 transition-colors"
                    href="#">
                     POS
                 </a>
 
                 <a role="menuitem"
-                   class="py-1 px-2 focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-sm ring-offset-4 ring-offset-amber-400 hover:text-amber-400 transition-colors"
+                   class="py-1 px-2 focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-md ring-offset-4 ring-offset-amber-400 hover:text-amber-400 transition-colors"
                    href="#">
                     MGIB Prime
                 </a>
@@ -140,13 +140,13 @@
             {{-- Mobile Side Bar --}}
 
 
-            <div class="h-screen bg-white transition-all duration-300 space-y-2 fixed sm:relative z-20"
+            <div class="h-screen bg-white transition-all duration-300 space-y-2 fixed md:relative z-20 lg:hidden"
                  x-bind:class="{
                      'w-64': $store.sidebar.full,
-                     'w-64 sm:w-20': !$store.sidebar.full,
+                     'w-64 md:w-20': !$store.sidebar.full,
                      'top-0 left-0': $store.sidebar
                          .navOpen,
-                     'top-0 -left-64 sm:left-0': !$store.sidebar.navOpen
+                     'top-0 -left-64 md:left-0': !$store.sidebar.navOpen
                  }">
 
                 <h1 class="text-white font-black py-4"
@@ -158,7 +158,7 @@
 
                     <!-- SideBar Toggle -->
                     <button @click="$store.sidebar.full = !$store.sidebar.full"
-                            class="hidden sm:block focus:outline-none absolute p-1 -right-3 top-10 bg-gray-900 rounded-full shadow-md">
+                            class="hidden md:block focus:outline-none absolute p-1 -right-3 top-10 bg-gray-900 rounded-full shadow-md">
                         <svg xmlns="http://www.w3.org/2000/svg"
                              class="h-4 w-4 transition-all duration-300 text-white transform"
                              x-bind:class="$store.sidebar.full ? 'rotate-90' : '-rotate-90 '"
@@ -177,7 +177,7 @@
                          class=" relative flex items-center hover:text-neutral-900 hover:bg-amber-200 space-x-2 rounded-md p-2 cursor-pointer"
                          x-bind:class="{
                              'justify-start': $store.sidebar.full,
-                             'sm:justify-center': !$store.sidebar
+                             'md:justify-center': !$store.sidebar
                                  .full,
                              'text-neutral-900 bg-amber-200': $store.sidebar.active ==
                                  'home',
@@ -236,7 +236,7 @@
                         </svg>
                         <h1 x-cloak
                             x-bind:class="!$store.sidebar.full && show ? visibleClass : '' || !$store.sidebar.full && !show ?
-                                'sm:hidden' : ''">
+                                'lg:hidden' : ''">
                             <a href="/"
                                class="text-decoration-none">Home</a>
                         </h1>
@@ -253,7 +253,7 @@
                              class="flex justify-between text-gray-400 hover:text-neutral-900 hover:bg-amber-200 items-center space-x-2 rounded-md p-2 cursor-pointer"
                              x-bind:class="{
                                  'justify-start': $store.sidebar.full,
-                                 'sm:justify-center': !$store.sidebar
+                                 'md:justify-center': !$store.sidebar
                                      .full,
                                  'text-neutral-900 bg-amber-200': $store.sidebar.active ==
                                      'products',
@@ -331,13 +331,13 @@
                                 </svg>
                                 <h1 x-cloak
                                     x-bind:class="!$store.sidebar.full && show ? visibleClass : '' || !$store.sidebar.full && !show ?
-                                        'sm:hidden' : ''">
+                                        'lg:hidden' : ''">
                                     <a href="#"
                                        class="text-decoration-none">Products</a>
                                 </h1>
                             </div>
                             <svg x-cloak
-                                 x-bind:class="$store.sidebar.full ? '' : 'sm:hidden'"
+                                 x-bind:class="$store.sidebar.full ? '' : 'lg:hidden'"
                                  xmlns="http://www.w3.org/2000/svg"
                                  class="h-4 w-4"
                                  viewBox="0 0 20 20"
@@ -371,7 +371,7 @@
                              class="flex justify-between text-gray-400 hover:text-neutral-900 hover:bg-amber-200 items-center space-x-2 rounded-md p-2 cursor-pointer"
                              x-bind:class="{
                                  'justify-start': $store.sidebar.full,
-                                 'sm:justify-center': !$store.sidebar
+                                 'md:justify-center': !$store.sidebar
                                      .full,
                                  'text-neutral-900 bg-amber-200': $store.sidebar.active ==
                                      'services',
@@ -443,11 +443,11 @@
                                 </svg>
                                 <h1 x-cloak
                                     x-bind:class="!$store.sidebar.full && show ? visibleClass : '' || !$store.sidebar.full && !show ?
-                                        'sm:hidden' : ''">
+                                        'lg:hidden' : ''">
                                     Services</h1>
                             </div>
                             <svg x-cloak
-                                 x-bind:class="$store.sidebar.full ? '' : 'sm:hidden'"
+                                 x-bind:class="$store.sidebar.full ? '' : 'lg:hidden'"
                                  xmlns="http://www.w3.org/2000/svg"
                                  class="h-4 w-4"
                                  viewBox="0 0 20 20"
@@ -480,7 +480,7 @@
                          class=" relative flex items-center hover:text-neutral-900 hover:bg-amber-200 space-x-2 rounded-md p-2 cursor-pointer"
                          x-bind:class="{
                              'justify-start': $store.sidebar.full,
-                             'sm:justify-center': !$store.sidebar
+                             'md:justify-center': !$store.sidebar
                                  .full,
                              'text-neutral-900 bg-amber-200': $store.sidebar.active ==
                                  'pos',
@@ -547,7 +547,7 @@
                         </svg>
                         <h1 x-cloak
                             x-bind:class="!$store.sidebar.full && show ? visibleClass : '' || !$store.sidebar.full && !show ?
-                                'sm:hidden' : ''">
+                                'lg:hidden' : ''">
                             <a href="#"
                                class="text-decoration-none">POS</a>
                         </h1>
@@ -561,7 +561,7 @@
                          class=" relative flex items-center hover:text-neutral-900 hover:bg-amber-200 space-x-2 rounded-md p-2 cursor-pointer"
                          x-bind:class="{
                              'justify-start': $store.sidebar.full,
-                             'sm:justify-center': !$store.sidebar
+                             'md:justify-center': !$store.sidebar
                                  .full,
                              'text-neutral-900 bg-amber-200': $store.sidebar.active ==
                                  'prime',
@@ -632,7 +632,7 @@
                         </svg>
                         <h1 x-cloak
                             x-bind:class="!$store.sidebar.full && show ? visibleClass : '' || !$store.sidebar.full && !show ?
-                                'sm:hidden' : ''">
+                                'lg:hidden' : ''">
                             <a href="#"
                                class="text-decoration-none">MGIB Prime</a>
                         </h1>
@@ -646,7 +646,7 @@
                          class=" relative flex items-center hover:text-neutral-900 hover:bg-amber-200 space-x-2 rounded-md p-2 cursor-pointer"
                          x-bind:class="{
                              'justify-start': $store.sidebar.full,
-                             'sm:justify-center': !$store.sidebar
+                             'md:justify-center': !$store.sidebar
                                  .full,
                              'text-neutral-900 bg-amber-200': $store.sidebar.active ==
                                  'about',
@@ -713,7 +713,7 @@
                         </svg>
                         <h1 x-cloak
                             x-bind:class="!$store.sidebar.full && show ? visibleClass : '' || !$store.sidebar.full && !show ?
-                                'sm:hidden' : ''">
+                                'lg:hidden' : ''">
                             <a href="{{ route('static-web.about') }}"
                                class="text-decoration-none">About Us</a>
                         </h1>
@@ -730,7 +730,7 @@
                              x-on:mouseover="show = true"
                              x-on:mouseleave="show = false"
                              class="flex justify-between text-gray-400 hover:text-amber-200 hover:bg-gray-800 items-center space-x-2 rounded-md p-2 cursor-pointer"
-                             x-bind:class="{ 'justify-start': $store.sidebar.full, 'sm:justify-center': !$store.sidebar
+                             x-bind:class="{ 'justify-start': $store.sidebar.full, 'md:justify-center': !$store.sidebar
                                  .full, 'text-gray-200 bg-gray-800': $store.sidebar.active ==
                                  'income', 'text-gray-400 ': $store.sidebar.active != 'income' }">
                             <div class="relative flex space-x-2 items-center">
@@ -750,11 +750,11 @@
                                 </svg>
                                 <h1 x-cloak
                                     x-bind:class="!$store.sidebar.full && show ? visibleClass : '' || !$store.sidebar.full && !show ?
-                                        'sm:hidden' : ''">
+                                        'md:hidden' : ''">
                                     Services</h1>
                             </div>
                             <svg x-cloak
-                                 x-bind:class="$store.sidebar.full ? '' : 'sm:hidden'"
+                                 x-bind:class="$store.sidebar.full ? '' : 'md:hidden'"
                                  xmlns="http://www.w3.org/2000/svg"
                                  class="h-4 w-4"
                                  viewBox="0 0 20 20"
@@ -805,7 +805,7 @@
                          x-on:mouseover="show = true"
                          x-on:mouseleave="show = false"
                          class=" relative flex justify-between items-center text-gray-400 hover:text-gray-200 hover:bg-gray-800 space-x-2 rounded-md p-2 cursor-pointer"
-                         x-bind:class="{ 'justify-start': $store.sidebar.full, 'sm:justify-center': !$store.sidebar
+                         x-bind:class="{ 'justify-start': $store.sidebar.full, 'md:justify-center': !$store.sidebar
                              .full, 'text-gray-200 bg-gray-800': $store.sidebar.active ==
                              'posts', 'text-gray-400 ': $store.sidebar.active != 'posts' }">
                         <div class="flex  items-center space-x-2">
@@ -821,12 +821,12 @@
                             </svg>
                             <h1 x-cloak
                                 x-bind:class="!$store.sidebar.full && show ? visibleClass : '' || !$store.sidebar.full && !show ?
-                                    'sm:hidden' : ''">
+                                    'md:hidden' : ''">
                                 Posts</h1>
                         </div>
                         <h1 x-cloak
-                            x-bind:class="$store.sidebar.full ? '' : 'sm:hidden'"
-                            class="w-5 h-5 p-1 bg-green-400 rounded-sm text-sm leading-3 text-center text-gray-900">8
+                            x-bind:class="$store.sidebar.full ? '' : 'md:hidden'"
+                            class="w-5 h-5 p-1 bg-green-400 rounded-md text-md leading-3 text-center text-gray-900">8
                         </h1>
                     </div> --}}
 
@@ -836,7 +836,7 @@
                          x-on:mouseover="show = true"
                          x-on:mouseleave="show = false"
                          class=" relative flex justify-between items-center text-gray-400 hover:text-gray-200 hover:bg-gray-800 space-x-2 rounded-md p-2 cursor-pointer"
-                         x-bind:class="{ 'justify-start': $store.sidebar.full, 'sm:justify-center': !$store.sidebar
+                         x-bind:class="{ 'justify-start': $store.sidebar.full, 'md:justify-center': !$store.sidebar
                              .full, 'text-gray-200 bg-gray-800': $store.sidebar.active ==
                              'schedules', 'text-gray-400 ': $store.sidebar.active != 'schedules' }">
                         <div class="flex  items-center space-x-2">
@@ -852,11 +852,11 @@
                             </svg>
                             <h1 x-cloak
                                 x-bind:class="!$store.sidebar.full && show ? visibleClass : '' || !$store.sidebar.full && !show ?
-                                    'sm:hidden' : ''">
+                                    'md:hidden' : ''">
                                 Schedules</h1>
                         </div>
                         <div x-cloak
-                             x-bind:class="$store.sidebar.full ? '' : 'sm:hidden'"
+                             x-bind:class="$store.sidebar.full ? '' : 'md:hidden'"
                              class="flex items-center space-x-2">
                             <svg xmlns="http://www.w3.org/2000/svg"
                                  class="h-6 w-6"
@@ -868,7 +868,7 @@
                                       stroke-width="1"
                                       d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-                            <h1 class="w-5 h-5 p-1 bg-pink-400 rounded-sm text-sm leading-3 text-center text-gray-900">
+                            <h1 class="w-5 h-5 p-1 bg-pink-400 rounded-md text-md leading-3 text-center text-gray-900">
                                 3
                             </h1>
 
@@ -896,9 +896,9 @@
                     this.open = !this.open;
                     Alpine.store('sidebar').active = tab;
                 },
-                activeClass: 'bg-gray-800 text-gray-200',
+                activeClass: 'bg-amber-800 text-gray-200',
                 expandedClass: 'border-l border-gray-400 ml-4 pl-4',
-                shrinkedClass: 'sm:absolute top-0 left-20 sm:shadow-md sm:z-10 sm:bg-gray-900 sm:rounded-md sm:p-4 border-l sm:border-none border-gray-400 ml-4 pl-4 sm:ml-0 w-28'
+                shrinkedClass: 'md:absolute top-0 left-20 md:shadow-md md:z-10 md:bg-gray-900 md:rounded-md md:p-4 border-l md:border-none border-gray-400 ml-4 pl-4 md:ml-0 w-28'
             }));
             // Creating component Sub Dropdown
             Alpine.data('sub_dropdown', () => ({
@@ -907,12 +907,12 @@
                     this.sub_open = !this.sub_open;
                 },
                 sub_expandedClass: 'border-l border-gray-400 ml-4 pl-4',
-                sub_shrinkedClass: 'sm:absolute top-0 left-28 sm:shadow-md sm:z-10 sm:bg-gray-900 sm:rounded-md sm:p-4 border-l sm:border-none border-gray-400 ml-4 pl-4 sm:ml-0 w-28'
+                sub_shrinkedClass: 'md:absolute top-0 left-28 md:shadow-md md:z-10 md:bg-gray-900 md:rounded-md md:p-4 border-l md:border-none border-gray-400 ml-4 pl-4 md:ml-0 w-28'
             }));
             // Creating tooltip
             Alpine.data('tooltip', () => ({
                 show: false,
-                visibleClass: 'block sm:absolute -top-7 sm:border border-gray-800 left-5 sm:text-sm sm:bg-gray-900 sm:px-2 sm:py-1 sm:rounded-md'
+                visibleClass: 'block md:absolute -top-7 md:border border-gray-800 left-5 md:text-md md:bg-gray-900 md:px-2 md:py-1 md:rounded-md'
             }))
 
         })
