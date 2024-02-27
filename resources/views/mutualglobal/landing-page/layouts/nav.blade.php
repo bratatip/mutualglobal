@@ -736,7 +736,8 @@
             Alpine.store('sidebar', {
                 full: false,
                 active: 'home',
-                navOpen: false
+                navOpen: false,
+                previousScrollTop: 0
             });
             // Creating component Dropdown
             Alpine.data('dropdown', () => ({
@@ -764,5 +765,34 @@
                 visibleClass: 'block md:absolute -top-7 md:border border-gray-800 left-5 md:text-md md:bg-gray-900 md:px-2 md:py-1 md:rounded-md'
             }))
 
-        })
+            // Alpine.effect(() => {
+            //     const body = document.body;
+            //     if (Alpine.store('sidebar').navOpen) {
+            //         body.classList.add('fixed');
+            //     } else {
+            //         body.classList.remove('fixed');
+            //     }
+            // });
+
+            Alpine.effect(() => {
+                const body = document.body;
+                const sidebar = Alpine.store('sidebar');
+
+                if (sidebar.navOpen) {
+                    // Store the current scroll position
+                    sidebar.previousScrollTop = window.scrollY;
+
+                    // Scroll to the top
+                    window.scrollTo(0, 0);
+
+                    body.classList.add('fixed');
+                } else {
+                    // Remove the fixed class
+                    body.classList.remove('fixed');
+
+                    // Scroll back to the previous position
+                    window.scrollTo(0, sidebar.previousScrollTop);
+                }
+            });
+        });
     </script>
