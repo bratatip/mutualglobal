@@ -5,9 +5,9 @@
             display: none;
         }
 
-        .backdrop-blur {
+        /* .backdrop-blur {
             backdrop-filter: blur(10px);
-        }
+        } */
     </style>
 
     <nav x-data="{ scrolledPastHeader: false }"
@@ -143,6 +143,8 @@
             <div class="h-screen bg-white transition-all duration-300 space-y-2 fixed z-20 lg:hidden"
                  x-cloak
                  x-bind:class="{
+                     'w-64': $store.sidebar.full,
+                     'w-64 sm:w-64': !$store.sidebar.full,
                      'top-0 left-0': $store.sidebar.navOpen,
                      'top-0 -left-64 md:left-0': !$store.sidebar.navOpen
                  }">
@@ -721,7 +723,10 @@
             </div>
             <div x-show="$store.sidebar.navOpen"
                  x-cloak
-                 class="fixed top-0 right-0 h-full w-full backdrop-blur z-10"
+                 class="fixed top-0 right-0 h-full w-full z-10 lg:hidden"
+                 x-bind:class="{
+                     'backdrop-blur': $store.sidebar.navOpen,
+                 }"
                  @click="$store.sidebar.navOpen = false"></div>
         </div>
     </nav>
