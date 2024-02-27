@@ -146,7 +146,7 @@
                      'w-64': $store.sidebar.full,
                      'w-64 sm:w-64': !$store.sidebar.full,
                      'top-0 left-0': $store.sidebar.navOpen,
-                     'top-0 -left-64 md:left-0': !$store.sidebar.navOpen
+                     'top-0 -left-64': !$store.sidebar.navOpen
                  }">
 
                 <h1 class="text-white font-black py-4"
