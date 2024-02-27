@@ -144,6 +144,7 @@
                  x-cloak
                  x-bind:class="{
                      'w-64': $store.sidebar.full,
+                     'w-64 sm:w-64': !$store.sidebar.full,
                      'top-0 left-0': $store.sidebar.navOpen,
                      'top-0 -left-64 md:left-0': !$store.sidebar.navOpen
                  }">
@@ -176,6 +177,8 @@
                          class=" relative flex items-center hover:text-neutral-900 hover:bg-amber-200 space-x-2 rounded-md p-2 cursor-pointer"
                          x-bind:class="{
                              'justify-start': $store.sidebar.full,
+                             'md:justify-center': !$store.sidebar
+                                 .full,
                              'text-neutral-900 bg-amber-200': $store.sidebar.active ==
                                  'home',
                              'text-gray-400 ': $store.sidebar.active != 'home'
@@ -250,6 +253,8 @@
                              class="flex justify-between text-gray-400 hover:text-neutral-900 hover:bg-amber-200 items-center space-x-2 rounded-md p-2 cursor-pointer"
                              x-bind:class="{
                                  'justify-start': $store.sidebar.full,
+                                 'md:justify-center': !$store.sidebar
+                                     .full,
                                  'text-neutral-900 bg-amber-200': $store.sidebar.active ==
                                      'products',
                                  'text-gray-400 ': $store.sidebar.active != 'products'
@@ -366,6 +371,8 @@
                              class="flex justify-between text-gray-400 hover:text-neutral-900 hover:bg-amber-200 items-center space-x-2 rounded-md p-2 cursor-pointer"
                              x-bind:class="{
                                  'justify-start': $store.sidebar.full,
+                                 'md:justify-center': !$store.sidebar
+                                     .full,
                                  'text-neutral-900 bg-amber-200': $store.sidebar.active ==
                                      'services',
                                  'text-gray-400 ': $store.sidebar.active != 'services'
@@ -473,6 +480,8 @@
                          class=" relative flex items-center hover:text-neutral-900 hover:bg-amber-200 space-x-2 rounded-md p-2 cursor-pointer"
                          x-bind:class="{
                              'justify-start': $store.sidebar.full,
+                             'md:justify-center': !$store.sidebar
+                                 .full,
                              'text-neutral-900 bg-amber-200': $store.sidebar.active ==
                                  'pos',
                              'text-gray-400 ': $store.sidebar.active != 'pos'
@@ -552,6 +561,8 @@
                          class=" relative flex items-center hover:text-neutral-900 hover:bg-amber-200 space-x-2 rounded-md p-2 cursor-pointer"
                          x-bind:class="{
                              'justify-start': $store.sidebar.full,
+                             'md:justify-center': !$store.sidebar
+                                 .full,
                              'text-neutral-900 bg-amber-200': $store.sidebar.active ==
                                  'prime',
                              'text-gray-400 ': $store.sidebar.active != 'prime'
@@ -635,6 +646,8 @@
                          class=" relative flex items-center hover:text-neutral-900 hover:bg-amber-200 space-x-2 rounded-md p-2 cursor-pointer"
                          x-bind:class="{
                              'justify-start': $store.sidebar.full,
+                             'md:justify-center': !$store.sidebar
+                                 .full,
                              'text-neutral-900 bg-amber-200': $store.sidebar.active ==
                                  'about',
                              'text-gray-400 ': $store.sidebar.active != 'about'
@@ -734,7 +747,7 @@
                 },
                 activeClass: 'bg-amber-800 text-gray-200',
                 expandedClass: 'border-l border-gray-400 ml-4 pl-4',
-                shrinkedClass: 'lg:absolute top-0 left-20 lg:shadow-md lg:z-10 lg:bg-gray-900 lg:rounded-md lg:p-4 border-l lg:border-none border-gray-400 ml-4 pl-4 lg:ml-0 w-28'
+                shrinkedClass: 'md:absolute top-0 left-20 md:shadow-md md:z-10 md:bg-gray-900 md:rounded-md md:p-4 border-l md:border-none border-gray-400 ml-4 pl-4 md:ml-0 w-28'
             }));
             // Creating component Sub Dropdown
             Alpine.data('sub_dropdown', () => ({
@@ -743,12 +756,12 @@
                     this.sub_open = !this.sub_open;
                 },
                 sub_expandedClass: 'border-l border-gray-400 ml-4 pl-4',
-                sub_shrinkedClass: 'lg:absolute top-0 left-28 lg:shadow-md lg:z-10 lg:bg-gray-900 lg:rounded-md lg:p-4 border-l lg:border-none border-gray-400 ml-4 pl-4 lg:ml-0 w-28'
+                sub_shrinkedClass: 'md:absolute top-0 left-28 md:shadow-md md:z-10 md:bg-gray-900 md:rounded-md md:p-4 border-l md:border-none border-gray-400 ml-4 pl-4 md:ml-0 w-28'
             }));
             // Creating tooltip
             Alpine.data('tooltip', () => ({
                 show: false,
-                visibleClass: 'block lg:absolute -top-7 lg:border border-gray-800 left-5 lg:text-md lg:bg-gray-900 lg:px-2 lg:py-1 lg:rounded-md'
+                visibleClass: 'block md:absolute -top-7 md:border border-gray-800 left-5 md:text-md md:bg-gray-900 md:px-2 md:py-1 md:rounded-md'
             }))
 
         })
