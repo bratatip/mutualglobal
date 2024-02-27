@@ -561,7 +561,7 @@
 @endpush
 
 @push('page_scripts')
-    <script>
+    {{-- <script>
         const sr = ScrollReveal({
             origin: "bottom",
             distance: "80px",
@@ -604,7 +604,7 @@
             delay: 600,
             interval: 200,
         });
-    </script>
+    </script> --}}
 @endpush
 
 @push('page_css')
