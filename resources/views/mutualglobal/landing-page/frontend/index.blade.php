@@ -210,7 +210,7 @@
                         <div
                              class="container mx-auto max-w-4xl flex gap-6 flex-wrap items-start justify-between md:justify-between">
                             <div class="product_items flex gap-10 justify-center text-center md:flex-1">
-                                <a href="https://web.mutualglobal.com/two-wheeler-insurance/"
+                                <a href="https://web.mutualglobal.com/two-wheeler-insurance/#/"
                                    class="text-decoration-none">
                                     <div
                                          class="border border-gray-200 rounded shadow-lg bg-[#F2F7FF] p-1 w-52 h-28 flex-shrink-0">
@@ -221,7 +221,7 @@
                                     <p class="text-sm font-bold text-slate-600 mt-4">Two Wheeler</p>
                                 </a>
 
-                                <a href="https://web.mutualglobal.com/car-insurance/"
+                                <a href="https://web.mutualglobal.com/car-insurance/#/"
                                    class="flex-shrink-0">
                                     <div class="border border-gray-200 rounded shadow-lg bg-[#F2F7FF] p-1 w-52 h-28">
                                         <img src="{{ asset('images/landing-page/services/4w.png') }}"
