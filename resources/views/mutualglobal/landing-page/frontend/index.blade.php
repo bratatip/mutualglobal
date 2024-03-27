@@ -313,7 +313,7 @@
 
 
                 <div class="product_items grid gap-4 justify-items-center text-center md:flex-1">
-                    <a href="http://uatweb.mutualglobal.com/two-wheeler-insurance/"
+                    <a href="https://web.mutualglobal.com/two-wheeler-insurance/#/"
                        class="text-decoration-none">
                         <div class="rounded shadow-lg bg-[#F2F7FF] p-1 w-32 h-20">
                             <img src="{{ asset('images/landing-page/services/2w.png') }}"
@@ -328,7 +328,7 @@
                 </div>
 
                 <div class="product_items grid gap-4 justify-items-center text-center md:flex-1">
-                    <a href="http://uatweb.mutualglobal.com/car-insurance/">
+                    <a href="https://web.mutualglobal.com/car-insurance/#/">
                         <div class="rounded shadow-lg bg-[#F2F7FF] p-1 w-32 h-20">
                             <img src="{{ asset('images/landing-page/services/4w.png') }}"
                                  class="w-full h-full object-contain"
