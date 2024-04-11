@@ -35,6 +35,7 @@ class StaticWebController extends Controller
 
     public function privacyPolicyPageView()
     {
-        return view('a-mgib-static.privacy_policy');
+        // return view('a-mgib-static.privacy_policy');
+        return view('mutualglobal.landing-page.frontend.privacy_policy');
     }
 }

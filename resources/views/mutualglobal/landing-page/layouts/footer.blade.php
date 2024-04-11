@@ -170,8 +170,7 @@
                 <li class="my-4 list-none text-sm">
                     <i class="fa-solid fa-chevron-right fa-fade-slow fa-sm me-1"
                        style="color: #ffd43b"></i>
-                    <a href="#"
-                       onclick="return false;"
+                    <a href="{{ route('static-web.privacy_policy') }}"
                        class="hover:text-amber-400">Privacy Policy</a>
                 </li>
             </ul>
