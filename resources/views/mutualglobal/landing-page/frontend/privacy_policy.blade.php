@@ -7,7 +7,7 @@
 @section('content')
 
 
-    <div class="container pt-[100px] px-[50px]">
+    <div class="container pt-[100px] px-[50px] select-none">
         <p>This privacy policy sets out how we use and protects any information that you give to Mutual
             Global Insurance Broking Pvt Ltd when you use this website.</p>
         <p>Mutual Global Insurance Broking Pvt Ltd is committed to protecting and respecting your privacy.
@@ -97,7 +97,7 @@
     </div>
 @endsection
 <style>
-    h4{
+    h4 {
         font-weight: bolder !important;
         text-decoration: underline;
     }
