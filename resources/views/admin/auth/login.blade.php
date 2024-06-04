@@ -13,7 +13,7 @@
             <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
                 <form class="space-y-6"
                     id="login-form"
-                    action="{{ route('admin.doLogin') }}"
+                    action="{{ route('doLogin') }}"
                     method="POST">
                     @csrf
                     @method('post')
@@ -100,7 +100,7 @@
                 var formData = $('#login-form').serialize();
 
                 $.ajax({
-                    url: "{{ route('admin.doLogin') }}",
+                    url: "{{ route('doLogin') }}",
                     type: "POST",
                     data: formData,
                     dataType: "json",

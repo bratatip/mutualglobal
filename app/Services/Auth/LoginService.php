@@ -44,21 +44,35 @@ class LoginService
             Cookie::queue(Cookie::forget('email'));
             Cookie::queue(Cookie::forget('password'));
         }
+        // dd($user->role->name);
+        // // Check user roles and redirect accordingly
+        // if ($user->hasRole('admin')) {
+        //     // $routeName = 'admin.import-uhid-form';
+        //     $routeName = '/admin/import-uhid-form';
+        // } elseif ($user->hasRole('employee')) {
+        //     if (Auth::check()) {
+        //         Auth::logout();
+        //     }
+        //     return ['success' => false, 'message' => 'You do not have the required role to access this page.'];
+        // } else {
+        //     if (Auth::check()) {
+        //         Auth::logout();
+        //     }
+        //     return ['success' => false, 'message' => 'You do not have the required role to access this page.'];
+        // }
 
-        // Check user roles and redirect accordingly
-        if ($user->hasRole('admin')) {
-            // $routeName = 'admin.import-uhid-form';
-            $routeName = '/admin/import-uhid-form';
-        } elseif ($user->hasRole('employee')) {
-            if (Auth::check()) {
+        switch ($user->role->name) {
+            case 'admin':
+                // $redirectTo = '/admin/dashboard';
+                // $routeName = 'Admin.dashboard';
+                $routeName = '/admin/dashboard';
+                break;
+            case 'client':
+                $routeName = '/client/dashboard';
+                break;
+            default:
                 Auth::logout();
-            }
-            return ['success' => false, 'message' => 'You do not have the required role to access this page.'];
-        } else {
-            if (Auth::check()) {
-                Auth::logout();
-            }
-            return ['success' => false, 'message' => 'You do not have the required role to access this page.'];
+                return ['success' => false, 'message' => 'You do not have the required role to access this page.'];
         }
 
         return ['success' => true, 'routeName' => $routeName];

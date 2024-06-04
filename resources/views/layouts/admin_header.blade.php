@@ -15,17 +15,17 @@
                     <x-forms.button type="link"
                         text="Import Uhids"
                         class="py-4 px-2 text-gray-500 font-semibold hover:text-[#FFC451] transition duration-300 no-underline "
-                        href="{{ route('admin.import-uhid-form') }}" />
+                        href="{{ route('Admin.import-uhid-form') }}" />
 
                     <x-forms.button type="link"
                         text="Delete Uhids"
                         class="py-4 px-2 text-gray-500 font-semibold hover:text-[#FFC451] transition duration-300 no-underline"
-                        href="{{ route('admin.delete-uhid-form') }}" />
+                        href="{{ route('Admin.delete-uhid-form') }}" />
 
                     <div class="flex mr-2 text-white text-lg items-center transition duration-300 no-underline">
                         {{ auth()->user()->name }}
                     </div>
-                    <a href="{{ route('logOut') }}"
+                    <a href="{{ route('logout') }}"
                         class="bg-transparent text-white rounded-full transition duration-300"><img
                             src="{{ asset('images/logout.png') }}"
                             width="15px"
@@ -54,13 +54,13 @@
         <!-- mobile menu -->
         <div class="hidden mobile-menu">
             <ul class="">
-                <li class="active"><a href="{{ route('admin.import-uhid-form') }}"
+                <li class="active"><a href="{{ route('Admin.import-uhid-form') }}"
                         class="block text-md px-2 py-4 text-white bg-[#FFC451] font-semibold no-underline">Import
                         Uhids</a></li>
-                <li><a href="{{ route('admin.delete-uhid-form') }}"
+                <li><a href="{{ route('Admin.delete-uhid-form') }}"
                         class="block text-md px-2 py-4 text-white hover:bg-[#FFC451] transition duration-300 no-underline">Delete
                         Uhids</a></li>
-                <li><a href="{{ route('logOut') }}"
+                <li><a href="{{ route('logout') }}"
                         class="block text-md px-2 py-4 text-white hover:bg-[#FFC451] transition duration-300 no-underline">Log
                         Out</a></li>
             </ul>

@@ -11,6 +11,13 @@ use Illuminate\Http\Request;
 
 class ClientController extends Controller
 {
+    public function showDashboard(){
+        return view('client.dashboard.index');
+    }
+
+    public function showPolicy(){
+        return view('client.policy.index');
+    }
 
     public function clientIndex()
     {

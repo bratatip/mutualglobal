@@ -11,7 +11,7 @@
         </div>
         <div class="flex justify-center">
             <form class="space-y-6"
-                action="{{ route('admin.downloadSampleCSVForDelete') }}"
+                action="{{ route('Admin.downloadSampleCSVForDelete') }}"
                 method="POST">
                 @csrf
                 @method('post')
@@ -78,7 +78,7 @@
 
             $.ajax({
                 type: 'POST',
-                url: "{{ route('admin.delete-uhid') }}",
+                url: "{{ route('Admin.delete-uhid') }}",
                 data: formData,
                 contentType: false,
                 processData: false,
