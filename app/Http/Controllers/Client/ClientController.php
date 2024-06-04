@@ -19,6 +19,10 @@ class ClientController extends Controller
         return view('client.policy.index');
     }
 
+    public function clientPolicyTableJson(){
+        
+    }
+
     public function clientIndex()
     {
         return view('client.index');

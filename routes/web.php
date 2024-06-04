@@ -70,6 +70,9 @@ Route::prefix('client')->name('Client.')->group(function () {
 
       # Policy route
       Route::get('/policy', [ClientController::class, 'showPolicy'])->name('policy');
+
+      # Policy route
+      Route::get('/policy-table-json', [ClientController::class, 'clientPolicyTableJson'])->name('clientPolicyTableJson');
 });
 
 

@@ -30,6 +30,10 @@
         "jquery": "^3.7.1",
         "scrollreveal": "^4.0.9",
         "select2": "^4.1.0-rc.0",
-        "toastr": "^2.1.4"
+        "toastr": "^2.1.4",
+        "datatables.net": "^1.13.1",
+        "datatables.net-bs5": "^1.13.1",
+        "datatables.net-buttons-bs5": "^2.3.3",
+        "datatables.net-dt": "^1.13.1"
     }
 }
