@@ -4,23 +4,36 @@ namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Uhid;
+use App\Models\ClientPolicy;
 use Illuminate\Support\Str;
 use Barryvdh\DomPDF\Facade\Pdf as PDF;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Http\Request;
+use Yajra\DataTables\Facades\DataTables;
 
 class ClientController extends Controller
 {
-    public function showDashboard(){
+    public function showDashboard()
+    {
         return view('client.dashboard.index');
     }
 
-    public function showPolicy(){
+    public function showPolicy()
+    {
         return view('client.policy.index');
     }
 
-    public function clientPolicyTableJson(){
-        
+    public function clientPolicyTableJson()
+    {
+        $data = ClientPolicy::with('insurer')->where('customer_id', auth()->user()->id)->get();
+        return DataTables::of($data)
+            ->addIndexColumn()
+            ->addColumn('action', function ($row) {
+                // Construct and return the HTML for the action button
+                return '<button class="btn btn-primary">Generate Invoice for ' . $row->id . '</button>';
+            })
+            ->rawColumns(['action'])
+            ->make(true);
     }
 
     public function clientIndex()

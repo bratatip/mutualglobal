@@ -40,9 +40,7 @@
 
 
     @if (auth()->check() && auth()->user()->hasRole('client'))
-        <div>
-            @include('client.layouts.side_bar')
-        </div>
+        @include('client.layouts.side_bar')
     @endif
 
     <main class="flex-grow content-area-width">
@@ -65,9 +63,11 @@
 </body>
 
 <style>
-    .content-area-width {
-        width: calc(100vw - 8rem);
-        margin-left: 8rem;
+    @media screen and (min-width: 768px) {
+        .content-area-width {
+            width: calc(100vw - 8rem);
+            margin-left: 8rem;
+        }
     }
 </style>
 

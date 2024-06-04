@@ -3,3 +3,5 @@
 
 <link href="{{ asset('css/atom-spinner.css') }}" rel="stylesheet">
 
+<link href="{{ asset('css/atom-spinner.css') }}" rel="stylesheet">
+

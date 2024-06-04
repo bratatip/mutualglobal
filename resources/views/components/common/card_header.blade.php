@@ -1,12 +1,12 @@
 <div>
 
     <div class="flex justify-between  p-5 max-md:items-center mob_relative">
-        <button class="hamburger_icon lg:hidden"
+        {{-- <button class="hamburger_icon lg:hidden"
                 data-toggle="collapse"
                 data-target="#mysidemenu"
                 class="navbar-brand"
                 style="font-size:30;cursor:pointer;padding:10px; padding-top:3px; width:20px; color: #0F628B;"
-                onclick="openNav()"></button>
+                onclick="openNav()"></button> --}}
 
 
 
@@ -28,13 +28,14 @@
 
         <div class="mb-2 text-[#0F628B] text-xs flex justify-end md:w-[100%] max-md:w-full">
             <div class="flex items-center mr-2 gap-4">
-                <small>Member since {{ Auth::user()->created_at->format('d M. Y') }}</small>
+                <p class="hidden md:block">
+                    <small>Member since {{ Auth::user()->created_at->format('d M. Y') }}</small>
+                </p>
                 <p class="font-bold ">
                     {{ Auth::user()->name }}
                 </p>
             </div>
             <div class="text-center md-w[15%]">
-
                 <button
                         class="logout_button block px-6  py-2 border border-solid rounded-2xl bg-[#F5F5F5] text-xs text-[#0F628B] hover:bg-gray-200 ml-2 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white font-bold shadow-xl ">
                     Logout
@@ -62,7 +63,8 @@
         <div class="modal-content py-4 text-left px-6">
 
             <div class="flex justify-end">
-                <p class="modal-close cursor-pointer px-3 py-1 bg-[#F5F5F5] hover:text-red-500 rounded-full shadow-xl">x</p>
+                <p class="modal-close cursor-pointer px-3 py-1 bg-[#F5F5F5] hover:text-red-500 rounded-full shadow-xl">x
+                </p>
             </div>
 
             <div class="mt-[150px] max-md:mt-[10px]"></div>

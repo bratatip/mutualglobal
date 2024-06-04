@@ -3,18 +3,24 @@ const mix = require("laravel-mix");
 mix.copyDirectory("resources/assets", "public/assets")
     .copy("resources/images", "public/images")
     .js("resources/js/app.js", "public/js")
+    .sass("resources/sass/app.scss", "public/css")
     .sass("resources/css/style.scss", "public/css/style.css")
     .scripts(["node_modules/jquery/dist/jquery.min.js"], "public/js/jquery.js")
-    .postCss("resources/css/app.css", "public/css", [require("tailwindcss"),
-]);
+    .postCss("resources/css/app.css", "public/css", [require("tailwindcss")]);
 
-mix.copy("node_modules/toastr/build/toastr.min.js", "public/js").copy(
-    "node_modules/toastr/build/toastr.min.css",
-    "public/css"
-);
+mix.copy("node_modules/toastr/build/toastr.min.js", "public/js")
+    .copy("node_modules/toastr/build/toastr.min.css", "public/css")
+    .copy(
+        "node_modules/datatables.net-dt/css/jquery.dataTables.css",
+        "public/css/vendor/datatables/"
+    )
+    .copy(
+        "node_modules/datatables.net/js/jquery.dataTables.min.js",
+        "public/js/vendor/datatables/"
+    );
 
 // Custome files
-mix.copy('node_modules/scrollreveal/dist/scrollreveal.min.js', 'public/js');
+mix.copy("node_modules/scrollreveal/dist/scrollreveal.min.js", "public/js");
 
 mix.copy(
     "node_modules/select2/dist/js/select2.min.js",

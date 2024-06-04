@@ -12,6 +12,7 @@
                         <th>Policy Start Date</th>
                         <th>Policy End Date</th>
                         <th>Insurer Name</th>
+                        <th>Property Add</th>
                         <th>Occupancy</th>
                         <th>Premium Inc Gst</th>
                         <th>Action</th>
@@ -60,12 +61,7 @@
                     "dataType": "json",
                     "contentType": 'application/jsondt; charset=utf-8',
                     data: function(d) {
-                        d.product_category = $('#product_category').val();
-                        d.insurer = $('#insurer').val();
-                        d.quarter = $('#quarter').val();
-                        d.half_year = $('#half_year').val();
-                        d.financial_year = $('#financial_year').val();
-                        d.date_range = $('#date_range').val();
+
                     }
                 },
                 "columnDefs": [{
@@ -88,35 +84,40 @@
                         name: 'policy_no',
                     },
                     {
-                        data: 'customer_name',
-                        name: 'customer_name',
+                        data: 'policy_start_date',
+                        name: 'policy_start_date',
                     },
                     {
-                        data: 'business_type',
-                        name: 'business_type',
-                    },
-                    {
-                        data: 'product_name',
-                        name: 'product_name',
+                        data: 'policy_end_date',
+                        name: 'policy_end_date',
                     },
                     {
                         data: 'insurer',
                         name: 'insurer',
                     },
                     {
-                        data: 'net_premium',
-                        name: 'net_premium',
+                        data: 'property_address',
+                        name: 'property_address',
                     },
                     {
-                        data: 'total_brokerage',
-                        name: 'total_brokerage',
+                        data: 'occupancy',
+                        name: 'occupancy',
                     },
                     {
-                        data: 'policy_issue_date',
-                        name: 'policy_issue_date',
-                    }
+                        data: 'premium_inc_gst',
+                        name: 'premium_inc_gst',
+                    },
+                    {
+                        data: 'action',
+                        name: 'action',
+                    },
+
                 ]
             });
         }
+
+        $(document).ready(function() {
+            initializeDataTable();
+        });
     </script>
 @endsection
