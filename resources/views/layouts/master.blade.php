@@ -42,6 +42,14 @@
     @endif
 
     <main class="flex-grow">
+        @auth
+            <div class="mt-6 fixed w-full ">
+                @component('components.common.card_header', [
+                    'logoutRouteName' => 'logout',
+                ])
+                @endcomponent
+            </div>
+        @endauth
         @yield('content')
     </main>
 
