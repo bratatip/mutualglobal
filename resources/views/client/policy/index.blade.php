@@ -1,9 +1,20 @@
 @extends('client.layouts.app')
 
 @section('content')
+    <link href="{{ config('app.url') }}/css/dt.css"
+          rel="stylesheet"
+          type="text/css" />
+
+    <link href="{{ config('app.url') }}/css/data_table.css"
+          rel="stylesheet"
+          type="text/css" />
+    <link rel="stylesheet"
+          href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+
     <x-common.card>
         @slot('card_content')
-            <table class="w-full  table-auto"
+            <table class="w-full table-auto"
                    id="policiesDataTable">
                 <thead class="text-black">
                     <tr>

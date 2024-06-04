@@ -41,6 +41,9 @@
 </div>
 
 <style>
+    .side_bar {
+            z-index: 999;
+        }
     @media screen and (max-width: 767px) {
         .side_bar {
             width: -moz-available;

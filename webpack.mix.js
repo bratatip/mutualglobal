@@ -4,7 +4,9 @@ mix.copyDirectory("resources/assets", "public/assets")
     .copy("resources/images", "public/images")
     .js("resources/js/app.js", "public/js")
     .sass("resources/sass/app.scss", "public/css")
-    .sass("resources/css/style.scss", "public/css/style.css")
+    .sass('resources/sass/data_table.scss', 'public/css/data_table.css')
+    .sass('resources/sass/dt.scss', 'public/css/dt.css')
+    .sass("resources/sass/style.scss", "public/css/style.css")
     .scripts(["node_modules/jquery/dist/jquery.min.js"], "public/js/jquery.js")
     .postCss("resources/css/app.css", "public/css", [require("tailwindcss")]);
 
@@ -31,7 +33,7 @@ mix.copy(
 );
 
 mix.css("resources/css/atom-spinner.css", "public/css/atom-spinner.css")
-    .css("resources/css/select2.css", "public/css/select2.css")
+    .sass("resources/sass/select2.scss", "public/css/select2.css")
     .copy(
         "resources/files/import_uhid_sample.csv",
         "public/files/csv/import_uhid_sample.csv"
