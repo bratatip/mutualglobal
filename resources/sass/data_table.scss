@@ -2,10 +2,6 @@ td {
     border: 0;
 }
 
-div.dataTables_wrapper {
-    z-index: -1 !important;
-}
-
 div.dataTables_wrapper div.dataTables_info {
     color: #0f628b;
     font-weight: 700;
@@ -36,16 +32,16 @@ th:last-child {
     border-top-right-radius: 20px;
 }
 
-div#clients_filter {
+div#policiesDataTable_filter {
     padding-bottom: 10px;
 }
 
-table#clients {
+table#policiesDataTable {
     width: 100% !important;
 }
 
-a#clients_previous,
-a#clients_next {
+a#policiesDataTable_previous,
+a#policiesDataTable_next {
     color: #0f628b !important;
 }
 
@@ -95,8 +91,8 @@ thead tr th,
 tbody tr td {
     text-align: center !important;
 }
-a#clients_previous:hover,
-a#clients_next:hover {
+a#policiesDataTable_previous:hover,
+a#policiesDataTable_next:hover {
     color: #ffffff !important;
 }
 

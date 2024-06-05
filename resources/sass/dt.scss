@@ -44,16 +44,16 @@ th:last-child {
     border-top-right-radius: 20px;
 }
 
-div#agencies_filter {
+div#policiesDataTable_filter {
     padding-bottom: 10px;
 }
 
-table#agencies {
+table#policiesDataTable {
     width: 100% !important;
 }
 
-a#agencies_previous,
-a#agencies_next {
+a#policiesDataTable_previous,
+a#policiesDataTable_next {
 
     color: #0F628B !important;
     font-size: 12px;
@@ -119,8 +119,8 @@ tbody tr td {
     text-align: center !important;
 }
 
-a#agencies_previous:hover,
-a#agencies_next:hover {
+a#policiesDataTable_previous:hover,
+a#policiesDataTable_next:hover {
     color: #ffffff !important;
 }
 
@@ -150,8 +150,8 @@ div#agencies_length {
         width: 80%;
     }
 
-    div#agencies_length,
-    div#agencies_filter {
+    div#policiesDataTable_length,
+    div#policiesDataTable_filter {
         margin-top: 57px;
     }
     body div.dataTables_processing {
@@ -249,6 +249,7 @@ td {
     th,
     td,
     tr {
+        font-size: 12px !important;
         display: block;
     }
 
