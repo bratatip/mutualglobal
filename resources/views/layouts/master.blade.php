@@ -6,6 +6,8 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
+    <link href="{{ asset('css/style.css') }}"
+          rel="stylesheet" />
     @include('layouts.custom_css')
     @include('layouts.js_cdn')
 

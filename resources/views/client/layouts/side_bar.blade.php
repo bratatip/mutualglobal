@@ -1,5 +1,5 @@
 <div
-     class="side_bar fixed max-md:bottom-0 md:w-32 md:h-[97%] max-md:mt-[-50px] m-3 p-1 md:p-3 rounded-lg bg-blue-300 flex md:flex-col shadow-2xl text-white font-bold select-none">
+     class="side_bar fixed max-md:bottom-0 md:w-32 md:h-[97%] max-md:mt-[-50px] m-3 p-1 md:p-3 rounded-lg bg-blue-300 flex md:flex-col shadow-2xl text-white font-bold select-none -z-10">
     <div class="hidden md:block">
         <a href="#"
            class="flex justify-center p-3 rounded-xl shadow-2xl">
@@ -41,9 +41,6 @@
 </div>
 
 <style>
-    .side_bar {
-            z-index: 999;
-        }
     @media screen and (max-width: 767px) {
         .side_bar {
             width: -moz-available;

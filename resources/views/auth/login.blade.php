@@ -58,7 +58,7 @@
                                 @include('common.partials._error', ['name' => 'email'])
                             </div>
 
-                            <div class="flex flex-col gap-3">
+                            <div class="flex flex-col gap-3 relative">
                                 <label for="password"
                                        class="text-indigo-500 font-bold text-xs">Password <span
                                           class="text-red-500 font-bold">*</span></label>
@@ -67,6 +67,13 @@
                                        name="password"
                                        placeholder="Enter Password"
                                        class="text-xs text-gray-500 font-bold border border-indigo-500 outline-none focus:border-none rounded-sm shadow-xl">
+                                <span class="absolute inset-y-0 right-0 flex items-center pr-3">
+                                    <i id="toggle-password"
+                                       class="fa-solid fa-eye text-indigo-500 cursor-pointer mt-8"></i>
+                                    <i id="toggle-password-hidden"
+                                       class="hidden fa-solid fa-eye-slash text-indigo-500 cursor-pointer mt-8"></i>
+                                </span>
+
                                 @include('common.partials._error', ['name' => 'password'])
                             </div>
 
@@ -187,6 +194,36 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const passwordInput = document.getElementById('password');
+            const togglePasswordBtn = document.getElementById('toggle-password');
+            const togglePasswordHiddenBtn = document.getElementById('toggle-password-hidden');
+
+            // Function to toggle password visibility
+            function togglePasswordVisibility() {
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                    togglePasswordBtn.classList.add('hidden');
+                    togglePasswordHiddenBtn.classList.remove('hidden');
+                } else {
+                    passwordInput.type = 'password';
+                    togglePasswordBtn.classList.remove('hidden');
+                    togglePasswordHiddenBtn.classList.add('hidden');
+                }
+            }
+
+            // Event listener to toggle password visibility when eye icon is clicked
+            togglePasswordBtn.addEventListener('click', function() {
+                togglePasswordVisibility();
+            });
+
+            togglePasswordHiddenBtn.addEventListener('click', function() {
+                togglePasswordVisibility();
+            });
+        });
+    </script>
 
 
     <script>

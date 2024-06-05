@@ -14,7 +14,7 @@
 
     <x-common.card>
         @slot('card_content')
-            <table class="w-full table-auto"
+            <table class="w-full table-auto z-10"
                    id="policiesDataTable">
                 <thead class="text-black">
                     <tr>
