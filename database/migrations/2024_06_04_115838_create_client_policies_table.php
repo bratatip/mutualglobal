@@ -22,9 +22,9 @@ return new class extends Migration
             $table->date('policy_start_date');
             $table->date('policy_end_date');
             $table->string('occupancy');
-            $table->string('property_address');
-            $table->decimal('premium_inc_gst', 20, 2)->default(0);
-            $table->string('file_path');
+            $table->text('property_address');
+            $table->decimal('premium_inc_gst', 20, 2)->default(0.00);
+            $table->string('file_path')->nullable();
 
             $table->timestamps();
             $table->softDeletes();

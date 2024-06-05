@@ -65,8 +65,11 @@ Route::prefix('admin')->name('Admin.')->middleware('admin')->group(function () {
     Route::post('/delete-uhid', [AdminSettingsController::class, 'adminDeleteUhid'])->name('delete-uhid');
 
     Route::get('/client-registration', [AdminClientController::class, 'registerClientView'])->name('registerClientView');
+
     Route::get('/add-client-policy', [AdminClientController::class, 'addClientPolicyView'])->name('addClientPolicyView');
     
+    Route::post('/store-client-policy', [AdminClientController::class, 'storeClientPolicy'])->name('storeClientPolicy');
+
 });
 
 Route::prefix('client')->name('Client.')->group(function () {
