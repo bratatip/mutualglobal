@@ -1,5 +1,7 @@
 @extends('layouts.master')
-
+@php
+    use App\Helpers\OptionGeneratorHelper;
+@endphp
 @section('content')
     <x-common.card>
         @slot('card_content')
@@ -8,23 +10,24 @@
                 @csrf
                 <div class="grid md:grid-cols-3 gap-2 p-5">
                     <div>
-                        <x-forms.input-field type="text"
-                                             class="h-8"
-                                             name="client"
-                                             label="Clint Name"
-                                             placeholder=""
-                                             class="js-select2"
-                                             required />
+                        <x-forms.select type="text"
+                                        class="h-8"
+                                        name="client"
+                                        label="Clint Name"
+                                        class="js-select2"
+                                        :options="OptionGeneratorHelper::generateClientOption()"
+                                        required />
                         @include('common.partials._error', ['name' => 'client'])
 
                     </div>
                     <div>
-                        <x-forms.input-field type="text"
+                        <x-forms.select type="text"
                                              class="h-8"
                                              name="insurer"
                                              label="Insurer Name"
                                              placeholder=""
                                              class="js-select2"
+                                             :options="OptionGeneratorHelper::generateInsurerOption()"
                                              required />
                         @include('common.partials._error', ['name' => 'insurer'])
 
