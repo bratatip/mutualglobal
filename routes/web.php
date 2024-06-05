@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminAuthController;
+use App\Http\Controllers\Admin\AdminClientController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminSettingsController;
 use App\Http\Controllers\Auth\AuthController;
@@ -50,7 +51,7 @@ Route::prefix('Coupon')->group(function () {
 
 # Admin Routes
 
-Route::prefix('admin')->middleware('admin')->name('Admin.')->group(function () {
+Route::prefix('admin')->name('Admin.')->middleware('admin')->group(function () {
     # dashboard route
     Route::get('/dashboard', [AdminController::class, 'showDashboard'])->name('dashboard');
 
@@ -62,25 +63,29 @@ Route::prefix('admin')->middleware('admin')->name('Admin.')->group(function () {
 
     Route::get('/delete-uhid-form', [AdminSettingsController::class, 'adminDeleteUhidForm'])->name('delete-uhid-form');
     Route::post('/delete-uhid', [AdminSettingsController::class, 'adminDeleteUhid'])->name('delete-uhid');
+
+    Route::get('/client-registration', [AdminClientController::class, 'registerClientView'])->name('registerClientView');
+    Route::get('/add-client-policy', [AdminClientController::class, 'addClientPolicyView'])->name('addClientPolicyView');
+    
 });
 
 Route::prefix('client')->name('Client.')->group(function () {
-     # dashboard route
-     Route::get('/dashboard', [ClientController::class, 'showDashboard'])->name('dashboard');
+    # dashboard route
+    Route::get('/dashboard', [ClientController::class, 'showDashboard'])->name('dashboard');
 
-      # Policy route
-      Route::get('/policy', [ClientController::class, 'showPolicy'])->name('policy');
+    # Policy route
+    Route::get('/policy', [ClientController::class, 'showPolicy'])->name('policy');
 
-      # Policy route
-      Route::get('/policy-table-json', [ClientController::class, 'clientPolicyTableJson'])->name('clientPolicyTableJson');
+    # Policy route
+    Route::get('/policy-table-json', [ClientController::class, 'clientPolicyTableJson'])->name('clientPolicyTableJson');
 });
 
 
 #Testing    
 Route::view('/test-view', 'welcome');
 
-// Import the admin routes file
-Route::prefix('admin')->namespace('Admin')->group(base_path('routes/panel/admin.php'));
+// // Import the admin routes file
+// Route::prefix('admin')->namespace('Admin')->group(base_path('routes/panel/admin.php'));
 
-// Import the client routes file
-Route::prefix('client')->namespace('Client')->group(base_path('routes/panel/client.php'));
+// // Import the client routes file
+// Route::prefix('client')->namespace('Client')->group(base_path('routes/panel/client.php'));

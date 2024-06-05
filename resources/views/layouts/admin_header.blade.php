@@ -12,6 +12,17 @@
                 </div>
 
                 <div class="flex items-center gap-6 ml-auto hidden md:flex items-center space-x-1">
+
+                    <x-forms.button type="link"
+                                    text="Add Policy"
+                                    class="py-4 px-2 text-gray-500 font-semibold hover:text-[#FFC451] transition duration-300 no-underline "
+                                    href="{{ route('Admin.addClientPolicyView') }}" />
+
+                    <x-forms.button type="link"
+                                    text="Register Client"
+                                    class="py-4 px-2 text-gray-500 font-semibold hover:text-[#FFC451] transition duration-300 no-underline "
+                                    href="{{ route('Admin.registerClientView') }}" />
+
                     <x-forms.button type="link"
                                     text="Import Uhids"
                                     class="py-4 px-2 text-gray-500 font-semibold hover:text-[#FFC451] transition duration-300 no-underline "
