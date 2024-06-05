@@ -1,237 +1,193 @@
 @extends('layouts.master')
 
 @section('content')
-    {{-- <div class="min-h-screen flex flex-col justify-center">
-        @include('common.partials._message')
-        <div>
-            <h2 class="mt-6 text-center text-md font-sans font-extrabold text-white">
-                Login
-            </h2>
-        </div>
-        <div class="mt-1 sm:mx-auto sm:w-full sm:max-w-md">
-            <div class="bg-white py-8 px-4 shadow-2xl sm:rounded-lg sm:px-10">
-                <form class="space-y-6"
-                      id="login-form"
-                      action="{{ route('doLogin') }}"
-                      method="POST">
-                    @csrf
-                    @method('post')
+    <div class="modal z-50 opacity-100 fixed w-full h-full top-0 left-0 flex items-center justify-center"
+         id="modal_logout">
+        <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-15"></div>
 
-                    <div>
-                        <x-forms.input-field type="email"
-                                             class="h-8"
-                                             name="email"
-                                             label="Email"
-                                             placeholder="Enter Registered Email Address"
-                                             required />
-                        @include('common.partials._error', ['name' => 'policy_name'])
+        <div
+             class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto modal_604px border_bg mob_350px block">
+
+            <!-- Modal content -->
+            <div class="modal-content py-4 text-left px-6">
+                <div class="flex flex-col justify-center">
+                    @include('common.partials._message')
+                    <div class="flex justify-center align-middle -mb-5">
+                        <img src="{{ asset('images/app/logo.png') }}"
+                             alt="..."
+                             width="50"
+                             class="rounded-full shadow-xl">
+                    </div>
+                    <div class="sm:mx-auto sm:w-full sm:max-w-md mb-3">
+                        <h2 class="mt-6 text-center text-sm font-extrabold text-indigo-600">Mutual Global Insurance Broking
+                            Pvt
+                            Ltd</h2>
                     </div>
 
-                    <div>
-                        <x-forms.input-field type="password"
-                                             class="h-8"
-                                             name="password"
-                                             label="Password"
-                                             placeholder="Enter Password"
-                                             required />
-                        @include('common.partials._error', ['name' => 'insured_name'])
-                    </div>
+                    <div class="flex justify-center text-xs">
 
-                    <div class="mt-3 flex justify-center">
-                        <div class="overlay">
-                            <div class="atom-spinner hide">
-                                <div class="spinner-inner">
-                                    <div class="spinner-line"></div>
-                                    <div class="spinner-line"></div>
-                                    <div class="spinner-line"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        <button id="login-tab"
+                                class="block px-6  py-2 border border-solid rounded-2xl bg-[#F5F5F5] text-xs text-[#0F628B] hover:bg-gray-200 ml-2 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white font-bold shadow-xl ">
+                            Login
+                        </button>
 
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center">
-                            <input id="remember_me"
-                                   name="remember_me"
-                                   type="checkbox"
-                                   value="1"
-                                   class="border-solid border-red-300 text-red-500 focus:ring-0">
-                            <label for="remember_me"
-                                   class="ml-2 text-sm text-gray-900">
-                                Remember me
-                            </label>
-                        </div>
-
-                        <div class="text-sm">
-                            <a href="#"
-                               class="font-medium text-red-300 no-underline">
-                                Forgot your password?
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="flex justify-center">
-                        <button type="button"
-                                class="px-6 py-2 mt-3 border border-solid border-[#CCCCCC] rounded-2xl bg-gray-500 text-xs text-white ml-2 font-bold"
-                                id="login-button">
-                            Sign in
+                        <button id="register-tab"
+                                class="block px-6  py-2 border border-solid rounded-2xl bg-[#F5F5F5] text-xs text-[#0F628B] hover:bg-gray-200 ml-2 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white font-bold shadow-xl ">
+                            Register
                         </button>
                     </div>
-                </form>
-            </div>
-        </div>
+                    <div id="login-form-container"
+                         class="mt-6 sm:mx-auto sm:w-full sm:max-w-md">
+                        <!-- Login Form -->
 
-        <div class="sm:mx-auto sm:w-full sm:max-w-md">
-            <h2 class="mt-6 text-center text-sm font-extrabold text-white">
-                Mutual Global Insurance Broking Pvt Ltd
-            </h2>
-        </div>
-    </div> --}}
+                        <form class="space-y-6"
+                              id="login-form"
+                              action="{{ route('doLogin') }}"
+                              method="POST">
+                            @csrf
+                            <div class="flex flex-col gap-3">
+                                <label for="email"
+                                       class="text-indigo-500 font-bold text-xs">Email <span
+                                          class="text-red-500 font-bold">*</span></label>
+                                <input type="text"
+                                       id="email"
+                                       name="email"
+                                       placeholder="Enter Registered Email Address"
+                                       class="text-xs text-gray-500 font-bold border border-indigo-500 outline-none focus:border-none rounded-sm shadow-xl">
 
-    <div class="min-h-screen flex flex-col justify-center">
-        @include('common.partials._message')
-        <div class="flex justify-center">
-            <button id="login-tab"
-                    class="py-2 px-4 bg-gray-300 text-gray-700 font-bold rounded-l-xl">Login</button>
-            <button id="register-tab"
-                    class="py-2 px-4 bg-gray-300 text-gray-700 font-bold rounded-r-xl">Register</button>
-        </div>
-        <div id="login-form-container"
-             class="mt-6 sm:mx-auto sm:w-full sm:max-w-md">
-            <!-- Login Form -->
-            <div class="bg-white py-8 px-4 shadow-2xl sm:rounded-lg sm:px-10">
-                <form class="space-y-6"
-                      id="login-form"
-                      action="{{ route('doLogin') }}"
-                      method="POST">
-                    @csrf
-                    <div>
-                        <x-forms.input-field type="email"
-                                             class="h-8"
-                                             name="email"
-                                             label="Email"
-                                             placeholder="Enter Registered Email Address"
-                                             required />
-                        @include('common.partials._error', ['name' => 'policy_name'])
-                    </div>
+                                @include('common.partials._error', ['name' => 'email'])
+                            </div>
 
-                    <div>
-                        <x-forms.input-field type="password"
-                                             class="h-8"
-                                             name="password"
-                                             label="Password"
-                                             placeholder="Enter Password"
-                                             required />
-                        @include('common.partials._error', ['name' => 'insured_name'])
-                    </div>
+                            <div class="flex flex-col gap-3">
+                                <label for="password"
+                                       class="text-indigo-500 font-bold text-xs">Password <span
+                                          class="text-red-500 font-bold">*</span></label>
+                                <input type="password"
+                                       id="password"
+                                       name="password"
+                                       placeholder="Enter Password"
+                                       class="text-xs text-gray-500 font-bold border border-indigo-500 outline-none focus:border-none rounded-sm shadow-xl">
+                                @include('common.partials._error', ['name' => 'password'])
+                            </div>
 
-                    <div class="mt-3 flex justify-center">
-                        <div class="overlay">
-                            <div class="atom-spinner hide">
-                                <div class="spinner-inner">
-                                    <div class="spinner-line"></div>
-                                    <div class="spinner-line"></div>
-                                    <div class="spinner-line"></div>
+                            <div class="mt-3 flex justify-center">
+                                <div class="overlay">
+                                    <div class="atom-spinner hide">
+                                        <div class="spinner-inner">
+                                            <div class="spinner-line"></div>
+                                            <div class="spinner-line"></div>
+                                            <div class="spinner-line"></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center">
-                            <input id="remember_me"
-                                   name="remember_me"
-                                   type="checkbox"
-                                   value="1"
-                                   class="border-solid border-red-300 text-red-500 focus:ring-0">
-                            <label for="remember_me"
-                                   class="ml-2 text-sm text-gray-900">
-                                Remember me
-                            </label>
-                        </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <input id="remember_me"
+                                           name="remember_me"
+                                           type="checkbox"
+                                           value="1"
+                                           class="border-solid border-indigo-500 text-indigo-500 focus:ring-0">
+                                    <label for="remember_me"
+                                           class="ml-2 text-sm text-gray-900">
+                                        Remember me
+                                    </label>
+                                </div>
 
-                        <div class="text-sm">
-                            <a href="#"
-                               class="font-medium text-red-300 no-underline">
-                                Forgot your password?
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="flex justify-center">
-                        <button type="button"
-                                class="px-6 py-2 mt-3 border border-solid border-[#CCCCCC] rounded-2xl bg-gray-500 text-xs text-white ml-2 font-bold"
-                                id="login-button">
-                            Sign in
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div id="register-form-container"
-             class="hidden mt-6 sm:mx-auto sm:w-full sm:max-w-md">
-            <!-- Register Form (initially hidden) -->
-            <div class="bg-white py-8 px-4 shadow-2xl sm:rounded-lg sm:px-10">
-                <form class="space-y-6"
-                      id="register-form"
-                      action="#"
-                      method="POST">
-                    @csrf
-                    <div>
-                        <x-forms.input-field type="text"
-                                             class="h-8"
-                                             name="name"
-                                             label="Name"
-                                             placeholder="Enter Full Name"
-                                             required />
-                        @include('common.partials._error', ['name' => 'name'])
-                    </div>
-                    <div>
-                        <x-forms.input-field type="email"
-                                             class="h-8"
-                                             name="email"
-                                             label="Email"
-                                             placeholder="Enter Email Address"
-                                             required />
-                        @include('common.partials._error', ['name' => 'email'])
-                    </div>
-
-                    <div>
-                        <x-forms.input-field type="text"
-                                             class="h-8"
-                                             name="phone"
-                                             label="Mobile Number"
-                                             placeholder="Enter Mobile Number"
-                                             required />
-                        @include('common.partials._error', ['name' => 'phone'])
-                    </div>
-
-                    <div class="mt-3 flex justify-center">
-                        <div class="overlay">
-                            <div class="atom-spinner hide">
-                                <div class="spinner-inner">
-                                    <div class="spinner-line"></div>
-                                    <div class="spinner-line"></div>
-                                    <div class="spinner-line"></div>
+                                <div class="text-sm">
+                                    <a href="#"
+                                       class="font-medium text-indigo-500 no-underline">
+                                        Forgot your password?
+                                    </a>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="flex justify-center">
-                        <button type="button"
-                                class="px-6 py-2 mt-3 border border-solid border-[#CCCCCC] rounded-2xl bg-gray-500 text-xs text-white ml-2 font-bold"
-                                id="login-button">
-                            Submit
-                        </button>
+                            <div class="flex justify-center">
+                                <button type="button"
+                                        id="login-button"
+                                        class="block px-6  py-2 border border-solid rounded-2xl bg-indigo-100 text-xs text-[#0F628B] hover:bg-gray-200 ml-2 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white font-bold shadow-xl">
+                                    Sign in
+                                </button>
+                            </div>
+                        </form>
                     </div>
-                </form>
+                    <div id="register-form-container"
+                         class="hidden mt-6 sm:mx-auto sm:w-full sm:max-w-md">
+
+                        <!-- Register Form (initially hidden) -->
+                        <form class="space-y-6"
+                              id="register-form"
+                              action="#"
+                              method="POST">
+                            @csrf
+
+                            <div class="flex flex-col gap-3">
+                                <label for="name"
+                                       class="text-indigo-500 font-bold text-xs">Name <span
+                                          class="text-red-500 font-bold">*</span></label>
+                                <input type="text"
+                                       id="name"
+                                       name="name"
+                                       placeholder="Enter Full Name"
+                                       class="text-xs text-gray-500 font-bold border border-indigo-500 outline-none focus:border-none rounded-sm shadow-xl">
+
+                                @include('common.partials._error', ['name' => 'name'])
+                            </div>
+
+                            <div class="flex flex-col gap-3">
+                                <label for="email"
+                                       class="text-indigo-500 font-bold text-xs">Email <span
+                                          class="text-red-500 font-bold">*</span></label>
+                                <input type="text"
+                                       id="email"
+                                       name="email"
+                                       placeholder="Enter Email"
+                                       class="text-xs text-gray-500 font-bold border border-indigo-500 outline-none focus:border-none rounded-sm shadow-xl">
+
+                                @include('common.partials._error', ['name' => 'email'])
+                            </div>
+
+                            <div class="flex flex-col gap-3">
+                                <label for="phone"
+                                       class="text-indigo-500 font-bold text-xs">Email <span
+                                          class="text-red-500 font-bold">*</span></label>
+                                <input type="number"
+                                       id="phone"
+                                       name="phone"
+                                       placeholder="Enter Mobile Number"
+                                       class="text-xs text-gray-500 font-bold border border-indigo-500 outline-none focus:border-none rounded-sm shadow-xl"
+                                       oninput="this.value = this.value.slice(0, 10)">
+
+                                @include('common.partials._error', ['name' => 'phone'])
+                            </div>
+
+                            <div class="mt-3 flex justify-center">
+                                <div class="overlay">
+                                    <div class="atom-spinner hide">
+                                        <div class="spinner-inner">
+                                            <div class="spinner-line"></div>
+                                            <div class="spinner-line"></div>
+                                            <div class="spinner-line"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-center">
+                                <button type="button"
+                                        id="login-button"
+                                        class="block px-6  py-2 border border-solid rounded-2xl bg-indigo-100 text-xs text-[#0F628B] hover:bg-gray-200 ml-2 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white font-bold shadow-xl">
+                                    Sign up
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="sm:mx-auto sm:w-full sm:max-w-md">
-            <h2 class="mt-6 text-center text-sm font-extrabold text-white">Mutual Global Insurance Broking Pvt Ltd</h2>
         </div>
     </div>
+
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -240,24 +196,42 @@
             const loginFormContainer = document.getElementById('login-form-container');
             const registerFormContainer = document.getElementById('register-form-container');
 
+            // Retrieve tab info from local storage
+            const activeTab = localStorage.getItem('activeTab');
+            if (activeTab === 'register') {
+                // If 'register' tab was active, show register form
+                registerTab.classList.add('bg-gray-200');
+                loginFormContainer.classList.add('hidden');
+                registerFormContainer.classList.remove('hidden');
+            } else {
+                // Otherwise, show login form (default behavior)
+                loginTab.classList.add('bg-gray-200');
+                registerFormContainer.classList.add('hidden');
+                loginFormContainer.classList.remove('hidden');
+            }
+
             loginTab.addEventListener('click', function() {
-                loginTab.classList.add('bg-gray-300', 'text-gray-700');
-                registerTab.classList.remove('bg-gray-300', 'text-gray-700');
+                // Set active tab to 'login' in local storage
+                localStorage.setItem('activeTab', 'login');
+
+                loginTab.classList.add('bg-gray-200');
+                registerTab.classList.remove('bg-gray-200');
                 loginFormContainer.classList.remove('hidden');
                 registerFormContainer.classList.add('hidden');
             });
 
             registerTab.addEventListener('click', function() {
-                registerTab.classList.add('bg-gray-300', 'text-gray-700');
-                loginTab.classList.remove('bg-gray-300', 'text-gray-700');
+                // Set active tab to 'register' in local storage
+                localStorage.setItem('activeTab', 'register');
+
+                registerTab.classList.add('bg-gray-200');
+                loginTab.classList.remove('bg-gray-200');
                 registerFormContainer.classList.remove('hidden');
                 loginFormContainer.classList.add('hidden');
             });
         });
     </script>
 
-
-    {{-- <script src="{{ asset('js/login.js') }}"></script> --}}
 
     <script>
         // public/js/login.js
@@ -298,3 +272,16 @@
         });
     </script>
 @endsection
+<style>
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+</style>
