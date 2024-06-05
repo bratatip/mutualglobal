@@ -14,4 +14,16 @@ class ClientRegistration extends Model
         'email',
         'phone',
     ];
+
+    // Mutator for the 'name' attribute
+    public function setNameAttribute($value)
+    {
+        $this->attributes['name'] = strtolower($value);
+    }
+
+    // Mutator for the 'email' attribute
+    public function setEmailAttribute($value)
+    {
+        $this->attributes['email'] = strtolower($value);
+    }
 }

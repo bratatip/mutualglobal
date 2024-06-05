@@ -11,7 +11,6 @@
             <!-- Modal content -->
             <div class="modal-content py-4 text-left px-6">
                 <div class="flex flex-col justify-center">
-                    @include('common.partials._message')
                     <div class="flex justify-center align-middle -mb-5">
                         <img src="{{ asset('images/app/logo.png') }}"
                              alt="..."
@@ -36,6 +35,11 @@
                             Register
                         </button>
                     </div>
+
+                    <div class="m-4">
+                        @include('common.partials._message')
+                    </div>
+                    
                     <div id="login-form-container"
                          class="mt-6 sm:mx-auto sm:w-full sm:max-w-md">
                         <!-- Login Form -->
@@ -125,7 +129,7 @@
                         <!-- Register Form (initially hidden) -->
                         <form class="space-y-6"
                               id="register-form"
-                              action="#"
+                              action="{{ route('Client.clientRegistration') }}"
                               method="POST">
                             @csrf
 
@@ -136,6 +140,7 @@
                                 <input type="text"
                                        id="name"
                                        name="name"
+                                       value="{{ old('name') }}"
                                        placeholder="Enter Full Name"
                                        class="text-xs text-gray-500 font-bold border border-indigo-500 outline-none focus:border-none rounded-sm shadow-xl">
 
@@ -149,6 +154,7 @@
                                 <input type="text"
                                        id="email"
                                        name="email"
+                                       value="{{ old('email') }}"
                                        placeholder="Enter Email"
                                        class="text-xs text-gray-500 font-bold border border-indigo-500 outline-none focus:border-none rounded-sm shadow-xl">
 
@@ -162,6 +168,7 @@
                                 <input type="number"
                                        id="phone"
                                        name="phone"
+                                       value="{{ old('phone') }}"
                                        placeholder="Enter Mobile Number"
                                        class="text-xs text-gray-500 font-bold border border-indigo-500 outline-none focus:border-none rounded-sm shadow-xl"
                                        oninput="this.value = this.value.slice(0, 10)">
@@ -182,7 +189,7 @@
                             </div>
 
                             <div class="flex justify-center">
-                                <button type="button"
+                                <button type="submit"
                                         id="login-button"
                                         class="block px-6  py-2 border border-solid rounded-2xl bg-indigo-100 text-xs text-[#0F628B] hover:bg-gray-200 ml-2 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white font-bold shadow-xl">
                                     Sign up

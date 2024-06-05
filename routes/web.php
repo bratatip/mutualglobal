@@ -67,9 +67,8 @@ Route::prefix('admin')->name('Admin.')->middleware('admin')->group(function () {
     Route::get('/client-registration', [AdminClientController::class, 'registerClientView'])->name('registerClientView');
 
     Route::get('/add-client-policy', [AdminClientController::class, 'addClientPolicyView'])->name('addClientPolicyView');
-    
-    Route::post('/store-client-policy', [AdminClientController::class, 'storeClientPolicy'])->name('storeClientPolicy');
 
+    Route::post('/store-client-policy', [AdminClientController::class, 'storeClientPolicy'])->name('storeClientPolicy');
 });
 
 Route::prefix('client')->name('Client.')->group(function () {
@@ -81,6 +80,9 @@ Route::prefix('client')->name('Client.')->group(function () {
 
     # Policy route
     Route::get('/policy-table-json', [ClientController::class, 'clientPolicyTableJson'])->name('clientPolicyTableJson');
+
+    # Registration Route
+    Route::post('/client-registration', [ClientController::class, 'clientRegistration'])->name('clientRegistration');
 });
 
 

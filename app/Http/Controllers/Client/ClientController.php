@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Client\ClientRegistrationRequest;
 use App\Models\Admin\Uhid;
 use App\Models\ClientPolicy;
+use App\Models\ClientRegistration;
 use Illuminate\Support\Str;
 use Barryvdh\DomPDF\Facade\Pdf as PDF;
+use Illuminate\Database\QueryException;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
@@ -35,6 +38,28 @@ class ClientController extends Controller
             ->rawColumns(['action'])
             ->make(true);
     }
+
+    public function clientRegistration(ClientRegistrationRequest $request)
+    {
+        try {
+
+            $validatedData = $request->validated();
+            $clientRegistration = ClientRegistration::create($validatedData);
+
+            session()->flash('success', 'Your registration was successful! You will receive an email shortly with your credentials. Please allow up to 48 hours for the email to arrive.');
+
+            return redirect()->back();
+        } catch (QueryException $e) {
+            session()->flash('error', 'Registration failed due to a database error. Please try again.');
+
+            return redirect()->back()->withInput();
+        } catch (\Exception $e) {
+            session()->flash('error', 'Registration failed. Please try again.');
+
+            return redirect()->back()->withInput();
+        }
+    }
+
 
     public function clientIndex()
     {
