@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('phone')->after('email')->nullable();
+            $table->boolean('is_active')->default(true)->after('phone');
             $table->softDeletes();
         });
     }
@@ -28,6 +29,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('phone');
+            $table->dropColumn('is_active');
             $table->dropSoftDeletes();
         });
     }
