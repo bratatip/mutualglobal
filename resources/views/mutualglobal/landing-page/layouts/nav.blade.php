@@ -137,7 +137,8 @@
                 </a>
 
                 <a href="{{ route('loginView') }}"
-                   class="rounded-full shadow-xl px-2 bg-amber-100 border border-amber-100 text-blue-700">Sign In</a>
+                   class="logout_button block px-6  py-2 border border-solid rounded-2xl bg-[#F5F5F5] text-xs text-[#0F628B] hover:bg-amber-100 hover:text-amber-500 ml-2 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white font-bold shadow-xl ">Sign
+                    In</a>
             </div>
 
             {{-- Mobile Side Bar --}}
