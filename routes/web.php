@@ -64,12 +64,27 @@ Route::prefix('admin')->name('Admin.')->middleware('admin')->group(function () {
     Route::get('/delete-uhid-form', [AdminSettingsController::class, 'adminDeleteUhidForm'])->name('delete-uhid-form');
     Route::post('/delete-uhid', [AdminSettingsController::class, 'adminDeleteUhid'])->name('delete-uhid');
 
+    #---------------------------------------------------
     Route::get('/client-registration', [AdminClientController::class, 'registerClientView'])->name('registerClientView');
+
+
+    Route::post('/client-registration-accept/{uuid}', [AdminClientController::class, 'approveClientRegistration'])->name('approveClientRegistration');
+
+
+    Route::post('/client-registration-reject/{uuid}', [AdminClientController::class, 'rejectClientRegistration'])->name('rejectClientRegistration');
+    
+
+    #Policy -----------------------------------------------
 
     Route::get('/add-client-policy', [AdminClientController::class, 'addClientPolicyView'])->name('addClientPolicyView');
 
     Route::post('/store-client-policy', [AdminClientController::class, 'storeClientPolicy'])->name('storeClientPolicy');
+
+    # Register Client json Route
+    Route::get('/register-client-table-json', [AdminClientController::class, 'registerClientTableJson'])->name('registerClientTableJson');
 });
+
+
 
 Route::prefix('client')->name('Client.')->group(function () {
     # dashboard route

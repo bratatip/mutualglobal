@@ -15,10 +15,13 @@ return new class extends Migration
     {
         Schema::create('client_registrations', function (Blueprint $table) {
             $table->id();
+            $table->uuid('uuid')->nullable();
             $table->string('name');
             $table->string('email')->unique();
             $table->string('phone');
+            $table->enum('status', ['PENDING', 'APPROVED', 'REJECTED'])->default('PENDING');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

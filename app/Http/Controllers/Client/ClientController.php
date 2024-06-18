@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Client;
 
+use App\Helpers\UuidGeneratorHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Client\ClientRegistrationRequest;
+use App\Jobs\Client\RegistrationNotificationToAdminJob;
+use App\Jobs\Client\RegistrationNotificationToClientJob;
 use App\Models\Admin\Uhid;
 use App\Models\ClientPolicy;
 use App\Models\ClientRegistration;
@@ -42,10 +45,18 @@ class ClientController extends Controller
     public function clientRegistration(ClientRegistrationRequest $request)
     {
         try {
+            // Simulating an error by throwing an exception
+            // throw new \Exception('This is a test error for simulation purposes.');
 
             $validatedData = $request->validated();
+            $validatedData['uuid'] = UuidGeneratorHelper::generateUniqueUuidForTable('client_registrations');
             $clientRegistration = ClientRegistration::create($validatedData);
 
+            if ($clientRegistration) {
+                dispatch(new RegistrationNotificationToClientJob($clientRegistration->email, $clientRegistration->name));
+
+                dispatch(new RegistrationNotificationToAdminJob($clientRegistration));
+            }
             session()->flash('success', 'Your registration was successful! You will receive an email shortly with your credentials. Please allow up to 48 hours for the email to arrive.');
 
             return redirect()->back();

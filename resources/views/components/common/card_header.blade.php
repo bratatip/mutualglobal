@@ -122,14 +122,14 @@
     $('.logout_button').click(function(e) {
         e.preventDefault();
         $('#modal_logout').addClass('opacity-100 pointer-events-auto');
-        $('div.dataTables_wrapper').css('z-index', -1);
+        $('div.dt-container').css('z-index', -1);
         $('.select2.select2-container').css('z-index', -1);
     });
 
 
     $('.modal-close, .modal-overlay').click(function() {
         $('.modal').removeClass('opacity-100 pointer-events-auto');
-        $('div.dataTables_wrapper').css('z-index', '');
+        $('div.dt-container').css('z-index', '');
         $('.select2.select2-container').css('z-index', '');
     });
 </script>

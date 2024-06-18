@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(AdminSeeder::class);
         // $this->call(MiscSeeder::class);
 
-        // $this->call(ClientSeeder::class);
+        // // $this->call(ClientSeeder::class);
         // $this->call(InsurerSeeder::class);
     }
 }

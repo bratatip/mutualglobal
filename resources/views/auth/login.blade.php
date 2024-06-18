@@ -202,6 +202,7 @@
         </div>
     </div>
 
+    <!-- Show And Hide Password Toggle -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const passwordInput = document.getElementById('password');
@@ -232,7 +233,7 @@
         });
     </script>
 
-
+    <!-- Show And Hide Password Toggle -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const loginTab = document.getElementById('login-tab');

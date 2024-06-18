@@ -8,7 +8,7 @@
             <span class="block sm:inline">{{ Session::get('success') }}</span>
             <button id="close-success"
                     class="absolute top-0 right-0 px-3 py-1"
-                    onclick="closeNotification('success-notification')">X</button>
+                    onclick="closeNotification('success-notification')">x</button>
         </div>
     @endif
 
@@ -20,7 +20,7 @@
             <span class="block sm:inline">{{ Session::get('error') }}</span>
             <button id="close-error"
                     class="absolute top-0 right-0 px-3 py-1"
-                    onclick="closeNotification('error-notification')">X</button>
+                    onclick="closeNotification('error-notification')">x</button>
         </div>
     @endif
 </div>
@@ -35,7 +35,6 @@
         @if (Session::has('error'))
             sessionStorage.removeItem('error');
         @endif
-
         // Hide the notification by setting its display property to none
         document.getElementById(notificationId).style.display = 'none';
     }

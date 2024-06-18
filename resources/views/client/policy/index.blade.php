@@ -122,7 +122,6 @@
                         data: 'action',
                         name: 'action',
                     },
-
                 ]
             });
         }

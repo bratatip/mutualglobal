@@ -81,7 +81,7 @@ class ImportUHIDcsvJob implements ShouldQueue
                 $clientUHIDData = array_combine($header, $row);
                 // Validate the required fields
                 $validator = Validator::make($clientUHIDData, $rules);
-                dd($clientUHIDData);
+                // dd($clientUHIDData);
                 if ($validator->fails()) {
                     // Add skipped rows to array
                     $skippedRows[] = $row;
@@ -116,7 +116,7 @@ class ImportUHIDcsvJob implements ShouldQueue
                     'status' => $clientUHIDData['status'],
                     'insurer' => $clientUHIDData['insurer'],
                 ]);
-                dd("Hi");
+                // dd("Hi");
             }
             Storage::delete($this->filePath);
 

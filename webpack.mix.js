@@ -13,11 +13,11 @@ mix.copyDirectory("resources/assets", "public/assets")
 mix.copy("node_modules/toastr/build/toastr.min.js", "public/js")
     .copy("node_modules/toastr/build/toastr.min.css", "public/css")
     .copy(
-        "node_modules/datatables.net-dt/css/jquery.dataTables.css",
+        "node_modules/datatables.net-dt/css/dataTables.dataTables.css",
         "public/css/vendor/datatables/"
     )
     .copy(
-        "node_modules/datatables.net/js/jquery.dataTables.min.js",
+        "node_modules/datatables.net/js/dataTables.min.js",
         "public/js/vendor/datatables/"
     );
 

@@ -13,8 +13,8 @@
 <link href="{{ asset('css/select2.css') }}"
       rel="stylesheet">
 
-<script src="{{ asset('/js/vendor/datatables/jquery.dataTables.min.js') }}" defer></script>
-<link href="{{ asset('css/vendor/datatables/jquery.dataTables.css') }}"
+<script src="{{ asset('/js/vendor/datatables/dataTables.min.js') }}" defer></script>
+<link href="{{ asset('css/vendor/datatables/dataTables.dataTables.css') }}"
       rel="stylesheet">
 
 <script src="{{ asset('/js/vendor/select2/select2.min.js') }}"></script>
