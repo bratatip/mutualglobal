@@ -1,7 +1,10 @@
 @extends('client.layouts.app')
 
 @section('content')
-    <div class="flex justify-center items-center h-screen">
-        <h1 class="text-4xl font-bold text-green-600">Client Dashboard</h1>
+    <div class="flex flex-col justify-center items-center h-screen">
+        <div>
+            <h6 class="text-sm font-bold text-indigo-800">Client Dashboard</h6>
+        </div>
+        <x-loader.coming_soon />
     </div>
 @endsection
