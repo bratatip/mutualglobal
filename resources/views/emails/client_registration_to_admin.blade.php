@@ -69,7 +69,7 @@
 
                             <p
                                style="font-size:14px; line-height: 18px; font-weight: 500px; color:#777777; margin-top:5px;">
-                                A leave application has been submitted. Here are the details:
+                               A new client has been registered. Here are the details:
                             </p>
 
                     </tr>
