@@ -124,6 +124,7 @@
         $('#modal_logout').addClass('opacity-100 pointer-events-auto');
         $('div.dt-container').css('z-index', -1);
         $('.select2.select2-container').css('z-index', -1);
+        $('.side_bar').css('z-index', -1);
     });
 
 
@@ -131,6 +132,7 @@
         $('.modal').removeClass('opacity-100 pointer-events-auto');
         $('div.dt-container').css('z-index', '');
         $('.select2.select2-container').css('z-index', '');
+        $('.side_bar').css('z-index', '');
     });
 </script>
 <style>

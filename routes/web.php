@@ -95,6 +95,7 @@ Route::prefix('client')->name('Client.')->group(function () {
 
     # Policy route
     Route::get('/policy-table-json', [ClientController::class, 'clientPolicyTableJson'])->name('clientPolicyTableJson');
+    Route::get('/policy-download/{uuid}', [ClientController::class, 'clientDownloadPolicy'])->name('downloadPolicy');
 
     # Registration Route
     Route::post('/client-registration', [ClientController::class, 'clientRegistration'])->name('clientRegistration');

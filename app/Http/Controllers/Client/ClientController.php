@@ -12,10 +12,15 @@ use App\Models\ClientPolicy;
 use App\Models\ClientRegistration;
 use Illuminate\Support\Str;
 use Barryvdh\DomPDF\Facade\Pdf as PDF;
+use GuzzleHttp\Exception\RequestException;
 use Illuminate\Database\QueryException;
+use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Yajra\DataTables\Facades\DataTables;
+use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Cache;
 
 class ClientController extends Controller
 {
@@ -32,14 +37,87 @@ class ClientController extends Controller
     public function clientPolicyTableJson()
     {
         $data = ClientPolicy::with('insurer')->where('customer_id', auth()->user()->id)->get();
+
         return DataTables::of($data)
             ->addIndexColumn()
+            ->editColumn('insurer', function ($row) {
+                return $row->insurer->name;
+            })
             ->addColumn('action', function ($row) {
-                // Construct and return the HTML for the action button
-                return '<button class="btn btn-primary">Generate Invoice for ' . $row->id . '</button>';
+                $uuid = $row->uuid;
+                return view('client.policy.data_table_buttons.action', compact('uuid'));
             })
             ->rawColumns(['action'])
             ->make(true);
+    }
+
+    public function clientDownloadPolicy($policy_id)
+    {
+        $policy = ClientPolicy::where('uuid', $policy_id)->first();
+        if (!$policy) {
+            return back()->withErrors('Policy not found.');
+        }
+
+        try {
+
+            $client = new Client();
+            if (!Cache::has('microsoft_graph_token')) {
+                // Step 1: Get the access token
+                $response = $client->post('https://login.microsoftonline.com/' . config('azure.tenant_id') . '/oauth2/v2.0/token', [
+                    'form_params' => [
+                        'grant_type' => 'client_credentials',
+                        'client_id' => config('azure.client_id'),
+                        'client_secret' => config('azure.client_secret'),
+                        'scope' => 'https://graph.microsoft.com/.default'
+                    ],
+                ]);
+
+                // $token = json_decode((string) $response->getBody(), true)['access_token'];
+
+                $body = json_decode((string) $response->getBody(), true);
+                $token = $body['access_token'];
+                $expiresIn = $body['expires_in'];
+
+                Cache::put('microsoft_graph_token', $token, now()->addSeconds($expiresIn - 30));
+            } else {
+                $token = Cache::get('microsoft_graph_token');
+            }
+
+            $fileInfo = $client->get('https://graph.microsoft.com/v1.0/drives/' . config('azure.driver_id') . '/items/' . $policy->file_path , [
+                'headers' => [
+                    'Authorization' => "Bearer {$token}",
+                    'Content-Type' => 'application/octet-stream',
+                ],
+            ]);
+
+            $fileInfoResponse = json_decode((string) $fileInfo->getBody(), true);
+            $downloadUrl = $fileInfoResponse['@microsoft.graph.downloadUrl'];
+            
+            $response = Http::get($downloadUrl);
+
+            if ($response->clientError() || $response->serverError()) {
+                return back()->withErrors('Unable to download file');
+            }
+
+            if ($response->getStatusCode() == 200) {
+                return response($response->body(), 200)
+                    ->header('Content-Type', $response->header('Content-Type'))
+                    ->header('Content-Disposition', $response->header('Content-Disposition') ?? 'attachment; filename="downloaded_file.pdf"');
+            }
+        } catch (ConnectionException $e) {
+            // Handle connection errors (e.g., cURL error 6)
+            return back()->withErrors('File upload failed');
+
+            // return back()->withErrors( 'Connection error occurred: ' . $e->getMessage());
+        } catch (RequestException $e) {
+
+            // Handle HTTP request errors
+            return back()->withErrors('HTTP request error occurred: ' . $e->getMessage());
+        } catch (\Exception $e) {
+
+            // Handle other exceptions
+            return back()->withErrors('An error occurred: ' . $e->getMessage());
+        }
     }
 
     public function clientRegistration(ClientRegistrationRequest $request)

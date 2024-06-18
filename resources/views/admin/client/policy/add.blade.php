@@ -3,10 +3,18 @@
     use App\Helpers\OptionGeneratorHelper;
 @endphp
 @section('content')
+    @if (Session::has('success') || Session::has('error'))
+        <div class="mt-20 w-full flex justify-center">
+            <div class="w-1/2">
+                @include('common.partials._message')
+            </div>
+        </div>
+    @endif
     <x-common.card>
         @slot('card_content')
             <form action="{{ route('Admin.storeClientPolicy') }}"
-                  method="post">
+                  method="post"
+                  enctype="multipart/form-data">
                 @csrf
                 <div class="grid md:grid-cols-3 gap-2 p-5">
                     <div>
@@ -22,13 +30,13 @@
                     </div>
                     <div>
                         <x-forms.select type="text"
-                                             class="h-8"
-                                             name="insurer"
-                                             label="Insurer Name"
-                                             placeholder=""
-                                             class="js-select2"
-                                             :options="OptionGeneratorHelper::generateInsurerOption()"
-                                             required />
+                                        class="h-8"
+                                        name="insurer"
+                                        label="Insurer Name"
+                                        placeholder=""
+                                        class="js-select2"
+                                        :options="OptionGeneratorHelper::generateInsurerOption()"
+                                        required />
                         @include('common.partials._error', ['name' => 'insurer'])
 
                     </div>
@@ -45,7 +53,7 @@
                     </div>
 
                     <div>
-                        <x-forms.input-field type="text"
+                        <x-forms.input-field type="date"
                                              class="h-8"
                                              name="policy_start_date"
                                              label="Policy Start Date"
@@ -56,7 +64,7 @@
                     </div>
 
                     <div>
-                        <x-forms.input-field type="text"
+                        <x-forms.input-field type="date"
                                              class="h-8"
                                              name="policy_end_date"
                                              label="Policy End Date"
@@ -105,6 +113,7 @@
                                              label="Policy Copy"
                                              placeholder=""
                                              class="bg-indigo-300"
+                                             accept=".pdf,.zip"
                                              required />
                         @include('common.partials._error', ['name' => 'policy_copy'])
 

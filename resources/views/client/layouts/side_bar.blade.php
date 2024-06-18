@@ -46,6 +46,7 @@
             width: -moz-available;
             width: -webkit-fill-available;
             justify-content: center;
+            z-index: 99;
         }
     }
 </style>

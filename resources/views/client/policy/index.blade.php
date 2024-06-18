@@ -11,7 +11,14 @@
     <link rel="stylesheet"
           href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
     <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
-
+    
+    @if (Session::has('success') || Session::has('error'))
+        <div class="mt-20 w-full flex justify-center">
+            <div class="w-1/2">
+                @include('common.partials._message')
+            </div>
+        </div>
+    @endif
     <x-common.card>
         @slot('card_content')
             <table class="w-full table-auto z-10"

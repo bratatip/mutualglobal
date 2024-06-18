@@ -2,13 +2,23 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Helpers\PasswordGeneratorHelper;
+use App\Helpers\UuidGeneratorHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Client\PolicyStoreRequest;
+use App\Models\Admin\Insurer;
+use App\Models\ClientPolicy;
 use App\Models\ClientRegistration;
+use App\Models\User;
 use App\Services\Auth\RegistrationService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Http;
+use GuzzleHttp\Client;
+
 
 class AdminClientController extends Controller
 {
@@ -93,6 +103,84 @@ class AdminClientController extends Controller
 
     public function storeClientPolicy(PolicyStoreRequest $request)
     {
-        dd($request->all());
+        // Handle the file upload
+        if ($request->file('policy_copy')->isValid()) {
+
+            $user = User::where('uuid', $request->input('client'))->first();
+            $insurer = Insurer::where('uuid', $request->input('insurer'))->first();
+
+            $file = $request->file('policy_copy');
+            // Store the file or perform other actions
+            // Example: $file->store('uploads');
+
+            $client = new Client();
+            if (!Cache::has('microsoft_graph_token')) {
+                // Step 1: Get the access token
+                $response = $client->post('https://login.microsoftonline.com/' . config('azure.tenant_id') . '/oauth2/v2.0/token', [
+                    'form_params' => [
+                        'grant_type' => 'client_credentials',
+                        'client_id' => config('azure.client_id'),
+                        'client_secret' => config('azure.client_secret'),
+                        'scope' => 'https://graph.microsoft.com/.default'
+                    ],
+                ]);
+
+                // $token = json_decode((string) $response->getBody(), true)['access_token'];
+
+                $body = json_decode((string) $response->getBody(), true);
+                $token = $body['access_token'];
+                $expiresIn = $body['expires_in'];
+
+                Cache::put('microsoft_graph_token', $token, now()->addSeconds($expiresIn - 30));
+            } else {
+                $token = Cache::get('microsoft_graph_token');
+            }
+
+            // Step 2: Use the access token to upload a file
+            // $fileContent = file_get_contents('path/to/your/file.txt');
+            $fileContent = $request->file('policy_copy');
+            $extension = $fileContent->getClientOriginalExtension();
+            $fileName = PasswordGeneratorHelper::generateRandomPassword(15) . '.' . $extension;
+            
+            $path = $user->uuid . '/' . $insurer->name . '/' . $fileName;
+
+            $response = $client->put('https://graph.microsoft.com/v1.0/drives/' . config('azure.driver_id') . '/root:/' . $path . ':/content', [
+                'headers' => [
+                    'Authorization' => "Bearer {$token}",
+                    'Content-Type' => 'application/octet-stream',
+                ],
+                'body' => $fileContent,
+            ]);
+
+
+            // return json_decode((string) $response->getBody(), true);
+
+            if ($response->getStatusCode() == 201) {
+                $responseData = json_decode((string) $response->getBody(), true);
+
+                $uuid = UuidGeneratorHelper::generateUniqueUuidForTable('client_policies');
+
+                $policy = ClientPolicy::create([
+                    'uuid' =>  $uuid,
+                    'customer_id' => $user->id,
+                    'insurer_id' => $insurer->id,
+                    'policy_no' => $request['policy_number'],
+                    'policy_start_date' => $request['policy_start_date'],
+                    'policy_end_date' => $request['policy_end_date'],
+                    'occupancy' => $request['occupancy'],
+                    'property_address' => $request['property_address'],
+                    'premium_inc_gst' => $request['premium_inc_gst'],
+                    'file_path' => $responseData['id'],
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                ]);
+
+                return back()->with('success', 'File uploaded successfully');
+            } else {
+                return back()->withErrors('File upload failed');
+            }
+        }
+
+        return back()->withErrors('File upload failed');
     }
 }
