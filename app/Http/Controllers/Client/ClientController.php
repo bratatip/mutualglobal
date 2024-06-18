@@ -98,11 +98,16 @@ class ClientController extends Controller
             if ($response->clientError() || $response->serverError()) {
                 return back()->withErrors('Unable to download file');
             }
-
+            
             if ($response->getStatusCode() == 200) {
-                return response($response->body(), 200)
-                    ->header('Content-Type', $response->header('Content-Type'))
-                    ->header('Content-Disposition', $response->header('Content-Disposition') ?? 'attachment; filename="downloaded_file.pdf"');
+                $fileContent = $response->body();
+                $contentType = $response->header('Content-Type', 'application/octet-stream');
+                $disposition = $response->header('Content-Disposition', 'attachment; filename="downloaded_file.pdf"');
+            
+                return response($fileContent, 200)
+                    ->header('Content-Type', $contentType)
+                    ->header('Content-Disposition', $disposition)
+                    ->header('Content-Length', strlen($fileContent));
             }
         } catch (ConnectionException $e) {
             // Handle connection errors (e.g., cURL error 6)

@@ -138,16 +138,17 @@ class AdminClientController extends Controller
 
             // Step 2: Use the access token to upload a file
             // $fileContent = file_get_contents('path/to/your/file.txt');
-            $fileContent = $request->file('policy_copy');
-            $extension = $fileContent->getClientOriginalExtension();
-            $fileName = PasswordGeneratorHelper::generateRandomPassword(15) . '.' . $extension;
+            $fileContent = file_get_contents($request->file('policy_copy')->getRealPath());
+
+            $extension = $request['policy_copy']->getClientOriginalExtension();
+            $fileName = UuidGeneratorHelper::generateUniqueUuidForTable('client_policies') . '.' . $extension;
             
-            $path = $user->uuid . '/' . $insurer->name . '/' . $fileName;
+            $path = Str::random(15) . '5' . $user->uuid . '/' . $insurer->name . '/' . $fileName;
 
             $response = $client->put('https://graph.microsoft.com/v1.0/drives/' . config('azure.driver_id') . '/root:/' . $path . ':/content', [
                 'headers' => [
                     'Authorization' => "Bearer {$token}",
-                    'Content-Type' => 'application/octet-stream',
+                    'Content-Type' => $file->getClientMimeType(),
                 ],
                 'body' => $fileContent,
             ]);
