@@ -30,7 +30,7 @@
     .bar {
         height: 1em;
         width: 30em;
-        max-width: 100%;
+        max-width: 80%;
         /* Added for responsiveness */
         border-radius: 10px;
         background: transparent;
