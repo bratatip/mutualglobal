@@ -141,9 +141,9 @@ class AdminClientController extends Controller
             $fileContent = file_get_contents($request->file('policy_copy')->getRealPath());
 
             $extension = $request['policy_copy']->getClientOriginalExtension();
-            $fileName = UuidGeneratorHelper::generateUniqueUuidForTable('client_policies') . '.' . $extension;
+            $fileName = Str::random(15) . '-' . UuidGeneratorHelper::generateUniqueUuidForTable('client_policies') . '.' . $extension;
             
-            $path = Str::random(15) . '5' . $user->uuid . '/' . $insurer->name . '/' . $fileName;
+            $path = $user->uuid . '/' . $insurer->name . '/' . $fileName;
 
             $response = $client->put('https://graph.microsoft.com/v1.0/drives/' . config('azure.driver_id') . '/root:/' . $path . ':/content', [
                 'headers' => [
