@@ -11,27 +11,27 @@
             <!-- Modal content -->
             <div class="modal-content py-4 text-left px-6">
                 <div class="flex flex-col justify-center">
-                    <div class="flex justify-center align-middle -mb-5">
-                        <img src="{{ asset('images/app/logo.png') }}"
+                    <div class="flex justify-center align-middle mb-5">
+                        <img src="{{ asset('images/app/mail_logo.png') }}"
                              alt="..."
-                             width="50"
-                             class="rounded-full shadow-xl">
+                             width="300"
+                             class="rounded-sm shadow-sm">
                     </div>
-                    <div class="sm:mx-auto sm:w-full sm:max-w-md mb-3">
+                    {{-- <div class="sm:mx-auto sm:w-full sm:max-w-md mb-3">
                         <h2 class="mt-6 text-center text-sm font-extrabold text-indigo-600">Mutual Global Insurance Broking
                             Pvt
                             Ltd</h2>
-                    </div>
+                    </div> --}}
 
                     <div class="flex justify-center text-xs">
 
                         <button id="login-tab"
-                                class="block px-6  py-2 border border-solid rounded-2xl bg-[#F5F5F5] text-xs text-[#0F628B] hover:bg-gray-200 ml-2 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white font-bold shadow-xl ">
+                                class="block px-6  py-2 border border-solid rounded-s-md bg-[#F5F5F5] text-xs text-[#0F628B] hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white font-bold shadow-xl ">
                             Login
                         </button>
 
                         <button id="register-tab"
-                                class="block px-6  py-2 border border-solid rounded-2xl bg-[#F5F5F5] text-xs text-[#0F628B] hover:bg-gray-200 ml-2 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white font-bold shadow-xl ">
+                                class="block px-6  py-2 border border-solid rounded-e-md bg-[#F5F5F5] text-xs text-[#0F628B] hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white font-bold shadow-xl ">
                             Register
                         </button>
                     </div>

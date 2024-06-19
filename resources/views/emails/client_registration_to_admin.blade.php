@@ -56,7 +56,7 @@
                     <tr>
                         <td align="center"
                             style="padding:5px 5px 5px 5px;">
-                            <img src="{{ asset('/images/mail_logo.png') }}"
+                            <img src="{{ asset('/images/app/mail_logo.png') }}"
                                  alt="Logo"
                                  width="200"
                                  height="50"
