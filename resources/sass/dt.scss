@@ -297,6 +297,7 @@ td {
         padding-right: 10px;
         white-space: nowrap;
         display: inline-table;
+        color: #0f628b;
     }
 
     td:nth-of-type(1):before {
@@ -345,6 +346,7 @@ td {
 table.dataTable thead > tr > * {
     white-space: nowrap;
     font-size: 11px;
+    color: #0f628b;
 }
 
 table.dataTable > tbody > tr > * {
@@ -354,6 +356,11 @@ table.dataTable > tbody > tr > * {
 //     margin-top: -25px;
 // }
 
+div.dt-container div.dt-search label {
+    font-size: smaller;
+    color: #0f628b;
+}
+
 div.dt-container div.dt-search input {
     border-radius: 30px;
     height: 30px;
@@ -361,6 +368,8 @@ div.dt-container div.dt-search input {
     font-weight: 300;
     color: gray;
     font-size: 12px;
+    border: solid #0f628b 1px ;
+    box-shadow: none;
 }
 
 // div.dt-container .dt-length {
@@ -370,20 +379,23 @@ div.dt-container div.dt-search input {
 div.dt-container div.dt-length select {
     width: 45px;
     font-size: 12px;
+    box-shadow: none;
+    border: solid #0f628b 0.5px ;
+    padding-block: 0;
 }
 div.dt-container div.dt-length select option {
     border-radius: 20px;
 }
 div.dt-container div.dt-length label {
     color: #0f628b;
-    font-weight: bold;
+    font-weight: normal;
     font-size: small;
 }
 
 div.dt-container div.dt-info {
     color: #0f628b;
-    font-weight: bold;
-    font-size: small;
+    font-weight: normal;
+    font-size: smaller;
 }
 
 div.dt-container .dt-paging .dt-paging-button.current {
