@@ -125,6 +125,8 @@
         $('div.dt-container').css('z-index', -1);
         $('.select2.select2-container').css('z-index', -1);
         $('.side_bar').css('z-index', -1);
+        $('#success-notification').css('z-index', -1);
+        $('#error-notification').css('z-index', -1);
     });
 
 
@@ -133,6 +135,9 @@
         $('div.dt-container').css('z-index', '');
         $('.select2.select2-container').css('z-index', '');
         $('.side_bar').css('z-index', '');
+        $('#success-notification').css('z-index', '');
+        $('#error-notification').css('z-index', '');
+
     });
 </script>
 <style>
