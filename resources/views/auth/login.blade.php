@@ -163,7 +163,7 @@
 
                             <div class="flex flex-col gap-3">
                                 <label for="phone"
-                                       class="text-indigo-500 font-bold text-xs">Email <span
+                                       class="text-indigo-500 font-bold text-xs">Mobile <span
                                           class="text-red-500 font-bold">*</span></label>
                                 <input type="number"
                                        id="phone"
