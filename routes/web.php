@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\AdminSettingsController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Client\ClientController;
+use App\Http\Controllers\Client\SupportController;
 use App\Http\Controllers\Coupon\ClientCouponController;
 use App\Http\Controllers\StaticWeb\StaticWebController;
 use Illuminate\Support\Facades\Route;
@@ -96,6 +97,9 @@ Route::prefix('client')->name('Client.')->group(function () {
     # Policy route
     Route::get('/policy-table-json', [ClientController::class, 'clientPolicyTableJson'])->name('clientPolicyTableJson');
     Route::get('/policy-download/{uuid}', [ClientController::class, 'clientDownloadPolicy'])->name('downloadPolicy');
+
+    # Support Route
+    Route::get('support', [SupportController::class, 'index'])->name('supportIndex');
 
     # Registration Route
     Route::post('/client-registration', [ClientController::class, 'clientRegistration'])->name('clientRegistration');
