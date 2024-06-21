@@ -32,7 +32,7 @@
                     <small>Member since {{ Auth::user()->created_at->format('d M. Y') }}</small>
                 </p>
                 <p class="font-bold ">
-                    {{ Auth::user()->name }}
+                    {{ ucwords(Auth::user()->name) }}
                 </p>
             </div>
             <div class="text-center md-w[15%]">

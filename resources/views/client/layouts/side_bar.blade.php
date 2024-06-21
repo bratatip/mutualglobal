@@ -29,13 +29,14 @@
             <p class="text-xs">More</p>
         </a>
 
-        <hr class="hidden md:block my-3 h-[5px] border-none bg-gradient-to-t from-white opacity-10">
-        <a href="{{ route('Client.supportIndex') }}"
-           class="flex flex-col text-center p-3 rounded-xl shadow-2xl bg-blue-300 max-md:h-max max-md:w-min">
-            <i class="fa-solid fa-headset md:text-4xl"></i>
-            <p class="text-xs">Support</p>
-        </a>
-
+        <div class="md:absolute md:bottom-0 md:w-[80%] md:mb-5">
+            <hr class="hidden md:block my-3 h-[5px] border-none bg-gradient-to-t from-white opacity-10">
+            <a href="{{ route('Client.supportIndex') }}"
+               class="flex flex-col text-center p-3 rounded-xl shadow-2xl bg-blue-300 max-md:h-max">
+                <i class="fa-solid fa-headset md:text-4xl"></i>
+                <p class="text-xs">Support</p>
+            </a>
+        </div>
     </div>
     {{-- <div class=" min:sm-ml-3">
         <hr class="hidden md:block my-3 h-[5px] border-none bg-gradient-to-t from-white opacity-10">
