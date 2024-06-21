@@ -34,7 +34,6 @@ class AdminClientController extends Controller
 
     public function registerClientTableJson()
     {
-        sleep(1);
         // Query to fetch all users data
         $data = ClientRegistration::all();
 

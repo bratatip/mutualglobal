@@ -67,9 +67,9 @@
                 </p>
             </div>
 
-            <div class="mt-[150px] max-md:mt-[10px]"></div>
+            <div class="mt-[50px] max-md:mt-[10px]"></div>
             <div class="flex justify-center items-center pb-3">
-                <p class="text-2xl font-bold text-[#0F628B] text-center max-md:text-xl">Are you sure you want to logout?
+                <p class="text-lg font-bold text-[#0F628B] text-center max-md:text-sm">Are you sure you want to logout?
                 </p>
                 <div class="modal-close cursor-pointer z-50">
                     <svg class="fill-current text-black"
@@ -81,14 +81,7 @@
                     </svg>
                 </div>
             </div>
-
-            <div class="mb-4">
-                <p class="text-lg font-medium text-[#777777] text-center max-md:text-sm">By submitting in you agree to
-                    our <strong><a href="https://professionalsourcingsolutions.ca/terms-and-conditions/">Terms of
-                            Service</a></strong> and <br>
-                    are hereby bound to them.</p>
-            </div>
-            <div class="mt-[100px] max-md:mt-[10px]"></div>
+            <div class="mt-[50px] max-md:mt-[10px]"></div>
             <div class="flex justify-center pt-2">
 
                 <a href="#"
@@ -100,9 +93,9 @@
                     hover:bg-gray-200
                     hover:text-red-500
                     border border-solid-gray-500
-                text-lg
+                text-sm
                 font-bold
-                w-[192px] h-[34px] flex justify-center items-center shadow-xl">
+                w-[120px] h-[34px] flex justify-center items-center shadow-xl">
                     Logout
                 </a>
                 <form id="logout-form"
@@ -141,6 +134,11 @@
     });
 </script>
 <style>
+    .modal-container{
+        max-width: 450px !important;
+        /* max-height: 300px !important; */
+    }
+
     .modal_604px {
         width: 100%;
         max-width: 604px;
