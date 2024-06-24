@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Client;
 
 use App\Rules\EmailFull;
+use App\Rules\ReCaptcha;
 use App\Rules\ValidNameRule;
 use App\Rules\ValidPhoneRule;
 use Illuminate\Foundation\Http\FormRequest;
@@ -43,6 +44,7 @@ class ClientRegistrationRequest extends FormRequest
                 Rule::unique('client_registrations', 'phone'),
                 Rule::unique('users', 'phone'),
             ],
+            'g-recaptcha-response' => ['required', new ReCaptcha],
         ];
     }
 }

@@ -1,6 +1,8 @@
 @extends('layouts.master')
 
 @section('content')
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
     <div class="modal z-50 opacity-100 fixed w-full h-full top-0 left-0 flex items-center justify-center"
          id="modal_logout">
         <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-15"></div>
@@ -9,7 +11,7 @@
              class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto modal_604px border_bg mob_350px block">
 
             <!-- Modal content -->
-            <div class="modal-content py-4 text-left px-6">
+            <div class="modal-content py-4 text-left px-6 overflow-y-auto">
                 <div class="flex flex-col justify-center">
                     <div class="flex justify-center align-middle mb-5">
                         <img src="{{ asset('images/app/mail_logo.png') }}"
@@ -39,7 +41,7 @@
                     <div class="m-4">
                         @include('common.partials._message')
                     </div>
-                    
+
                     <div id="login-form-container"
                          class="mt-6 sm:mx-auto sm:w-full sm:max-w-md">
                         <!-- Login Form -->
@@ -174,6 +176,16 @@
                                        oninput="this.value = this.value.slice(0, 10)">
 
                                 @include('common.partials._error', ['name' => 'phone'])
+                            </div>
+
+                            <div class="flex flex-col gap-3">
+                                {{-- <label class="text-indigo-500 font-bold text-xs">ReCaptcha <span
+                                          class="text-red-500 font-bold">*</span></label> --}}
+                                <div class="g-recaptcha"
+                                     data-sitekey="{{ env('GOOGLE_RECAPTCHA_KEY') }}"></div>
+                                @if ($errors->has('g-recaptcha-response'))
+                                    <span class="text-red-500 text-xs">{{ $errors->first('g-recaptcha-response') }}</span>
+                                @endif
                             </div>
 
                             <div class="mt-3 flex justify-center">
