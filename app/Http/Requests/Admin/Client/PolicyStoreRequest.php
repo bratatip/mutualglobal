@@ -32,7 +32,7 @@ class PolicyStoreRequest extends FormRequest
             'premium_inc_gst' => 'required|numeric',
             'occupancy' => 'required|string',
             'property_address' => 'required|string',
-            'policy_copy' => 'required|file|mimes:pdf,zip|max:2048',
+            'policy_copy' => 'required|file|mimes:pdf,zip|max:15360',
         ];
     }
 }
