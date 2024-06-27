@@ -14,7 +14,8 @@
         @slot('card_content')
             <form action="{{ route('Admin.storeClientPolicy') }}"
                   method="post"
-                  enctype="multipart/form-data">
+                  enctype="multipart/form-data"
+                  class="from-prevent-multiple-submits">
                 @csrf
                 <div class="grid md:grid-cols-3 gap-2 p-5">
                     <div>
@@ -144,17 +145,70 @@
                     </label>
                 </div> --}}
 
+                {{-- <div class="flex justify-end">
+                    <button type="submit"
+                            class="from-prevent-multiple-submits block mr-6 px-6  py-2 border border-solid rounded-2xl bg-[#F5F5F5] text-xs text-[#0F628B] hover:bg-gray-200 ml-2 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white font-bold shadow-xl cursor-not-allowed">
+                        <div class="flex mr-6">
+                            <div class="relative">
+                                <!-- Outer Ring-->
+                                <div
+                                     class="w-4 h-4 rounded-full absolute
+                                 border-4 border-solid border-gray-400">
+                                </div>
+
+                                <!-- Inner Ring -->
+                                <div
+                                     class="w-4 h-4 rounded-full animate-spin absolute
+                                border-4 border-solid border-[#0F628B] border-t-transparent">
+                                </div>
+                            </div>
+                        </div>
+                        Submit
+                    </button>
+                </div> --}}
+
                 <div class="flex justify-end">
                     <button type="submit"
-                            class="logout_button block mr-6 px-6  py-2 border border-solid rounded-2xl bg-[#F5F5F5] text-xs text-[#0F628B] hover:bg-gray-200 ml-2 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white font-bold shadow-xl ">
+                            class="from-prevent-multiple-submits flex items-center mr-6 px-6 py-2 border border-solid rounded-2xl bg-[#F5F5F5] text-xs text-[#0F628B] hover:bg-gray-200 ml-2 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white font-bold shadow-xl">
                         Submit
                     </button>
                 </div>
+
             </form>
         @endslot
     </x-common.card>
 
-    <script>
+    <script type="text/javascript">
+        // (function() {
+        //     $('.from-prevent-multiple-submits').on('submit', function() {
+        //         $('.from-prevent-multiple-submits').attr('disabled', 'true');
+        //     })
+        // })
+        // ();
+
+
+        (function() {
+            $('.from-prevent-multiple-submits').on('submit', function() {
+                var button = $(this).find('button[type=submit]');
+
+                // Disable the button
+                button.attr('disabled', 'disabled');
+
+                // Change button text to "Processing"
+                button.html(
+                    '<div class="flex items-center"><div class="mr-2"><div class="w-4 h-4 rounded-full border-4 border-solid border-gray-500 border-t-transparent animate-spin"></div></div><span class="text-gray-500">Processing...</span></div>'
+                );
+
+                // Optionally, add a class for cursor or other styling
+                button.addClass('cursor-not-allowed');
+
+                // You can also add further logic here if needed, like form submission via AJAX
+
+                // Prevent form from submitting multiple times
+                return true; // Returning true allows the form to submit normally
+            });
+        })();
+
         $(document).ready(function() {
             $(".js-select2").select2({
                 closeOnSelect: true,
